@@ -1,0 +1,32 @@
+group_name,code,name,description
+WEEK_DAY,MONDAY,Monday,First day of the week by ISO 8601.
+WEEK_DAY,TUESDAT,Tuesday,Second day of the week by ISO 8601.
+WEEK_DAY,WEDNESDAY,Wednesday,Third day of the week by ISO 8601.
+WEEK_DAY,THURSDAY,Thursday,Fourth day of the week by ISO 8601.
+WEEK_DAY,FRIDAY,Friday,Fifth day of the week by ISO 8601.
+WEEK_DAY,SATURDAY,Saturday,Sixth day of the week by ISO 8601.
+WEEK_DAY,SUNDAY,Sunday,Seventh day of the week by ISO 8601.
+BINDING_TYPE,ERP,ERP ,Corporate ERP system used in company.
+ORGANIZATION_ROLE_TYPE,practitioner,Practitioner,Role for healthcare prectiotioner.
+ENTITY_STATE,DRAFT,Draft,Entity in draft state and not ready yet for approval.
+ENTITY_STATE,PENDING,Pending,Entity pending approval and can't be used.
+ENTITY_STATE,ACTIVE,Active,Entity in active state and can be used.
+ENTITY_STATE,RETIRED,Retired,Entity retired and cannot be executed any more.
+ENTITY_STATE,ERROR,Error,Entity in have error and can't be used.
+ORGANIZATION_TYPE,prov,Healthcare Provider,An organization that provides healthcare services.
+ORGANIZATION_TYPE,dept,Hospital Department,A department or ward within a hospital (Generally is not applicable to top level organizations)
+ORGANIZATION_TYPE,team,Organizational team,An organizational team is usually a grouping of practitioners that perform a specific function within an organization (which could be a top level organization, or a department).
+ORGANIZATION_TYPE,govt,Government,A political body, often used when including organization records for government bodies such as a Federal Government, State or Local Government.
+ORGANIZATION_TYPE,ins,Insurance Company,A company that provides insurance to its subscribers that may include healthcare related policies.
+ORGANIZATION_TYPE,pay,Payer,A company, charity, or governmental organization which processes claims and/or issues payments to providers on behalf of patients or groups of patients.
+ORGANIZATION_TYPE,edu,Educational Institute,An educational institution that provides education or research facilities.
+ORGANIZATION_TYPE,reli,Religious Institution,An organization that is identified as a part of a religious institution.
+ORGANIZATION_TYPE,crs,Clinical Research Sponsor,An organization that is identified as a Pharmaceutical/Clinical Research Sponsor.
+ORGANIZATION_TYPE,cg,Community Group,An un-incorporated community group.
+ORGANIZATION_TYPE,bus,Non-Healthcare Business or Corporation,An organization that is a registered business or corporation but not identified by other types.
+ORGANIZATION_TYPE,other,Other,Other type of organization not already specified.
+EMPLOYEE_TYPE,PERMANENT,Permanent,Permanent employee of organization.
+EMPLOYEE_TYPE,TEMPORARY,Temporary,Temporary employee of organization working by contract.
+EMPLOYEE_TYPE,VENDOR,Vendor,Employee from external provider organization.
+EMPLOYEE_TYPE,CANDIDATE,Candidate,Position open and have candidate in hiring process.
+EMPLOYEE_TYPE,VACANT,Vacancy,Position open and waiting for candidate.

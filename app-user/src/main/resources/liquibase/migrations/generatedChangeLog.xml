@@ -1,0 +1,461 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="initial/tables.xml"
+				   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+				   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<changeSet author="CodeGeneration" id="create_generated_table_address" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="address" />
+			</not>
+		</preConditions>
+		<createTable tableName="address">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="use_" type="VARCHAR(255)" />
+			<column name="type" type="VARCHAR(255)" />
+			<column name="text" type="VARCHAR(256)" />
+			<column name="district" type="VARCHAR(100)" />
+			<column name="state" type="VARCHAR(100)" />
+			<column name="postal_code" type="VARCHAR(64)" />
+			<column name="country" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_attachment" labels="version:1.3.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="content_type" type="VARCHAR(100)" />
+			<column name="language" type="VARCHAR(255)" />
+			<column name="data" type="VARCHAR(2048)" />
+			<column name="url" type="VARCHAR(255)" />
+			<column name="size" type="int" />
+			<column name="hash" type="VARCHAR(2048)" />
+			<column name="title" type="VARCHAR(255)" />
+			<column name="creation" type="datetime" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.1.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="binding" />
+			</not>
+		</preConditions>
+		<createTable tableName="binding">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="type" type="VARCHAR(255)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="code" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_contact" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="type" type="VARCHAR(255)" />
+			<column name="person" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_contact_point" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact_point" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact_point">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="system_" type="VARCHAR(255)" />
+			<column name="value" type="VARCHAR(255)" />
+			<column name="use_" type="VARCHAR(255)" />
+			<column name="rank_" type="int" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_hours_of_operation" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="hours_of_operation" />
+			</not>
+		</preConditions>
+		<createTable tableName="hours_of_operation">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="days_of_week" type="${JSON_OBJECT}"/>
+			<column name="all_day" type="${BOOLEAN_VALUE}" />
+			<column name="opening_time" type="VARCHAR(255)" />
+			<column name="closing_time" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_human_name" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="human_name" />
+			</not>
+		</preConditions>
+		<createTable tableName="human_name">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="use_" type="VARCHAR(255)" />
+			<column name="text" type="VARCHAR(1024)" />
+			<column name="family" type="VARCHAR(256)" />
+			<column name="given" type="${JSON_OBJECT}"/>
+			<column name="prefix" type="${JSON_OBJECT}"/>
+			<column name="suffix" type="${JSON_OBJECT}"/>
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_identifier" labels="version:1.5.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="identifier" />
+			</not>
+		</preConditions>
+		<createTable tableName="identifier">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="use_" type="VARCHAR(255)" />
+			<column name="type" type="VARCHAR(255)" />
+			<column name="system_" type="VARCHAR(255)" />
+			<column name="value" type="VARCHAR(255)" />
+			<column name="description" type="VARCHAR(255)" />
+			<column name="assigner" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_location" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="location" />
+			</not>
+		</preConditions>
+		<createTable tableName="location">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="type" type="${JSON_OBJECT}"/>
+			<column name="mode" type="VARCHAR(255)" />
+			<column name="status" type="VARCHAR(255)" />
+			<column name="operational_status" type="VARCHAR(255)" />
+			<column name="physical_type" type="VARCHAR(255)" />
+			<column name="address" type="VARCHAR(255)" />
+			<column name="position_longitude" type="VARCHAR(255)"/>
+			<column name="position_altitude" type="VARCHAR(255)"/>
+			<column name="position_latitude" type="VARCHAR(255)"/>
+			<column name="availability_exceptions" type="VARCHAR(255)" />
+			<column name="part_of" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_person" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="person" />
+			</not>
+		</preConditions>
+		<createTable tableName="person">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="gender" type="VARCHAR(255)" />
+			<column name="birth_date" type="datetime" />
+			<column name="photo" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_reference_identity" labels="version:">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="reference_identity" />
+			</not>
+		</preConditions>
+		<createTable tableName="reference_identity">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="resource_id" type="VARCHAR(255)" />
+			<column name="name" type="VARCHAR(255)" />
+			<column name="description" type="VARCHAR(255)" />
+			<column name="type" type="VARCHAR(255)" />
+			<column name="uri" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.6.1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="parent_id" type="${UUID}"/>
+			<column name="parent_name" type="VARCHAR(255)"/>
+			<column name="parent_description" type="VARCHAR(255)"/>
+			<column name="type" type="VARCHAR(255)" />
+			<column name="state" type="VARCHAR(255)" />
+			<column name="alias" type="${JSON_OBJECT}"/>
+			<column name="token" type="VARCHAR(255)" />
+			<column name="containing_folder" type="${UUID}" />
+			<column name="managing_organization" type="VARCHAR(255)" />
+			<column name="source" type="VARCHAR(255)" />
+			<column name="created_at" type="datetime"/>
+			<column name="created_by" type="VARCHAR(256)"/>
+			<column name="updated_at" type="datetime"/>
+			<column name="updated_by" type="VARCHAR(256)"/>
+			<column name="updated_note" type="VARCHAR(255)"/>
+			<column name="updated_message" type="VARCHAR(255)"/>
+			<column name="reviewed_at" type="datetime"/>
+			<column name="reviewed_by" type="VARCHAR(256)"/>
+			<column name="retired_at" type="datetime"/>
+			<column name="retired_by" type="VARCHAR(256)"/>
+			<column name="completions" type="${JSON_OBJECT}"/>
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_user" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="user" />
+			</not>
+		</preConditions>
+		<createTable tableName="user">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="email_address" type="VARCHAR(255)"/>
+			<column name="email_verified" type="${BOOLEAN_VALUE}"/>
+			<column name="email_date_added" type="bigint"/>
+			<column name="email_date_bounced" type="bigint"/>
+			<column name="phone_home" type="VARCHAR(255)"/>
+			<column name="phone_work" type="VARCHAR(255)"/>
+			<column name="profile" type="VARCHAR(255)" />
+			<column name="primary_party" type="VARCHAR(255)" />
+			<column name="provider" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="CodeGeneration" id="create_generated_join_table_binding_to_entity">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="binding_to_entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="binding_to_entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="entity"/>
+			</column>
+			<column name="binding_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="binding"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="entity_id, binding_id"
+					   constraintName="pk_binding_to_entity"
+					   tableName="binding_to_entity"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contact_to_contact_point">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact_to_contact_point" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact_to_contact_point">
+			<column name="contact_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contact"/>
+			</column>
+			<column name="contact_point_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contact_point"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contact_id, contact_point_id"
+					   constraintName="pk_contact_to_contact_point"
+					   tableName="contact_to_contact_point"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_address_to_contact">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="address_to_contact" />
+			</not>
+		</preConditions>
+		<createTable tableName="address_to_contact">
+			<column name="contact_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contact"/>
+			</column>
+			<column name="address_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="address"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contact_id, address_id"
+					   constraintName="pk_address_to_contact"
+					   tableName="address_to_contact"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contact_point_to_location">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact_point_to_location" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact_point_to_location">
+			<column name="location_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="location"/>
+			</column>
+			<column name="contact_point_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contact_point"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="location_id, contact_point_id"
+					   constraintName="pk_contact_point_to_location"
+					   tableName="contact_point_to_location"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_hours_of_operation_to_location">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="hours_of_operation_to_location" />
+			</not>
+		</preConditions>
+		<createTable tableName="hours_of_operation_to_location">
+			<column name="location_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="location"/>
+			</column>
+			<column name="hours_of_operation_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="hours_of_operation"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="location_id, hours_of_operation_id"
+					   constraintName="pk_hours_of_operation_to_location"
+					   tableName="hours_of_operation_to_location"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_identifier_to_person">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="identifier_to_person" />
+			</not>
+		</preConditions>
+		<createTable tableName="identifier_to_person">
+			<column name="person_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="person"/>
+			</column>
+			<column name="identifier_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="identifier"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="person_id, identifier_id"
+					   constraintName="pk_identifier_to_person"
+					   tableName="identifier_to_person"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_human_name_to_person">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="human_name_to_person" />
+			</not>
+		</preConditions>
+		<createTable tableName="human_name_to_person">
+			<column name="person_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="person"/>
+			</column>
+			<column name="human_name_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="human_name"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="person_id, human_name_id"
+					   constraintName="pk_human_name_to_person"
+					   tableName="human_name_to_person"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contact_point_to_person">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact_point_to_person" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact_point_to_person">
+			<column name="person_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="person"/>
+			</column>
+			<column name="contact_point_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contact_point"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="person_id, contact_point_id"
+					   constraintName="pk_contact_point_to_person"
+					   tableName="contact_point_to_person"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_address_to_person">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="address_to_person" />
+			</not>
+		</preConditions>
+		<createTable tableName="address_to_person">
+			<column name="person_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="person"/>
+			</column>
+			<column name="address_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="address"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="person_id, address_id"
+					   constraintName="pk_address_to_person"
+					   tableName="address_to_person"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_party_to_user">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="party_to_user" />
+			</not>
+		</preConditions>
+		<createTable tableName="party_to_user">
+			<column name="user_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="user"/>
+			</column>
+			<column name="party_id" type="${UUID}">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="user_id, party_id"
+					   constraintName="pk_party_to_user"
+					   tableName="party_to_user"/>
+	</changeSet>
+</databaseChangeLog>

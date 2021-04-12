@@ -1,0 +1,269 @@
+group_name,code,name,description
+LEGAL_ENTITY_TYPE,PERSONAL,Personal,Legal entity contains personal legal information.
+LEGAL_ENTITY_TYPE,BUSINESS,Business,Legal entity contains legal information about not personal entity recognized by government under jurisdiction it operates. 
+BINDING_TYPE,ERP,ERP ,Corporate ERP system used in company.
+COUNTRY,AE,Afghanistan,93
+COUNTRY,AX,Aland Islands,35818
+COUNTRY,AL,Albania,355
+COUNTRY,DZ,Algeria,213
+COUNTRY,AS,American Samoa,1684
+COUNTRY,AD,Andorra,376
+COUNTRY,AO,Angola,244
+COUNTRY,AI,Anguilla,1264
+COUNTRY,AG,Antigua and Barbuda,1268
+COUNTRY,AR,Argentina,54
+COUNTRY,AM,Armenia,374
+COUNTRY,AW,Aruba,297
+COUNTRY,AU,Australia,61
+COUNTRY,AT,Austria,43
+COUNTRY,AZ,Azerbaijan,994
+COUNTRY,BS,Bahamas,1242
+COUNTRY,BH,Bahrain,973
+COUNTRY,BD,Bangladesh,880
+COUNTRY,BB,Barbados,1246
+COUNTRY,BY,Belarus,375
+COUNTRY,BE,Belgium,32
+COUNTRY,BZ,Belize,501
+COUNTRY,BJ,Benin,229
+COUNTRY,BM,Bermuda,1441
+COUNTRY,BT,Bhutan,975
+COUNTRY,BO,Bolivia, Plurinational State of,591
+COUNTRY,BQ,Bonaire, Sint Eustatius and Saba,5997
+COUNTRY,BA,Bosnia and Herzegovina,387
+COUNTRY,BW,Botswana,267
+COUNTRY,BR,Brazil,55
+COUNTRY,IO,British Indian Ocean Territory,246
+COUNTRY,BN,Brunei Darussalam,673
+COUNTRY,BG,Bulgaria,359
+COUNTRY,BF,Burkina Faso,226
+COUNTRY,BI,Burundi,257
+COUNTRY,CV,Cabo Verde,238
+COUNTRY,KH,Cambodia,855
+COUNTRY,CM,Cameroon,237
+COUNTRY,CA,Canada,1
+COUNTRY,KY,Cayman Islands,1345
+COUNTRY,CF,Central African Republic,236
+COUNTRY,TD,Chad,235
+COUNTRY,CL,Chile,56
+COUNTRY,CN,China,86
+COUNTRY,CX,Christmas Island,6189164
+COUNTRY,CC,Cocos (Keeling) Islands,6189162
+COUNTRY,CO,Colombia,57
+COUNTRY,KM,Comoros,269
+COUNTRY,CG,Congo,242
+COUNTRY,CD,Congo, the Democratic Republic of the,243
+COUNTRY,CK,Cook Islands,682
+COUNTRY,CR,Costa Rica,506
+COUNTRY,CI,Cote d'Ivoire,225
+COUNTRY,HR,Croatia,385
+COUNTRY,CU,Cuba,53
+COUNTRY,CW,Curacao,5999
+COUNTRY,CY,Cyprus,357
+COUNTRY,CZ,Czechia,420
+COUNTRY,DK,Denmark,45
+COUNTRY,DJ,Djibouti,253
+COUNTRY,DM,Dominica,1767
+COUNTRY,DO,Dominican Republic,1809
+COUNTRY,EC,Ecuador,593
+COUNTRY,EG,Egypt,20
+COUNTRY,SV,El Salvador,503
+COUNTRY,GQ,Equatorial Guinea,240
+COUNTRY,ER,Eritrea,291
+COUNTRY,EE,Estonia,372
+COUNTRY,ET,Ethiopia,251
+COUNTRY,FK,Falkland Islands (Malvinas),500
+COUNTRY,,Faroe Islands,298
+COUNTRY,FJ,Fiji,679
+COUNTRY,FI,Finland,358
+COUNTRY,FR,France,33
+COUNTRY,GF,French Guiana,594
+COUNTRY,PF,French Polynesia,689
+COUNTRY,TF,French Southern Territories,689
+COUNTRY,GA,Gabon,241
+COUNTRY,GM,Gambia,220
+COUNTRY,GE,Georgia,995
+COUNTRY,DE,Germany,49
+COUNTRY,GH,Ghana,233
+COUNTRY,GI,Gibraltar,350
+COUNTRY,GR,Greece,30
+COUNTRY,GL,Greenland,299
+COUNTRY,GD,Grenada,1473
+COUNTRY,GP,Guadeloupe,590
+COUNTRY,GU,Guam,1671
+COUNTRY,GT,Guatemala,502
+COUNTRY,GG,Guernsey,441481
+COUNTRY,GN,Guinea,224
+COUNTRY,GW,Guinea-Bissau,245
+COUNTRY,GY,Guyana,592
+COUNTRY,HT,Haiti,509
+COUNTRY,HM,Heard Island and McDonald Islands,6723
+COUNTRY,VA,Holy See,3906698
+COUNTRY,HN,Honduras,504
+COUNTRY,HK,Hong Kong,852
+COUNTRY,HU,Hungary,36
+COUNTRY,IS,Iceland,354
+COUNTRY,IN,India,91
+COUNTRY,ID,Indonesia,62
+COUNTRY,IR,Iran, Islamic Republic of,98
+COUNTRY,IQ,Iraq,964
+COUNTRY,IE,Ireland,353
+COUNTRY,IM,Isle of Man,441624
+COUNTRY,IL,Israel,972
+COUNTRY,IT,Italy,39
+COUNTRY,JM,Jamaica,1876
+COUNTRY,JP,Japan,81
+COUNTRY,JE,Jersey,441534
+COUNTRY,JO,Jordan,962
+COUNTRY,KZ,Kazakhstan,76
+COUNTRY,KE,Kenya,254
+COUNTRY,KI,Kiribati,686
+COUNTRY,KP,Korea, Democratic People's Republic of,850
+COUNTRY,KR,Korea, Republic of,82
+COUNTRY,KW,Kuwait,965
+COUNTRY,KG,Kyrgyzstan,996
+COUNTRY,LA,Lao People's Democratic Republic,856
+COUNTRY,LV,Latvia,371
+COUNTRY,LB,Lebanon,961
+COUNTRY,LS,Lesotho,266
+COUNTRY,LR,Liberia,231
+COUNTRY,LY,Libya,218
+COUNTRY,LI,Liechtenstein,423
+COUNTRY,LT,Lithuania,370
+COUNTRY,LU,Luxembourg,352
+COUNTRY,MO,Macao,853
+COUNTRY,MK,Macedonia, the former Yugoslav Republic of,389
+COUNTRY,MG,Madagascar,261
+COUNTRY,MW,Malawi,265
+COUNTRY,MY,Malaysia,60
+COUNTRY,MV,Maldives,960
+COUNTRY,ML,Mali,223
+COUNTRY,MT,Malta,356
+COUNTRY,MH,Marshall Islands,692
+COUNTRY,MQ,Martinique,596
+COUNTRY,MR,Mauritania,222
+COUNTRY,MU,Mauritius,230
+COUNTRY,YT,Mayotte,262269
+COUNTRY,MX,Mexico,52
+COUNTRY,FM,Micronesia, Federated States of,691
+COUNTRY,MD,Moldova, Republic of,373
+COUNTRY,MC,Monaco,377
+COUNTRY,MN,Mongolia,976
+COUNTRY,ME,Montenegro,382
+COUNTRY,MS,Montserrat,1664
+COUNTRY,MA,Morocco,212
+COUNTRY,MZ,Mozambique,258
+COUNTRY,MM,Myanmar,95
+COUNTRY,NA,Namibia,264
+COUNTRY,NR,Nauru,674
+COUNTRY,NP,Nepal,977
+COUNTRY,NL,Netherlands,31
+COUNTRY,NC,New Caledonia,687
+COUNTRY,NZ,New Zealand,64
+COUNTRY,NI,Nicaragua,505
+COUNTRY,NE,Niger,227
+COUNTRY,NG,Nigeria,234
+COUNTRY,NU,Niue,683
+COUNTRY,NF,Norfolk Island,6723
+COUNTRY,MP,Northern Mariana Islands,1670
+COUNTRY,NO,Norway,47
+COUNTRY,OM,Oman,968
+COUNTRY,PK,Pakistan,92
+COUNTRY,PW,Palau,680
+COUNTRY,PS,Palestine, State of,970
+COUNTRY,PA,Panama,507
+COUNTRY,PG,Papua New Guinea,675
+COUNTRY,PY,Paraguay,595
+COUNTRY,PE,Peru,51
+COUNTRY,PH,Philippines,63
+COUNTRY,PN,Pitcairn,64
+COUNTRY,PL,Poland,48
+COUNTRY,PT,Portugal,351
+COUNTRY,PR,Puerto Rico,1787
+COUNTRY,QA,Qatar,974
+COUNTRY,RE,Reunion,262
+COUNTRY,RO,Romania,40
+COUNTRY,RU,Russian Federation,7
+COUNTRY,RW,Rwanda,250
+COUNTRY,BL,Saint Barthelemy,590
+COUNTRY,SH,Saint Helena, Ascension and Tristan da Cunha,290
+COUNTRY,KN,Saint Kitts and Nevis,1869
+COUNTRY,LC,Saint Lucia,1758
+COUNTRY,MF,Saint Martin (French part),590
+COUNTRY,PM,Saint Pierre and Miquelon,508
+COUNTRY,VC,Saint Vincent and the Grenadines,1784
+COUNTRY,WS,Samoa,685
+COUNTRY,SM,San Marino,378
+COUNTRY,ST,Sao Tome and Principe,239
+COUNTRY,SA,Saudi Arabia,966
+COUNTRY,SN,Senegal,221
+COUNTRY,RS,Serbia,381
+COUNTRY,SC,Seychelles,248
+COUNTRY,SL,Sierra Leone,232
+COUNTRY,SG,Singapore,65
+COUNTRY,SX,Sint Maarten (Dutch part),1721
+COUNTRY,SK,Slovakia,421
+COUNTRY,SI,Slovenia,386
+COUNTRY,SB,Solomon Islands,677
+COUNTRY,SO,Somalia,252
+COUNTRY,ZA,South Africa,27
+COUNTRY,GS,South Georgia and the South Sandwich Islands,500
+COUNTRY,SS,South Sudan,211
+COUNTRY,ES,Spain,34
+COUNTRY,LK,Sri Lanka,94
+COUNTRY,SD,Sudan,249
+COUNTRY,SR,Suriname,597
+COUNTRY,SJ,Svalbard and Jan Mayen,4779
+COUNTRY,SZ,Swaziland,268
+COUNTRY,SE,Sweden,46
+COUNTRY,CH,Switzerland,41
+COUNTRY,SY,Syrian Arab Republic,963
+COUNTRY,TW,Taiwan, Province of China,886
+COUNTRY,TJ,Tajikistan,992
+COUNTRY,TZ,Tanzania, United Republic of,255
+COUNTRY,TH,Thailand,66
+COUNTRY,TL,Timor-Leste,670
+COUNTRY,TG,Togo,228
+COUNTRY,TK,Tokelau,690
+COUNTRY,TO,Tonga,676
+COUNTRY,TT,Trinidad and Tobago,1868
+COUNTRY,TN,Tunisia,216
+COUNTRY,TR,Turkey,90
+COUNTRY,TM,Turkmenistan,993
+COUNTRY,TC,Turks and Caicos Islands,1649
+COUNTRY,TV,Tuvalu,688
+COUNTRY,UG,Uganda,256
+COUNTRY,UA,Ukraine,380
+COUNTRY,AE,United Arab Emirates,971
+COUNTRY,GB,United Kingdom of Great Britain and Northern Ireland,44
+COUNTRY,US,United States of America,1
+COUNTRY,UY,Uruguay,598
+COUNTRY,UZ,Uzbekistan,998
+COUNTRY,VU,Vanuatu,678
+COUNTRY,VE,Venezuela, Bolivarian Republic of,58
+COUNTRY,VN,Viet Nam,84
+COUNTRY,VG,Virgin Islands, British,1284
+COUNTRY,VI,Virgin Islands, U.S.,1340
+COUNTRY,WF,Wallis and Futuna,681
+COUNTRY,EH,Western Sahara,212
+COUNTRY,YE,Yemen,967
+COUNTRY,ZM,Zambia,260
+COUNTRY,ZW,Zimbabwe,263
+REGION,US-WEST-2,US-WEST-2,Western region of USA
+REGION,US-EAST-2,US-EAST-2,Eastern region of USA
+ENTITY_STATE,DRAFT,Draft,Entity in draft state and not ready yet for approval.
+ENTITY_STATE,PENDING,Pending,Entity pending approval and can't be used.
+ENTITY_STATE,ACTIVE,Active,Entity in active state and can be used.
+ENTITY_STATE,RETIRED,Retired,Entity retired and cannot be executed any more.
+ENTITY_STATE,ERROR,Error,Entity in have error and can't be used.
+PAYMENT_INSTRUMENT_TYPE,CASH,Cash,Cash used as the financial instrument for payment.
+PAYMENT_INSTRUMENT_TYPE,CARD,Card,Credit or debit card used as financial instrument.
+PAYMENT_INSTRUMENT_TYPE,CHECK,Check,Bank check used as financial instrument.
+PAYMENT_INSTRUMENT_TYPE,TRANSFER,Transfer,Transfer money from bank account used as financial instrument.
+PAYMENT_INSTRUMENT_TYPE,WALLET,Wallet,Electronic wallet application used as payment instrument.
+PAYMENT_INSTRUMENT_TYPE,NETWORK,Network,Payment network used as financial instrument. 
+PAYMENT_INSTRUMENT_TYPE,CRYPTOCURRENCY,Cryptocurrency,Cryptocurrency used as payment instrument.
+ACCOUNT_TYPE,SERVICE,Service,Account used to provide services to persons presented on the Network.
+ACCOUNT_TYPE,SUPPORT,Support,Account used to provide support to other parties of the network.
+PARTY_TYPE,PERSON,Person,Party is an individual maintaining his representation in the Network.
+PARTY_TYPE,CLINIC,Clinic,Medical organization presented as party on the Network.
+PARTY_TYPE,PROVIDER,Provider,Service provider for other parties on the Network. Provider can supply materials, support financial activities, manage equipment and so on.

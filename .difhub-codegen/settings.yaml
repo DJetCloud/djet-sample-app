@@ -1,0 +1,17 @@
+system: Client
+application:
+- Organization
+- Party
+- User
+groupId: com.client
+artifactId: client
+artifactVersion: 0.0.1-SNAPSHOT
+artifactDescription: Client System
+title: Client System
+basePackage: com.client
+dbName: ""
+database: MySQL
+addKotlin: true
+dateLibrary: default
+addBindingEntity: true
+authorizationEnabled: false

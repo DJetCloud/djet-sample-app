@@ -1,0 +1,418 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="initial/tables.xml"
+				   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+				   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<changeSet author="CodeGeneration" id="create_generated_table_available_time" labels="version:1.0.1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="available_time" />
+			</not>
+		</preConditions>
+		<createTable tableName="available_time">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="days_of_week" type="${JSON_OBJECT}"/>
+			<column name="all_day" type="${BOOLEAN_VALUE}" />
+			<column name="available_start_time" type="datetime" />
+			<column name="available_end_time" type="datetime" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.1.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="binding" />
+			</not>
+		</preConditions>
+		<createTable tableName="binding">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="type" type="VARCHAR(255)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="code" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_codeable_concept" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="codeable_concept" />
+			</not>
+		</preConditions>
+		<createTable tableName="codeable_concept">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="text" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_coding" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="coding" />
+			</not>
+		</preConditions>
+		<createTable tableName="coding">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="version" type="VARCHAR(256)" />
+			<column name="code" type="VARCHAR(64)" />
+			<column name="display" type="VARCHAR(255)" />
+			<column name="user_selected" type="${BOOLEAN_VALUE}" />
+			<column name="system_" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_employee" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="employee" />
+			</not>
+		</preConditions>
+		<createTable tableName="employee">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="type" type="VARCHAR(255)" />
+			<column name="reference" type="VARCHAR(255)" />
+			<column name="schedule" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_employee_role" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="employee_role" />
+			</not>
+		</preConditions>
+		<createTable tableName="employee_role">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="assigned_role" type="VARCHAR(255)" />
+			<column name="role_schedule" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_not_available_time" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="not_available_time" />
+			</not>
+		</preConditions>
+		<createTable tableName="not_available_time">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="description" type="VARCHAR(255)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="during_start" type="datetime"/>
+			<column name="during_end" type="datetime"/>
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_organization" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="organization" />
+			</not>
+		</preConditions>
+		<createTable tableName="organization">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="type" type="${JSON_OBJECT}"/>
+			<column name="part_of" type="VARCHAR(255)" />
+			<column name="legal" type="VARCHAR(255)" />
+			<column name="account" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_organization_role" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="organization_role" />
+			</not>
+		</preConditions>
+		<createTable tableName="organization_role">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="type" type="VARCHAR(255)" />
+			<column name="reference" type="VARCHAR(255)" />
+			<column name="location" type="VARCHAR(255)" />
+			<column name="availability_exceptions" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_reference_identity" labels="version:">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="reference_identity" />
+			</not>
+		</preConditions>
+		<createTable tableName="reference_identity">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="resource_id" type="VARCHAR(255)" />
+			<column name="name" type="VARCHAR(255)" />
+			<column name="description" type="VARCHAR(255)" />
+			<column name="type" type="VARCHAR(255)" />
+			<column name="uri" type="VARCHAR(255)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.6.1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="parent_id" type="${UUID}"/>
+			<column name="parent_name" type="VARCHAR(255)"/>
+			<column name="parent_description" type="VARCHAR(255)"/>
+			<column name="type" type="VARCHAR(255)" />
+			<column name="state" type="VARCHAR(255)" />
+			<column name="alias" type="${JSON_OBJECT}"/>
+			<column name="token" type="VARCHAR(255)" />
+			<column name="containing_folder" type="${UUID}" />
+			<column name="managing_organization" type="VARCHAR(255)" />
+			<column name="source" type="VARCHAR(255)" />
+			<column name="created_at" type="datetime"/>
+			<column name="created_by" type="VARCHAR(256)"/>
+			<column name="updated_at" type="datetime"/>
+			<column name="updated_by" type="VARCHAR(256)"/>
+			<column name="updated_note" type="VARCHAR(255)"/>
+			<column name="updated_message" type="VARCHAR(255)"/>
+			<column name="reviewed_at" type="datetime"/>
+			<column name="reviewed_by" type="VARCHAR(256)"/>
+			<column name="retired_at" type="datetime"/>
+			<column name="retired_by" type="VARCHAR(256)"/>
+			<column name="completions" type="${JSON_OBJECT}"/>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="CodeGeneration" id="create_generated_join_table_binding_to_entity">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="binding_to_entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="binding_to_entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="entity"/>
+			</column>
+			<column name="binding_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="binding"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="entity_id, binding_id"
+					   constraintName="pk_binding_to_entity"
+					   tableName="binding_to_entity"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_employee_role_to_product">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="employee_role_to_product" />
+			</not>
+		</preConditions>
+		<createTable tableName="employee_role_to_product">
+			<column name="employee_role_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="employee_role"/>
+			</column>
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="employee_role_id, product_id"
+					   constraintName="pk_employee_role_to_product"
+					   tableName="employee_role_to_product"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_employee_to_organization">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="employee_to_organization" />
+			</not>
+		</preConditions>
+		<createTable tableName="employee_to_organization">
+			<column name="employee_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="employee"/>
+			</column>
+			<column name="organization_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="organization"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="employee_id, organization_id"
+					   constraintName="pk_employee_to_organization"
+					   tableName="employee_to_organization"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_employee_to_employee_role">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="employee_to_employee_role" />
+			</not>
+		</preConditions>
+		<createTable tableName="employee_to_employee_role">
+			<column name="employee_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="employee"/>
+			</column>
+			<column name="employee_role_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="employee_role"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="employee_id, employee_role_id"
+					   constraintName="pk_employee_to_employee_role"
+					   tableName="employee_to_employee_role"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_location_to_organization">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="location_to_organization" />
+			</not>
+		</preConditions>
+		<createTable tableName="location_to_organization">
+			<column name="organization_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="organization"/>
+			</column>
+			<column name="location_id" type="${UUID}">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="organization_id, location_id"
+					   constraintName="pk_location_to_organization"
+					   tableName="location_to_organization"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contact_to_organization">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact_to_organization" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact_to_organization">
+			<column name="organization_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="organization"/>
+			</column>
+			<column name="contact_id" type="${UUID}">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="organization_id, contact_id"
+					   constraintName="pk_contact_to_organization"
+					   tableName="contact_to_organization"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_codeable_concept_to_coding">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="codeable_concept_to_coding" />
+			</not>
+		</preConditions>
+		<createTable tableName="codeable_concept_to_coding">
+			<column name="codeable_concept_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="codeable_concept"/>
+			</column>
+			<column name="coding_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="coding"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="codeable_concept_id, coding_id"
+					   constraintName="pk_codeable_concept_to_coding"
+					   tableName="codeable_concept_to_coding"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_organization_role_to_telecom">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="organization_role_to_telecom" />
+			</not>
+		</preConditions>
+		<createTable tableName="organization_role_to_telecom">
+			<column name="organization_role_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="organization_role"/>
+			</column>
+			<column name="codeable_concept_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="codeable_concept"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="organization_role_id, codeable_concept_id"
+					   constraintName="pk_organization_role_to_telecom"
+					   tableName="organization_role_to_telecom"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_available_time_to_organization_role">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="available_time_to_organization_role" />
+			</not>
+		</preConditions>
+		<createTable tableName="available_time_to_organization_role">
+			<column name="organization_role_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="organization_role"/>
+			</column>
+			<column name="available_time_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="available_time"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="organization_role_id, available_time_id"
+					   constraintName="pk_available_time_to_organization_role"
+					   tableName="available_time_to_organization_role"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_not_available_time_to_organization_role">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="not_available_time_to_organization_role" />
+			</not>
+		</preConditions>
+		<createTable tableName="not_available_time_to_organization_role">
+			<column name="organization_role_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="organization_role"/>
+			</column>
+			<column name="not_available_time_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="not_available_time"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="organization_role_id, not_available_time_id"
+					   constraintName="pk_not_available_time_to_organization_role"
+					   tableName="not_available_time_to_organization_role"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_organization_role_to_product">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="organization_role_to_product" />
+			</not>
+		</preConditions>
+		<createTable tableName="organization_role_to_product">
+			<column name="organization_role_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="organization_role"/>
+			</column>
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="organization_role_id, product_id"
+					   constraintName="pk_organization_role_to_product"
+					   tableName="organization_role_to_product"/>
+	</changeSet>
+</databaseChangeLog>

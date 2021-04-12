@@ -1,0 +1,665 @@
+group_name,code,name,description
+LOCALE,af,Afrikaans,af
+LOCALE,sq,Albanian,sq
+LOCALE,am,Amharic,am
+LOCALE,ar-dz,Arabic - Algeria,ar-dz
+LOCALE,ar-bh,Arabic - Bahrain,ar-bh
+LOCALE,ar-eg,Arabic - Egypt,ar-eg
+LOCALE,ar-iq,Arabic - Iraq,ar-iq
+LOCALE,ar-jo,Arabic - Jordan,ar-jo
+LOCALE,ar-kw,Arabic - Kuwait,ar-kw
+LOCALE,ar-lb,Arabic - Lebanon,ar-lb
+LOCALE,ar-ly,Arabic - Libya,ar-ly
+LOCALE,ar-ma,Arabic - Morocco,ar-ma
+LOCALE,ar-om,Arabic - Oman,ar-om
+LOCALE,ar-qa,Arabic - Qatar,ar-qa
+LOCALE,ar-sa,Arabic - Saudi Arabia,ar-sa
+LOCALE,ar-sy,Arabic - Syria,ar-sy
+LOCALE,ar-tn,Arabic - Tunisia,ar-tn
+LOCALE,ar-ae,Arabic - United Arab Emirates,ar-ae
+LOCALE,ar-ye,Arabic - Yemen,ar-ye
+LOCALE,hy,Armenian,hy
+LOCALE,as,Assamese,as
+LOCALE,az-az,Azeri - Cyrillic,az-az
+LOCALE,az-az,Azeri - Latin,az-az
+LOCALE,eu,Basque,eu
+LOCALE,be,Belarusian,be
+LOCALE,bn,Bengali - Bangladesh,bn
+LOCALE,bn,Bengali - India,bn
+LOCALE,bs,Bosnian,bs
+LOCALE,bg,Bulgarian,bg
+LOCALE,my,Burmese,my
+LOCALE,ca,Catalan,ca
+LOCALE,zh-cn,Chinese - China,zh-cn
+LOCALE,zh-hk,Chinese - Hong Kong SAR,zh-hk
+LOCALE,zh-mo,Chinese - Macau SAR,zh-mo
+LOCALE,zh-sg,Chinese - Singapore,zh-sg
+LOCALE,zh-tw,Chinese - Taiwan,zh-tw
+LOCALE,cs,Croatian,cs
+LOCALE,da,Danish,da
+LOCALE,nl-be,Dutch - Belgium,nl-be
+LOCALE,nl-nl,Dutch - Netherlands,nl-nl
+LOCALE,en-au,English - Australia,en-au
+LOCALE,en-bz,English - Belize,en-bz
+LOCALE,en-ca,English - Canada,en-ca
+LOCALE,en-cb,English - Caribbean,en-cb
+LOCALE,en-gb,English - Great Britain,en-gb
+LOCALE,en-in,English - India,en-in
+LOCALE,en-ie,English - Ireland,en-ie
+LOCALE,en-jm,English - Jamaica,en-jm
+LOCALE,en-nz,English - New Zealand,en-nz
+LOCALE,en-ph,English - Phillippines,en-ph
+LOCALE,en-za,English - Southern Africa,en-za
+LOCALE,en-tt,English - Trinidad,en-tt
+LOCALE,en-us,English - United States,en-us
+LOCALE,,English - Zimbabwe,
+LOCALE,et,Estonian,et
+LOCALE,mk,FYRO Macedonia,mk
+LOCALE,fo,Faroese,fo
+LOCALE,fa,Farsi - Persian,fa
+LOCALE,,Filipino,
+LOCALE,fi,Finnish,fi
+LOCALE,fr-be,French - Belgium,fr-be
+LOCALE,,French - Cameroon,
+LOCALE,fr-ca,French - Canada,fr-ca
+LOCALE,,French - Congo,
+LOCALE,,French - Cote d'Ivoire,
+LOCALE,fr-fr,French - France,fr-fr
+LOCALE,fr-lu,French - Luxembourg,fr-lu
+LOCALE,,French - Mali,
+LOCALE,,French - Morocco,
+LOCALE,,French - Senegal,
+LOCALE,fr-ch,French - Switzerland,fr-ch
+LOCALE,,French - West Indies,
+LOCALE,,Frisian - Netherlands,
+LOCALE,gd-ie,Gaelic - Ireland,gd-ie
+LOCALE,gd,Gaelic - Scotland,gd
+LOCALE,,Galician,
+LOCALE,ka,Georgian,ka
+LOCALE,de-at,German - Austria,de-at
+LOCALE,de-de,German - Germany,de-de
+LOCALE,de-li,German - Liechtenstein,de-li
+LOCALE,de-lu,German - Luxembourg,de-lu
+LOCALE,de-ch,German - Switzerland,de-ch
+LOCALE,el,Greek,el
+LOCALE,gn,Guarani - Paraguay,gn
+LOCALE,gu,Gujarati,gu
+LOCALE,he,Hebrew,he
+LOCALE,hi,Hindi,hi
+LOCALE,hu,Hungarian,hu
+LOCALE,is,Icelandic,is
+LOCALE,,Igbo - Nigeria,
+LOCALE,id,Indonesian,id
+LOCALE,it-it,Italian - Italy,it-it
+LOCALE,it-ch,Italian - Switzerland,it-ch
+LOCALE,ja,Japanese,ja
+LOCALE,kn,Kannada,kn
+LOCALE,ks,Kashmiri,ks
+LOCALE,kk,Kazakh,kk
+LOCALE,km,Khmer,km
+LOCALE,,Konkani,
+LOCALE,ko,Korean,ko
+LOCALE,,Kyrgyz - Cyrillic,
+LOCALE,lo,Lao,lo
+LOCALE,la,Latin,la
+LOCALE,lt,Latvian,lt
+LOCALE,ms-bn,Malay - Brunei,ms-bn
+LOCALE,ms-my,Malay - Malaysia,ms-my
+LOCALE,ml,Malayalam,ml
+LOCALE,mt,Maltese,mt
+LOCALE,,Manipuri,
+LOCALE,mi,Maori,mi
+LOCALE,mr,Marathi,mr
+LOCALE,mn,Mongolian,mn
+LOCALE,ne,Nepali,ne
+LOCALE,no-no,Norwegian - Bokml,no-no
+LOCALE,no-no,Norwegian - Nynorsk,no-no
+LOCALE,or,Oriya,or
+LOCALE,pl,Polish,pl
+LOCALE,pt-br,Portuguese - Brazil,pt-br
+LOCALE,pt-pt,Portuguese - Portugal,pt-pt
+LOCALE,pa,Punjabi,pa
+LOCALE,rm,Raeto-Romance,rm
+LOCALE,ro-mo,Romanian - Moldova,ro-mo
+LOCALE,ro,Romanian - Romania,ro
+LOCALE,ru,Russian,ru
+LOCALE,ru-mo,Russian - Moldova,ru-mo
+LOCALE,,Sami Lappish,
+LOCALE,sa,Sanskrit,sa
+LOCALE,sr-sp,Serbian - Cyrillic,sr-sp
+LOCALE,sr-sp,Serbian - Latin,sr-sp
+LOCALE,,Sesotho (Sutu),
+LOCALE,tn,Setsuana,tn
+LOCALE,sd,Sindhi,sd
+LOCALE,si,Sinhala Sinhalese,si
+LOCALE,sk,Slovak,sk
+LOCALE,sl,Slovenian,sl
+LOCALE,so,Somali,so
+LOCALE,sb,Sorbian,sb
+LOCALE,es-ar,Spanish - Argentina,es-ar
+LOCALE,es-bo,Spanish - Bolivia,es-bo
+LOCALE,es-cl,Spanish - Chile,es-cl
+LOCALE,es-co,Spanish - Colombia,es-co
+LOCALE,es-cr,Spanish - Costa Rica,es-cr
+LOCALE,es-do,Spanish - Dominican Republic,es-do
+LOCALE,es-ec,Spanish - Ecuador,es-ec
+LOCALE,es-sv,Spanish - El Salvador,es-sv
+LOCALE,es-gt,Spanish - Guatemala,es-gt
+LOCALE,es-hn,Spanish - Honduras,es-hn
+LOCALE,es-mx,Spanish - Mexico,es-mx
+LOCALE,es-ni,Spanish - Nicaragua,es-ni
+LOCALE,es-pa,Spanish - Panama,es-pa
+LOCALE,es-py,Spanish - Paraguay,es-py
+LOCALE,es-pe,Spanish - Peru,es-pe
+LOCALE,es-pr,Spanish - Puerto Rico,es-pr
+LOCALE,es-es,Spanish - Spain (Traditional),es-es
+LOCALE,es-uy,Spanish - Uruguay,es-uy
+LOCALE,es-ve,Spanish - Venezuela,es-ve
+LOCALE,sw,Swahili,sw
+LOCALE,sv-fi,Swedish - Finland,sv-fi
+LOCALE,sv-se,Swedish - Sweden,sv-se
+LOCALE,,Syriac,
+LOCALE,tg,Tajik,tg
+LOCALE,ta,Tamil,ta
+LOCALE,tt,Tatar,tt
+LOCALE,te,Telugu,te
+LOCALE,th,Thai,th
+LOCALE,bo,Tibetan,bo
+LOCALE,ts,Tsonga,ts
+LOCALE,tr,Turkish,tr
+LOCALE,tk,Turkmen,tk
+LOCALE,uk,Ukrainian,uk
+LOCALE,ur,Urdu,ur
+LOCALE,uz-uz,Uzbek - Cyrillic,uz-uz
+LOCALE,,Venda,
+LOCALE,vi,Vietnamese,vi
+LOCALE,cy,Welsh,cy
+LOCALE,xh,Zulu,xh
+LOCALE,yi,Yiddish,yi
+CONTACT_POINT_USE,home,Home,A communication contact point at a home; attempted contacts for business purposes might intrude privacy and chances are one will contact family or other household members instead of the person one wishes to call. Typically used with urgent cases, or if no other contacts are available.
+work
+CONTACT_POINT_USE,work,Work,An office contact point. First choice for business related contacts during business hours.
+
+CONTACT_POINT_USE,temp,Temp,A temporary contact point. The period can provide more detailed information.
+
+CONTACT_POINT_USE,old,Old,This contact point is no longer in use (or was never correct, but retained for records).
+
+
+CONTACT_POINT_USE,mobile,Mobile,A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable for urgent matters, not the first choice for routine business.
+ 
+CONTACT_TYPE,ORG,Organization,Contact details for organization general information or head quaters information.
+CONTACT_TYPE,BILL,Billing,Contact details for information regarding to billing/general finance enquiries.
+CONTACT_TYPE,ADMIN,Administrative,Contact details for administrative enquiries.
+CONTACT_TYPE,HR,Human Resource,Contact details for issues related to Human Resources, such as staff matters, OH&S etc.
+CONTACT_TYPE,PAYOR,Payor,Contact details for dealing with issues related to insurance claims/adjudication/payment.
+CONTACT_TYPE,PATINF,Patient,Generic information contact for patients.
+CONTACT_TYPE,PRESS,Press,Dedicated contact point for matters relating to press enquiries. 
+CONTACT_POINT_SYSTEM,phone,Phone,The value is a telephone number used for voice calls. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.
+CONTACT_POINT_SYSTEM,fax,Fax,The value is a fax machine. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.
+
+CONTACT_POINT_SYSTEM,email,Email,The value is an email address.
+CONTACT_POINT_SYSTEM,pager,Pager,The value is a pager number. These may be local pager numbers that are only usable on a particular pager system.
+
+CONTACT_POINT_SYSTEM,url,URL,A contact that is not a phone, fax, pager or email address and is expressed as a URL. This is intended for various personal contacts including blogs, Skype, Twitter, Facebook, etc. Do not use for email addresses.
+CONTACT_POINT_SYSTEM,sms,SMS,A contact that can be used for sending an sms message (e.g. mobile phones, some landlines)
+other
+CONTACT_POINT_SYSTEM,other,Other,A contact that is not a phone, fax, page or email address and is not expressible as a URL. E.g. Internal mail address. This SHOULD NOT be used for contacts that are expressible as a URL (e.g. Skype, Twitter, Facebook, etc.) Extensions may be used to distinguish 'other' contact types.
+ 
+NAME_USE,usual,Usual,Known as/conventional/the one you normally use
+NAME_USE,official,Official,The formal name as registered in an official (government) registry, but which name might not be commonly used. May be called 'legal name'.
+NAME_USE,temp,Temp,A temporary name. Name.period can provide more detailed information. This may also be used for temporary names assigned at birth or in emergency situations.
+NAME_USE,nickname,Nickname,A name that is used to address the person in an informal manner, but is not part of their formal or usual name
+NAME_USE,anonymous,Anonymous,Anonymous assigned name, alias, or pseudonym (used to protect a person's identity for privacy reasons)
+NAME_USE,old,Old,This name is no longer in use (or was never correct, but retained for records)
+NAME_USE,maiden,Name changed for Marriage,A name used prior to changing name because of marriage. This name use is for use by applications that collect and store names that were used prior to a marriage. Marriage naming customs vary greatly around the world, and are constantly changing. This term is not gender specific. The use of this term does not imply any particular history for a person's name
+ENTITY_STATE,DRAFT,Draft,Entity in draft state and not ready yet for approval.
+ENTITY_STATE,PENDING,Pending,Entity pending approval and can't be used.
+ENTITY_STATE,ACTIVE,Active,Entity in active state and can be used.
+ENTITY_STATE,RETIRED,Retired,Entity retired and cannot be executed any more.
+ENTITY_STATE,ERROR,Error,Entity in have error and can't be used.
+IDENTIFIER_USE,usual,Usual,The identifier recommended for display and use in real-world interactions.
+IDENTIFIER_USE,official,Official,The identifier considered to be most trusted for the identification of this item.
+IDENTIFIER_USE,temp,Temp,A temporary identifier.
+IDENTIFIER_USE,secondary,Secondary, An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context.
+IDENTIFIER_USE,old,Old,The identifier id no longer considered valid, but may be relevant for search purposes. E.g. Changes to identifier schemes, account merges, etc.
+ 
+GENDER,NOT_KNOWN,Not known,Gender specification not known.
+GENDER,MALE,Male,Gander specified as male.
+GENDER,FEMALE,Female,Gender specified as female.
+GENDER,NOT_APPLICABLE,Not applicable ,Gender specification not applicable.
+IDENTIFIER_TYPE,DL,Driver's license number,Driver's license number
+IDENTIFIER_TYPE,PPN,Passport number,Passport number
+IDENTIFIER_TYPE,BRN,Breed Registry Number,Breed Registry Number
+IDENTIFIER_TYPE,MR,Medical record number,Medical record number
+IDENTIFIER_TYPE,MCN,Microchip Number,Microchip Number
+IDENTIFIER_TYPE,EN,Employer number,Employer number
+IDENTIFIER_TYPE,TAX,Tax ID number,Tax ID number
+IDENTIFIER_TYPE,NIIP,National Insurance Payor Identifier (Payor),National Insurance Payor Identifier (Payor)
+IDENTIFIER_TYPE,PRN,Provider number,Provider number
+IDENTIFIER_TYPE,MD,Medical License number,Medical License number
+IDENTIFIER_TYPE,DR,Donor Registration Number,Donor Registration Number
+IDENTIFIER_TYPE,ACSN,Accession ID,Accession ID
+IDENTIFIER_TYPE,UDI,Universal Device Identifier,Universal Device Identifier
+IDENTIFIER_TYPE,SNO,Serial Number,Serial Number
+IDENTIFIER_TYPE,SB,Social Beneficiary Identifier,Social Beneficiary Identifier
+IDENTIFIER_TYPE,PLAC,Placer Identifier,Placer Identifier
+IDENTIFIER_TYPE,FILL,Filler Identifier,Filler Identifier
+IDENTIFIER_TYPE,JHN,Jurisdictional health number (Canada),Jurisdictional health number (Canada)
+BED_STATUS,C,Closed,
+BED_STATUS,H,Housekeeping,
+BED_STATUS,I,Isolated,
+BED_STATUS,K,Contaminated,
+BED_STATUS,O,Occupied,
+BED_STATUS,U,Unoccupied,
+WEEK_DAY,MONDAY,Monday,First day of the week by ISO 8601.
+WEEK_DAY,TUESDAT,Tuesday,Second day of the week by ISO 8601.
+WEEK_DAY,WEDNESDAY,Wednesday,Third day of the week by ISO 8601.
+WEEK_DAY,THURSDAY,Thursday,Fourth day of the week by ISO 8601.
+WEEK_DAY,FRIDAY,Friday,Fifth day of the week by ISO 8601.
+WEEK_DAY,SATURDAY,Saturday,Sixth day of the week by ISO 8601.
+WEEK_DAY,SUNDAY,Sunday,Seventh day of the week by ISO 8601.
+ADDRESS_USE,home,Home,A communication address at a home.
+ADDRESS_USE,work,Work,A communication address at a home.
+ADDRESS_USE,temp,Temp,A temporary address. The period can provide more detailed information.
+
+ADDRESS_USE,old,Old,This address is no longer in use (or was never correct but retained for records).
+
+
+ADDRESS_USE,billing,Billing,An address to be used to send bills, invoices, receipts etc.
+ 
+ 
+BINDING_TYPE,ERP,ERP ,Corporate ERP system used in company.
+LOCATION_MODE,instance,Instance,The Location resource represents a specific instance of a location (e.g. Operating Theatre 1A).
+LOCATION_MODE,kind,Kind,The Location represents a class of locations (e.g. Any Operating Theatre) although this class of locations could be constrained within a specific boundary (such as organization, or parent location, address etc.).
+COUNTRY,AE,Afghanistan,93
+COUNTRY,AX,Aland Islands,35818
+COUNTRY,AL,Albania,355
+COUNTRY,DZ,Algeria,213
+COUNTRY,AS,American Samoa,1684
+COUNTRY,AD,Andorra,376
+COUNTRY,AO,Angola,244
+COUNTRY,AI,Anguilla,1264
+COUNTRY,AG,Antigua and Barbuda,1268
+COUNTRY,AR,Argentina,54
+COUNTRY,AM,Armenia,374
+COUNTRY,AW,Aruba,297
+COUNTRY,AU,Australia,61
+COUNTRY,AT,Austria,43
+COUNTRY,AZ,Azerbaijan,994
+COUNTRY,BS,Bahamas,1242
+COUNTRY,BH,Bahrain,973
+COUNTRY,BD,Bangladesh,880
+COUNTRY,BB,Barbados,1246
+COUNTRY,BY,Belarus,375
+COUNTRY,BE,Belgium,32
+COUNTRY,BZ,Belize,501
+COUNTRY,BJ,Benin,229
+COUNTRY,BM,Bermuda,1441
+COUNTRY,BT,Bhutan,975
+COUNTRY,BO,Bolivia, Plurinational State of,591
+COUNTRY,BQ,Bonaire, Sint Eustatius and Saba,5997
+COUNTRY,BA,Bosnia and Herzegovina,387
+COUNTRY,BW,Botswana,267
+COUNTRY,BR,Brazil,55
+COUNTRY,IO,British Indian Ocean Territory,246
+COUNTRY,BN,Brunei Darussalam,673
+COUNTRY,BG,Bulgaria,359
+COUNTRY,BF,Burkina Faso,226
+COUNTRY,BI,Burundi,257
+COUNTRY,CV,Cabo Verde,238
+COUNTRY,KH,Cambodia,855
+COUNTRY,CM,Cameroon,237
+COUNTRY,CA,Canada,1
+COUNTRY,KY,Cayman Islands,1345
+COUNTRY,CF,Central African Republic,236
+COUNTRY,TD,Chad,235
+COUNTRY,CL,Chile,56
+COUNTRY,CN,China,86
+COUNTRY,CX,Christmas Island,6189164
+COUNTRY,CC,Cocos (Keeling) Islands,6189162
+COUNTRY,CO,Colombia,57
+COUNTRY,KM,Comoros,269
+COUNTRY,CG,Congo,242
+COUNTRY,CD,Congo, the Democratic Republic of the,243
+COUNTRY,CK,Cook Islands,682
+COUNTRY,CR,Costa Rica,506
+COUNTRY,CI,Cote d'Ivoire,225
+COUNTRY,HR,Croatia,385
+COUNTRY,CU,Cuba,53
+COUNTRY,CW,Curacao,5999
+COUNTRY,CY,Cyprus,357
+COUNTRY,CZ,Czechia,420
+COUNTRY,DK,Denmark,45
+COUNTRY,DJ,Djibouti,253
+COUNTRY,DM,Dominica,1767
+COUNTRY,DO,Dominican Republic,1809
+COUNTRY,EC,Ecuador,593
+COUNTRY,EG,Egypt,20
+COUNTRY,SV,El Salvador,503
+COUNTRY,GQ,Equatorial Guinea,240
+COUNTRY,ER,Eritrea,291
+COUNTRY,EE,Estonia,372
+COUNTRY,ET,Ethiopia,251
+COUNTRY,FK,Falkland Islands (Malvinas),500
+COUNTRY,,Faroe Islands,298
+COUNTRY,FJ,Fiji,679
+COUNTRY,FI,Finland,358
+COUNTRY,FR,France,33
+COUNTRY,GF,French Guiana,594
+COUNTRY,PF,French Polynesia,689
+COUNTRY,TF,French Southern Territories,689
+COUNTRY,GA,Gabon,241
+COUNTRY,GM,Gambia,220
+COUNTRY,GE,Georgia,995
+COUNTRY,DE,Germany,49
+COUNTRY,GH,Ghana,233
+COUNTRY,GI,Gibraltar,350
+COUNTRY,GR,Greece,30
+COUNTRY,GL,Greenland,299
+COUNTRY,GD,Grenada,1473
+COUNTRY,GP,Guadeloupe,590
+COUNTRY,GU,Guam,1671
+COUNTRY,GT,Guatemala,502
+COUNTRY,GG,Guernsey,441481
+COUNTRY,GN,Guinea,224
+COUNTRY,GW,Guinea-Bissau,245
+COUNTRY,GY,Guyana,592
+COUNTRY,HT,Haiti,509
+COUNTRY,HM,Heard Island and McDonald Islands,6723
+COUNTRY,VA,Holy See,3906698
+COUNTRY,HN,Honduras,504
+COUNTRY,HK,Hong Kong,852
+COUNTRY,HU,Hungary,36
+COUNTRY,IS,Iceland,354
+COUNTRY,IN,India,91
+COUNTRY,ID,Indonesia,62
+COUNTRY,IR,Iran, Islamic Republic of,98
+COUNTRY,IQ,Iraq,964
+COUNTRY,IE,Ireland,353
+COUNTRY,IM,Isle of Man,441624
+COUNTRY,IL,Israel,972
+COUNTRY,IT,Italy,39
+COUNTRY,JM,Jamaica,1876
+COUNTRY,JP,Japan,81
+COUNTRY,JE,Jersey,441534
+COUNTRY,JO,Jordan,962
+COUNTRY,KZ,Kazakhstan,76
+COUNTRY,KE,Kenya,254
+COUNTRY,KI,Kiribati,686
+COUNTRY,KP,Korea, Democratic People's Republic of,850
+COUNTRY,KR,Korea, Republic of,82
+COUNTRY,KW,Kuwait,965
+COUNTRY,KG,Kyrgyzstan,996
+COUNTRY,LA,Lao People's Democratic Republic,856
+COUNTRY,LV,Latvia,371
+COUNTRY,LB,Lebanon,961
+COUNTRY,LS,Lesotho,266
+COUNTRY,LR,Liberia,231
+COUNTRY,LY,Libya,218
+COUNTRY,LI,Liechtenstein,423
+COUNTRY,LT,Lithuania,370
+COUNTRY,LU,Luxembourg,352
+COUNTRY,MO,Macao,853
+COUNTRY,MK,Macedonia, the former Yugoslav Republic of,389
+COUNTRY,MG,Madagascar,261
+COUNTRY,MW,Malawi,265
+COUNTRY,MY,Malaysia,60
+COUNTRY,MV,Maldives,960
+COUNTRY,ML,Mali,223
+COUNTRY,MT,Malta,356
+COUNTRY,MH,Marshall Islands,692
+COUNTRY,MQ,Martinique,596
+COUNTRY,MR,Mauritania,222
+COUNTRY,MU,Mauritius,230
+COUNTRY,YT,Mayotte,262269
+COUNTRY,MX,Mexico,52
+COUNTRY,FM,Micronesia, Federated States of,691
+COUNTRY,MD,Moldova, Republic of,373
+COUNTRY,MC,Monaco,377
+COUNTRY,MN,Mongolia,976
+COUNTRY,ME,Montenegro,382
+COUNTRY,MS,Montserrat,1664
+COUNTRY,MA,Morocco,212
+COUNTRY,MZ,Mozambique,258
+COUNTRY,MM,Myanmar,95
+COUNTRY,NA,Namibia,264
+COUNTRY,NR,Nauru,674
+COUNTRY,NP,Nepal,977
+COUNTRY,NL,Netherlands,31
+COUNTRY,NC,New Caledonia,687
+COUNTRY,NZ,New Zealand,64
+COUNTRY,NI,Nicaragua,505
+COUNTRY,NE,Niger,227
+COUNTRY,NG,Nigeria,234
+COUNTRY,NU,Niue,683
+COUNTRY,NF,Norfolk Island,6723
+COUNTRY,MP,Northern Mariana Islands,1670
+COUNTRY,NO,Norway,47
+COUNTRY,OM,Oman,968
+COUNTRY,PK,Pakistan,92
+COUNTRY,PW,Palau,680
+COUNTRY,PS,Palestine, State of,970
+COUNTRY,PA,Panama,507
+COUNTRY,PG,Papua New Guinea,675
+COUNTRY,PY,Paraguay,595
+COUNTRY,PE,Peru,51
+COUNTRY,PH,Philippines,63
+COUNTRY,PN,Pitcairn,64
+COUNTRY,PL,Poland,48
+COUNTRY,PT,Portugal,351
+COUNTRY,PR,Puerto Rico,1787
+COUNTRY,QA,Qatar,974
+COUNTRY,RE,Reunion,262
+COUNTRY,RO,Romania,40
+COUNTRY,RU,Russian Federation,7
+COUNTRY,RW,Rwanda,250
+COUNTRY,BL,Saint Barthelemy,590
+COUNTRY,SH,Saint Helena, Ascension and Tristan da Cunha,290
+COUNTRY,KN,Saint Kitts and Nevis,1869
+COUNTRY,LC,Saint Lucia,1758
+COUNTRY,MF,Saint Martin (French part),590
+COUNTRY,PM,Saint Pierre and Miquelon,508
+COUNTRY,VC,Saint Vincent and the Grenadines,1784
+COUNTRY,WS,Samoa,685
+COUNTRY,SM,San Marino,378
+COUNTRY,ST,Sao Tome and Principe,239
+COUNTRY,SA,Saudi Arabia,966
+COUNTRY,SN,Senegal,221
+COUNTRY,RS,Serbia,381
+COUNTRY,SC,Seychelles,248
+COUNTRY,SL,Sierra Leone,232
+COUNTRY,SG,Singapore,65
+COUNTRY,SX,Sint Maarten (Dutch part),1721
+COUNTRY,SK,Slovakia,421
+COUNTRY,SI,Slovenia,386
+COUNTRY,SB,Solomon Islands,677
+COUNTRY,SO,Somalia,252
+COUNTRY,ZA,South Africa,27
+COUNTRY,GS,South Georgia and the South Sandwich Islands,500
+COUNTRY,SS,South Sudan,211
+COUNTRY,ES,Spain,34
+COUNTRY,LK,Sri Lanka,94
+COUNTRY,SD,Sudan,249
+COUNTRY,SR,Suriname,597
+COUNTRY,SJ,Svalbard and Jan Mayen,4779
+COUNTRY,SZ,Swaziland,268
+COUNTRY,SE,Sweden,46
+COUNTRY,CH,Switzerland,41
+COUNTRY,SY,Syrian Arab Republic,963
+COUNTRY,TW,Taiwan, Province of China,886
+COUNTRY,TJ,Tajikistan,992
+COUNTRY,TZ,Tanzania, United Republic of,255
+COUNTRY,TH,Thailand,66
+COUNTRY,TL,Timor-Leste,670
+COUNTRY,TG,Togo,228
+COUNTRY,TK,Tokelau,690
+COUNTRY,TO,Tonga,676
+COUNTRY,TT,Trinidad and Tobago,1868
+COUNTRY,TN,Tunisia,216
+COUNTRY,TR,Turkey,90
+COUNTRY,TM,Turkmenistan,993
+COUNTRY,TC,Turks and Caicos Islands,1649
+COUNTRY,TV,Tuvalu,688
+COUNTRY,UG,Uganda,256
+COUNTRY,UA,Ukraine,380
+COUNTRY,AE,United Arab Emirates,971
+COUNTRY,GB,United Kingdom of Great Britain and Northern Ireland,44
+COUNTRY,US,United States of America,1
+COUNTRY,UY,Uruguay,598
+COUNTRY,UZ,Uzbekistan,998
+COUNTRY,VU,Vanuatu,678
+COUNTRY,VE,Venezuela, Bolivarian Republic of,58
+COUNTRY,VN,Viet Nam,84
+COUNTRY,VG,Virgin Islands, British,1284
+COUNTRY,VI,Virgin Islands, U.S.,1340
+COUNTRY,WF,Wallis and Futuna,681
+COUNTRY,EH,Western Sahara,212
+COUNTRY,YE,Yemen,967
+COUNTRY,ZM,Zambia,260
+COUNTRY,ZW,Zimbabwe,263
+LOCATION_STATUS,active,Active,The location is operational.
+LOCATION_STATUS,suspended,Suspended,The location is temporarily closed.
+LOCATION_STATUS,inactive,Inactive,The location is no longer used
+ADDRESS_TYPE,postal,Postal,Mailing addresses - PO Boxes and care-of addresses.
+
+ADDRESS_TYPE,physical,Physical,A physical address that can be visited.
+
+ADDRESS_TYPE,both,Postal & Physical,An address that is both physical and postal.
+
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,DX,Diagnostics or therapeutics unit,A practice setting where diagnostic procedures or therapeutic interventions are performed
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CVDX,Cardiovascular diagnostics or therapeutics unit,A practice setting where cardiovascular diagnostic procedures or therapeutic interventions are performed (e.g., cardiac catheterization lab, echocardiography suite)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CATH,Cardiac catheterization lab,Cardiac catheterization lab
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ECHO,Echocardiography lab,Echocardiography lab
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,GIDX,Gastroenterology diagnostics or therapeutics lab,A practice setting where GI procedures (such as endoscopies) are performed
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ENDOS,Endoscopy lab,(X12N 261QD0000N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RADDX,Radiology diagnostics or therapeutics unit,A practice setting where radiology services (diagnostic or therapeutic) are provided            (X12N 261QR0200N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RADO,Radiation oncology unit,(X12N 261QX0203N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RNEU,Neuroradiology unit,Neuroradiology unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HOSP,Hospital,An acute care institution that provides medical, surgical, or psychiatric care and treatment for the sick or the injured.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CHR,Chronic Care Facility,(1) A hospital including a physical plant and personnel that provides multidisciplinary diagnosis and treatment for diseases that have one or more of the following characteristics: is permanent; leaves residual disability; is caused by nonreversible pathological alteration; requires special training of the patient for rehabilitation; and/or may be expected to require a long period of supervision or care. In addition, patients require the safety, security, and shelter of these specialized inpatient or partial hospitalization settings.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,GACH,Hospitals; General Acute Care Hospital,(X12N 282N00000N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,MHSP,Military Hospital,A health care facility operated by the Department of Defense or other military operation.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PSYCHF,Psychatric Care Facility,Healthcare facility that cares for patients with psychiatric illness(s).
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RH,Rehabilitation hospital,(X12N 283X00000N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHAT,addiction treatment center,Description: A location that plays the role of delivering services which may include life training and/or social support to people with addictions.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHII,intellectual impairment center,Description: A location that plays the role of delivering services which may include adaptation, rehabilitation and social integration services for people with intellectual and/or pervasive development disorders such as autism or severe behaviour disorder.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHMAD,parents with adjustment difficulties center,Description: A location that plays the role of delivering services which may social support services for adolescents who are pregnant or have child and are experiencing adaptation issues/difficulties in their current or eventual parenting role.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHPI,physical impairment center,Description: A location that plays the role of delivering services which may include adaptation, rehabilitation and social integration services for people with physical impairments.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHPIH,physical impairment - hearing center,Description: A location that plays the role of delivering services for people with hearing impairments.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHPIMS,physical impairment - motor skills center,Description: A location that plays the role of delivering services for people with motor skill impairments.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHPIVS,physical impairment - visual skills center,Description: A location that plays the role of delivering services for people with visual skill impairments.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHYAD,youths with adjustment difficulties center,Description: A location that plays the role of delivering services which may include life training and/or social support services for the adaption, rehabilitation and social integration of youths with adjustment difficulties.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HU,Hospital unit,Hospital unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,BMTU,Bone marrow transplant unit,Bone marrow transplant unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CCU,Coronary care unit,Coronary care unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CHEST,Chest unit,A specialty unit in hospital that focuses on chronic respirator patients and pulmonary failure
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,EPIL,Epilepsy unit,Epilepsy unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ER,Emergency room,The section of a health care facility for providing rapid treatment to victims of sudden illness or trauma.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ETU,Emergency trauma unit,Emergency trauma unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HD,Hemodialysis unit,Hemodialysis unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HLAB,hospital laboratory,Description: A location that plays the role of delivering services which may include tests done based on clinical specimens to get health information about a patient as pertaining to the diagnosis, treatment and prevention of disease.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,INLAB,inpatient laboratory,Description: A location that plays the role of delivering services which may include tests are done on clinical specimens to get health information about a patient pertaining to the diagnosis, treatment, and prevention of disease for a hospital visit longer than one day.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,OUTLAB,outpatient laboratory,Description: A location that plays the role of delivering services which may include tests are done on clinical specimens to get health information about a patient pertaining to the diagnosis, treatment, and prevention of disease for same day visits.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HRAD,radiology unit,Description: A location that plays the role of delivering services which may include the branch of medicine that uses ionizing and non-ionizing radiation to diagnose and treat diseases.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HUSCS,specimen collection site,Description: A location that plays the role of delivering services which may include collecting specimens and/or samples from patients for laboratory testing purposes, but does not perform any tests or analysis functions.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ICU,Intensive care unit,Intensive care unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDICU,Pediatric intensive care unit,Pediatric intensive care unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDNICU,Pediatric neonatal intensive care unit,Pediatric neonatal intensive care unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,INPHARM,inpatient pharmacy,Description: A location that plays the role of delivering services which may include providing judicious, safe, efficacious, appropriate and cost effective use of medicines for treatment of patients for visits longer than one day.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,MBL,medical laboratory,Description: A location that plays the role of delivering services which include biochemistry, hematology, microbiology, immunochemistry, and toxicology.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,NCCS,Neurology critical care and stroke unit,Neurology critical care and stroke unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,NS,Neurosurgery unit,Neurosurgery unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,OUTPHARM,outpatient pharmacy,Description: A location that plays the role of delivering services which may include providing judicious, safe, efficacious, appropriate and cost effective use of medicines for treatment of patients for outpatient visits and may also be used for discharge prescriptions.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDU,Pediatric unit,Pediatric unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PHU,Psychiatric hospital unit,(X12N 273R00000N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHU,Rehabilitation hospital unit,Rehabilitation hospital unit
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,SLEEP,Sleep disorders unit,(X12N 261QA1200N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,NCCF,Nursing or custodial care facility,Nursing or custodial care facility
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,SNF,Skilled nursing facility,(X12N 314000000N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,OF,Outpatient facility,Outpatient facility
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ALL,Allergy clinic,Allergy clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,AMPUT,Amputee clinic,Amputee clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,BMTC,Bone marrow transplant clinic,Bone marrow transplant clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,BREAST,Breast clinic,Breast clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CANC,Child and adolescent neurology clinic,Child and adolescent neurology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CAPC,Child and adolescent psychiatry clinic,Child and adolescent psychiatry clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CARD,Ambulatory Health Care Facilities; Clinic/Center; Rehabilitation: Cardiac Facilities,Ambulatory Health Care Facilities; Clinic/Center; Rehabilitation: Cardiac Facilities
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDCARD,Pediatric cardiology clinic,Pediatric cardiology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,COAG,Coagulation clinic,Coagulation clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CRS,Colon and rectal surgery clinic,Colon and rectal surgery clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,DERM,Dermatology clinic,Dermatology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ENDO,Endocrinology clinic,Endocrinology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDE,Pediatric endocrinology clinic,Pediatric endocrinology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ENT,Otorhinolaryngology clinic,Otorhinolaryngology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,FMC,Family medicine clinic,Family medicine clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,GI,Gastroenterology clinic,Gastroenterology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDGI,Pediatric gastroenterology clinic,Pediatric gastroenterology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,GIM,General internal medicine clinic,General internal medicine clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,GYN,Gynecology clinic,Gynecology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HEM,Hematology clinic,Hematology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDHEM,Pediatric hematology clinic,Pediatric hematology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HTN,Hypertension clinic,Hypertension clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,IEC,Impairment evaluation center,Focuses on assessing disability
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,INFD,Infectious disease clinic,Infectious disease clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDID,Pediatric infectious disease clinic,Pediatric infectious disease clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,INV,Infertility clinic,Infertility clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,LYMPH,Lympedema clinic,Lympedema clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,MGEN,Medical genetics clinic,Medical genetics clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,NEPH,Nephrology clinic,Nephrology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDNEPH,Pediatric nephrology clinic,Pediatric nephrology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,NEUR,Neurology clinic,Neurology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,OB,Obstetrics clinic,Obstetrics clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,OMS,Oral and maxillofacial surgery clinic,Oral and maxillofacial surgery clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ONCL,Medical oncology clinic,Medical oncology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDHO,Pediatric oncology clinic,Pediatric oncology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,OPH,Opthalmology clinic,Opthalmology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,OPTC,optometry clinic,Description: A location that plays the role of delivering services which may include examination, diagnosis, treatment, management, and prevention of diseases and disorders of the eye as well as prescribing and fitting appropriate corrective lenses (glasses or contact lenses) as needed.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ORTHO,Orthopedics clinic,Orthopedics clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,HAND,Hand clinic,Hand clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PAINCL,Pain clinic,(X12N 261QP3300N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PC,Primary care clinic,(X12N 261QP2300N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDC,Pediatrics clinic,Pediatrics clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PEDRHEUM,Pediatric rheumatology clinic,Pediatric rheumatology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,POD,Podiatry clinic,(X12N 261QP1100N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PREV,Preventive medicine clinic,Preventive medicine clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PROCTO,Proctology clinic,Proctology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PROFF,Provider's Office,Location where healthcare service was delivered, identified as the healthcare provider's practice office.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PROS,Prosthodontics clinic,Prosthodontics clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PSI,Psychology clinic,Psychology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PSY,Psychiatry clinic,Psychiatry clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RHEUM,Rheumatology clinic,Rheumatology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,SPMED,Sports medicine clinic,Sports medicine clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,SU,Surgery clinic,Surgery clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PLS,Plastic surgery clinic,Plastic surgery clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,URO,Urology clinic,Urology clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,TR,Transplant clinic,Transplant clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,TRAVEL,Travel and geographic medicine clinic,Travel and geographic medicine clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,WND,Wound clinic,Wound clinic
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,RTF,Residential treatment facility,Residential treatment facility
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PRC,Pain rehabilitation center,Pain rehabilitation center
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,SURF,Substance use rehabilitation facility,(X12N 324500000N)
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,DADDR,Delivery Address,Location address where medical supplies were transported to for use.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,MOBL,Mobile Unit,Location (mobile) where healthcare service was delivered.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,AMB,Ambulance,Location (mobile) where healthcare service was delivered, identified specifically as an ambulance.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PHARM,Pharmacy,Location where healthcare service was delivered, identified as a pharmacy.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,ACC,accident site,Location of an accident where healthcare service was delivered, such as a roadside.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,COMM,Community Location,Community location where healthcare is delivered.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,CSC,community service center,Description: A location that plays the role of delivering services which may include providing front-line services to the population of a defined geographic area such as: healthcare services and social services, preventive or curative, rehabilitation or reintegration.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,PTRES,Patient's Residence,location where healthcare was delivered which is the residence of the Patient.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,SCHOOL,school,Location where healthcare service was delivered, identified as a school or educational facility.
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,UPC,underage protection center,Description: A location that plays the role of delivering services which may include: social emergency services required for a young person as required under any jurisdictional youth laws, child placement, and family mediation in the defined geographical area the SDL is responsible for. 
+SERVICE_DELIVERY_LOCATION_ROLE_TYPE,WORK,work site,Location where healthcare service was delivered, identified as a work place.
+LOCATION_TYPE,si,Site,A collection of buildings or other locations such as a site or a campus.
+LOCATION_TYPE,bu,Building,Any Building or structure. This may contain rooms, corridors, wings, etc. It might not have walls, or a roof, but is considered a defined/allocated space.
+LOCATION_TYPE,wi,Wing,A Wing within a Building, this often contains levels, rooms and corridors.
+LOCATION_TYPE,wa,Ward,A Ward is a section of a medical facility that may contain rooms and other types of location.
+LOCATION_TYPE,lvl,Level,A Level in a multi-level Building/Structure.
+LOCATION_TYPE,co,Corridor,Any corridor within a Building, that may connect rooms.
+LOCATION_TYPE,ro,Room,A space that is allocated as a room, it may have walls/roof etc., but does not require these.
+LOCATION_TYPE,bd,Bed,A space that is allocated for sleeping/laying on. This is not the physical bed/trolley that may be moved about, but the space it may occupy.
+LOCATION_TYPE,ve,Vehicle,A means of transportation.
+LOCATION_TYPE,ho,House,A residential dwelling. Usually used to reference a location that a person/patient may reside.
+LOCATION_TYPE,ca,Cabinet,A container that can store goods, equipment, medications or other items.
+LOCATION_TYPE,rd,Road,A defined path to travel between 2 points that has a known name.
+LOCATION_TYPE,area,Area,A defined physical boundary of something, such as a flood risk zone, region, postcode
+LOCATION_TYPE,jdn,Jurisdiction	,A wide scope that covers a conceptual domain, such as a Nation (Country wide community or Federal Government - e.g. Ministry of Health), Province or State (community or Government), Business (throughout the enterprise), Nation with a business scope of an agency (e.g. CDC, FDA etc.) or a Business segment (UK Pharmacy), not just an physical boundary
