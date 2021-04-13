@@ -23,6 +23,11 @@ class LocationsController(service: LocationsService)
         return super.create(location)
     }
 
+    override fun locationsDeleteLocation(
+			@PathVariable("locationId") locationId: String): ResponseEntity<Location> {
+        return super.delete(locationId)
+    }
+
     override fun locationsGetLocation(
 			@PathVariable("locationId") locationId: String): ResponseEntity<Location> {
         return super.getById(locationId)

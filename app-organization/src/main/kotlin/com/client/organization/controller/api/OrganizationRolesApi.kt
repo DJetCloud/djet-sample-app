@@ -33,6 +33,20 @@ interface OrganizationRolesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteOrganizationRole", nickname = "organizationRolesDeleteOrganizationRole", notes = "Delete organization role if it exists", tags=["OrganizationRoles"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "Object is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Organization Role is not found")
+    )
+    @DeleteMapping("/organizations/{organizationId}/organizationroles/{organizationRoleId}")
+    fun organizationRolesDeleteOrganizationRole(
+			@PathVariable("organizationId") organizationId: String,
+			@PathVariable("organizationRoleId") organizationRoleId: String): ResponseEntity<OrganizationRole> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetOrganizationRole", nickname = "organizationRolesGetOrganizationRole", notes = "Get organization role or list of employ roles from service.", tags=["OrganizationRoles"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),

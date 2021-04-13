@@ -24,6 +24,12 @@ class PartyAccountsController(service: PartyAccountsService)
         return super.create(partyId, account)
     }
 
+    override fun partyAccountsDeleteAccount(
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("accountId") accountId: String): ResponseEntity<Account> {
+        return super.delete(partyId, accountId)
+    }
+
     override fun partyAccountsGetAccount(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("accountId") accountId: String): ResponseEntity<Account> {

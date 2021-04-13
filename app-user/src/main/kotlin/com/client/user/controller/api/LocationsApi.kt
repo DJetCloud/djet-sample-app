@@ -32,6 +32,19 @@ interface LocationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteLocation", nickname = "locationsDeleteLocation", notes = "Delete location if it exists", tags=["Locations"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "Person is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Object is not found")
+    )
+    @DeleteMapping("/locations/{locationId}")
+    fun locationsDeleteLocation(
+			@PathVariable("locationId") locationId: String): ResponseEntity<Location> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetLocation", nickname = "locationsGetLocation", notes = "Get location or list of locations from service.", tags=["Locations"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "Person is found and returned."),

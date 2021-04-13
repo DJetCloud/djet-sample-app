@@ -24,6 +24,12 @@ class PartyOrganizationsController(service: PartyOrganizationsService)
         return super.create(partyId, organization)
     }
 
+    override fun partyOrganizationsDeleteOrganization(
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("organizationtId") organizationtId: String): ResponseEntity<Organization> {
+        return super.delete(partyId, organizationtId)
+    }
+
     override fun partyOrganizationsGetOrganization(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("organizationtId") organizationtId: String): ResponseEntity<Organization> {

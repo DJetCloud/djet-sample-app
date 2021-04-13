@@ -33,6 +33,20 @@ interface PartyLegalEntitiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteLegalEntity", nickname = "partyLegalEntitiesDeleteLegalEntity", notes = "Delete legal entity of the party if the legal entity exists", tags=["PartyLegalEntities"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "LegalEntity is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Legal Entity is not found")
+    )
+    @DeleteMapping("/parties/{partyId}/legalentities/{legalentityId}")
+    fun partyLegalEntitiesDeleteLegalEntity(
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("legalentityId") legalentityId: String): ResponseEntity<LegalEntity> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetLegalEntity", nickname = "partyLegalEntitiesGetLegalEntity", notes = "Get legal entity or list of legal entities from service.", tags=["PartyLegalEntities"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "LegalEntity is found and returned."),

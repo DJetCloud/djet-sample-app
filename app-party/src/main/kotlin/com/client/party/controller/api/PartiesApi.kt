@@ -32,6 +32,19 @@ interface PartiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteParty", nickname = "partiesDeleteParty", notes = "Delete party if it exists", tags=["Parties"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "Party is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Party is not found")
+    )
+    @DeleteMapping("/parties/{partyId}")
+    fun partiesDeleteParty(
+			@PathVariable("partyId") partyId: String): ResponseEntity<Party> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetParty", nickname = "partiesGetParty", notes = "Get party or list of parties from service.", tags=["Parties"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "Party is found and returned."),

@@ -32,6 +32,19 @@ interface ContactsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteContact", nickname = "contactsDeleteContact", notes = "Delete contact if it exist", tags=["Contacts"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "Contact is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Contact is not found")
+    )
+    @DeleteMapping("/contacts/{contactId}")
+    fun contactsDeleteContact(
+			@PathVariable("contactId") contactId: String): ResponseEntity<Contact> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetContact", nickname = "contactsGetContact", notes = "Get contact or list of contacts from service.", tags=["Contacts"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),

@@ -33,6 +33,20 @@ interface PartyAccountsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteAccount", nickname = "partyAccountsDeleteAccount", notes = "Delete the account of party if the account is exists", tags=["PartyAccounts"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "Object is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Account is not found")
+    )
+    @DeleteMapping("/parties/{partyId}/accounts/{accountId}")
+    fun partyAccountsDeleteAccount(
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("accountId") accountId: String): ResponseEntity<Account> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetAccount", nickname = "partyAccountsGetAccount", notes = "Get account or list of accounts from service.", tags=["PartyAccounts"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),

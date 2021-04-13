@@ -33,6 +33,20 @@ interface PartyOrganizationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteOrganization", nickname = "partyOrganizationsDeleteOrganization", notes = "Delete organization of party", tags=["PartyOrganizations"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "Object is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Organization is not found")
+    )
+    @DeleteMapping("/parties/{partyId}/organizations/{organizationtId}")
+    fun partyOrganizationsDeleteOrganization(
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("organizationtId") organizationtId: String): ResponseEntity<Organization> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetOrganization", nickname = "partyOrganizationsGetOrganization", notes = "Get organization or list of organizations from service.", tags=["PartyOrganizations"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),

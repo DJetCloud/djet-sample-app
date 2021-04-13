@@ -33,6 +33,20 @@ interface OrganizationEmployeesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteEmployee", nickname = "organizationEmployeesDeleteEmployee", notes = "Delete employee of organization if the employee exists", tags=["OrganizationEmployees"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "Object is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "Employee is not found")
+    )
+    @DeleteMapping("/organizations/{organizationId}/employees/{employeeId}")
+    fun organizationEmployeesDeleteEmployee(
+			@PathVariable("employeeId") employeeId: String,
+			@PathVariable("organizationId") organizationId: String): ResponseEntity<Employee> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetEmployee", nickname = "organizationEmployeesGetEmployee", notes = "Get employee or list of employees from service.", tags=["OrganizationEmployees"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),

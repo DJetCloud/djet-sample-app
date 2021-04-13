@@ -23,6 +23,11 @@ class ContactsController(service: ContactsService)
         return super.create(contact)
     }
 
+    override fun contactsDeleteContact(
+			@PathVariable("contactId") contactId: String): ResponseEntity<Contact> {
+        return super.delete(contactId)
+    }
+
     override fun contactsGetContact(
 			@PathVariable("contactId") contactId: String): ResponseEntity<Contact> {
         return super.getById(contactId)

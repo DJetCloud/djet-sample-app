@@ -23,6 +23,11 @@ class UsersController(service: UsersService)
         return super.create(user)
     }
 
+    override fun usersDeleteUser(
+			@PathVariable("userId") userId: String): ResponseEntity<User> {
+        return super.delete(userId)
+    }
+
     override fun usersGetUser(
 			@PathVariable("userId") userId: String): ResponseEntity<User> {
         return super.getById(userId)

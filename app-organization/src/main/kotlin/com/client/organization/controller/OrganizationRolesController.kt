@@ -24,6 +24,12 @@ class OrganizationRolesController(service: OrganizationRolesService)
         return super.create(organizationId, organizationRole)
     }
 
+    override fun organizationRolesDeleteOrganizationRole(
+			@PathVariable("organizationId") organizationId: String,
+			@PathVariable("organizationRoleId") organizationRoleId: String): ResponseEntity<OrganizationRole> {
+        return super.delete(organizationId, organizationRoleId)
+    }
+
     override fun organizationRolesGetOrganizationRole(
 			@PathVariable("organizationId") organizationId: String,
 			@PathVariable("organizationRoleId") organizationRoleId: String): ResponseEntity<OrganizationRole> {

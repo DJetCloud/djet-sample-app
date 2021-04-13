@@ -32,6 +32,19 @@ interface UsersApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
+    @ApiOperation(value = "DeleteUser", nickname = "usersDeleteUser", notes = "Delete user on id if user exists", tags=["Users"],)
+    @ApiResponses(
+        ApiResponse(code = 200, message = "User is found and returned."),
+        ApiResponse(code = 400, message = "Execution of user request failed."),
+        ApiResponse(code = 409, message = "User don't have permissions to execute operation on the object."),
+        ApiResponse(code = 404, message = "User is not found")
+    )
+    @DeleteMapping("/users/{userId}")
+    fun usersDeleteUser(
+			@PathVariable("userId") userId: String): ResponseEntity<User> {
+        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
+    }
+
     @ApiOperation(value = "GetUser", nickname = "usersGetUser", notes = "Get user or list of users from service.", tags=["Users"],)
     @ApiResponses(
         ApiResponse(code = 200, message = "User is found and returned."),

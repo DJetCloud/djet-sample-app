@@ -91,6 +91,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - OrganizationEmployees
+      summary: DeleteEmployee
+      description: Delete employee of organization if the employee exists
+      operationId: organizationEmployeesDeleteEmployee
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Object is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Employee is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     patch:
       tags:
       - OrganizationEmployees
@@ -259,6 +294,41 @@ paths:
       responses:
         "204":
           description: Operation completed successfully without object returned.
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Organization Role is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - OrganizationRoles
+      summary: DeleteOrganizationRole
+      description: Delete organization role if it exists
+      operationId: organizationRolesDeleteOrganizationRole
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Object is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationRole'
         "400":
           description: Execution of user request failed.
           content:
@@ -448,6 +518,41 @@ paths:
       responses:
         "204":
           description: Operation completed successfully without object returned.
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Organization is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - PartyOrganizations
+      summary: DeleteOrganization
+      description: Delete organization of party
+      operationId: partyOrganizationsDeleteOrganization
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Object is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
         "400":
           description: Execution of user request failed.
           content:

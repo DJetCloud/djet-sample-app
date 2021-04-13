@@ -24,6 +24,12 @@ class PartyLegalEntitiesController(service: PartyLegalEntitiesService)
         return super.create(partyId, legalEntity)
     }
 
+    override fun partyLegalEntitiesDeleteLegalEntity(
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("legalentityId") legalentityId: String): ResponseEntity<LegalEntity> {
+        return super.delete(partyId, legalentityId)
+    }
+
     override fun partyLegalEntitiesGetLegalEntity(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("legalentityId") legalentityId: String): ResponseEntity<LegalEntity> {

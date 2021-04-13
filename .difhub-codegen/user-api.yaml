@@ -84,6 +84,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - Contacts
+      summary: DeleteContact
+      description: Delete contact if it exist
+      operationId: contactsDeleteContact
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Contact is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Contact is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     patch:
       tags:
       - Contacts
@@ -259,6 +294,41 @@ paths:
                   $ref: '#/components/schemas/Error'
         "409":
           description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - Locations
+      summary: DeleteLocation
+      description: Delete location if it exists
+      operationId: locationsDeleteLocation
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Person is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Object is not found
           content:
             application/json:
               schema:
@@ -441,6 +511,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - Persons
+      summary: DeletePerson
+      description: Delete person if it exists
+      operationId: personsDeletePerson
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Person is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Object is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     patch:
       tags:
       - Persons
@@ -615,6 +720,41 @@ paths:
                   $ref: '#/components/schemas/Error'
         "409":
           description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - Users
+      summary: DeleteUser
+      description: Delete user on id if user exists
+      operationId: usersDeleteUser
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: User is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: User is not found
           content:
             application/json:
               schema:

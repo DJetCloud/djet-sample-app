@@ -24,6 +24,12 @@ class OrganizationEmployeesController(service: OrganizationEmployeesService)
         return super.create(organizationId, employee)
     }
 
+    override fun organizationEmployeesDeleteEmployee(
+			@PathVariable("employeeId") employeeId: String,
+			@PathVariable("organizationId") organizationId: String): ResponseEntity<Employee> {
+        return super.delete(organizationId, employeeId)
+    }
+
     override fun organizationEmployeesGetEmployee(
 			@PathVariable("employeeId") employeeId: String,
 			@PathVariable("organizationId") organizationId: String): ResponseEntity<Employee> {

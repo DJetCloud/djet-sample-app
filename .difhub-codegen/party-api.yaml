@@ -92,6 +92,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - Parties
+      summary: DeleteParty
+      description: Delete party if it exists
+      operationId: partiesDeleteParty
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Party is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Party'
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Party is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     patch:
       tags:
       - Parties
@@ -258,6 +293,41 @@ paths:
       responses:
         "204":
           description: Operation completed successfully without object returned.
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Account is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - PartyAccounts
+      summary: DeleteAccount
+      description: Delete the account of party if the account is exists
+      operationId: partyAccountsDeleteAccount
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: Object is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
         "400":
           description: Execution of user request failed.
           content:
@@ -445,6 +515,41 @@ paths:
       responses:
         "204":
           description: Operation completed successfully without object returned.
+        "400":
+          description: Execution of user request failed.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Error'
+        "409":
+          description: User don't have permissions to execute operation on the object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Legal Entity is not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - PartyLegalEntities
+      summary: DeleteLegalEntity
+      description: Delete legal entity of the party if the legal entity exists
+      operationId: partyLegalEntitiesDeleteLegalEntity
+      parameters:
+      - $ref: '#/components/parameters/bearer'
+      responses:
+        "200":
+          description: LegalEntity is found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegalEntity'
         "400":
           description: Execution of user request failed.
           content:
