@@ -3,6 +3,7 @@ package com.client.organization.controller
 import com.client.organization.domain.Employee
 import com.client.organization.service.OrganizationEmployeesService
 import com.client.organization.controller.api.OrganizationEmployeesApi
+import io.swagger.annotations.ApiParam
 import com.client.controller.AbstractController
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

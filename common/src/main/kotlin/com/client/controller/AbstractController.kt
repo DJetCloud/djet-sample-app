@@ -1,6 +1,7 @@
 package com.client.controller
 
 import com.client.domain.BaseResource
+import com.client.domain.Identity
 import com.client.exception.InvalidRequestException
 import com.client.exception.ResourceNotFoundException
 import com.client.service.CommonService
@@ -56,7 +57,11 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 	}
 
 	override fun create(parentId: String, domain: E): ResponseEntity<E> {
-		validateParent(domain, parentId)
+		if(domain.entity.parent != null) {
+			domain.entity.parent!!.id = parentId
+		} else {
+			domain.entity.parent = Identity(id = parentId)
+		}
 		val result = service.save(domain) ?: throw InvalidRequestException()
 		return ResponseEntity(result, HttpStatus.CREATED)
 	}

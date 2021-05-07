@@ -33,6 +33,16 @@ services:
       - 8041:8080
     depends_on:
       - db
+  app-product:
+    image: app-product:0.0.1
+    restart: on-failure
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+    ports:
+      - 8042:8080
+    depends_on:
+      - db
   app-user:
     image: app-user:0.0.1
     restart: on-failure
@@ -40,7 +50,7 @@ services:
       DB_HOST: db
       DB_PORT: 3306
     ports:
-      - 8042:8080
+      - 8043:8080
     depends_on:
       - db
 volumes:

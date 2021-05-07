@@ -3,6 +3,7 @@ package com.client.user.controller
 import com.client.user.domain.User
 import com.client.user.service.UsersService
 import com.client.user.controller.api.UsersApi
+import io.swagger.annotations.ApiParam
 import com.client.controller.AbstractController
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

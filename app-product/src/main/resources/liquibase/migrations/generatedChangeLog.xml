@@ -1,0 +1,705 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="initial/tables.xml"
+				   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+				   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<changeSet author="CodeGeneration" id="create_generated_table_attachment" labels="version:1.3.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="content_type" type="VARCHAR(100)" />
+			<column name="language" type="VARCHAR(512)" />
+			<column name="data" type="VARCHAR(2048)" />
+			<column name="url" type="VARCHAR(512)" />
+			<column name="size" type="int" />
+			<column name="hash" type="VARCHAR(2048)" />
+			<column name="title" type="VARCHAR(512)" />
+			<column name="creation" type="datetime" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_available_time" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="available_time" />
+			</not>
+		</preConditions>
+		<createTable tableName="available_time">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="days_of_week" type="${JSON_OBJECT}"/>
+			<column name="all_day" type="${BOOLEAN_VALUE}" />
+			<column name="available_start_time" type="datetime" />
+			<column name="available_end_time" type="datetime" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.1.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="binding" />
+			</not>
+		</preConditions>
+		<createTable tableName="binding">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="type" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="code" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_communication_language" labels="version:1.1.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="communication_language" />
+			</not>
+		</preConditions>
+		<createTable tableName="communication_language">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="language" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_contact_point" labels="version:1.6.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact_point" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact_point">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="system_" type="VARCHAR(512)" />
+			<column name="value" type="VARCHAR(512)" />
+			<column name="use_" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_contract" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="version_major" type="int"/>
+			<column name="version_minor" type="int"/>
+			<column name="version_revision" type="int"/>
+			<column name="version_label" type="VARCHAR(512)"/>
+			<column name="type" type="VARCHAR(512)" />
+			<column name="merchant" type="${UUID}" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="start" type="datetime" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="end" type="datetime" />
+			<column name="currency" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_contract_item" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_item" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_item">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="version_major" type="int"/>
+			<column name="version_minor" type="int"/>
+			<column name="version_revision" type="int"/>
+			<column name="version_label" type="VARCHAR(512)"/>
+			<column name="start" type="datetime" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="end" type="datetime" />
+			<column name="product" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="price" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_contract_party" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_party" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_party">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="role" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="party" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="account" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_discount" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="discount" />
+			</not>
+		</preConditions>
+		<createTable tableName="discount">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="party" type="${UUID}" />
+			<column name="value" type="decimal(10,2)" />
+			<column name="ratio" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_fee" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="fee" />
+			</not>
+		</preConditions>
+		<createTable tableName="fee">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="pay_party" type="${UUID}" />
+			<column name="receive_party" type="${UUID}" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="value" type="decimal(10,2)" />
+			<column name="ratio" type="VARCHAR(512)" />
+			<column name="base" type="${UUID}" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_not_available_time" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="not_available_time" />
+			</not>
+		</preConditions>
+		<createTable tableName="not_available_time">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="description" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="during_start" type="datetime"/>
+			<column name="during_end" type="datetime"/>
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_price" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="price" />
+			</not>
+		</preConditions>
+		<createTable tableName="price">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="amount_amount" type="decimal(10,2)"/>
+			<column name="amount_currency" type="VARCHAR(512)"/>
+			<column name="quantity" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_product" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product" />
+			</not>
+		</preConditions>
+		<createTable tableName="product">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="type" type="VARCHAR(512)" />
+			<column name="category" type="${UUID}" />
+			<column name="reference" type="VARCHAR(512)" />
+			<column name="service" type="VARCHAR(512)" />
+			<column name="sku" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="photo" type="VARCHAR(512)" />
+			<column name="location" type="VARCHAR(512)" />
+			<column name="appointment_required" type="${BOOLEAN_VALUE}" />
+			<column name="availability_exceptions" type="VARCHAR(512)" />
+			<column name="price" type="VARCHAR(512)" />
+			<column name="party_id" type="${UUID}" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_product_category" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product_category" />
+			</not>
+		</preConditions>
+		<createTable tableName="product_category">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="category" type="VARCHAR(512)" />
+			<column name="definition" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_product_line" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product_line" />
+			</not>
+		</preConditions>
+		<createTable tableName="product_line">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="name" type="VARCHAR(255)"/>
+			<column name="description" type="VARCHAR(510)"/>
+			<column name="type" type="VARCHAR(512)" />
+			<column name="owner" type="VARCHAR(512)" />
+			<column name="account" type="VARCHAR(512)" />
+			<column name="category" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_product_ref" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product_ref" />
+			</not>
+		</preConditions>
+		<createTable tableName="product_ref">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="product" type="VARCHAR(512)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="properties" type="VARCHAR(512)" />
+			<column name="discount" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_product_s_k_u" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product_s_k_u" />
+			</not>
+		</preConditions>
+		<createTable tableName="product_s_k_u">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="bar_code" type="VARCHAR(16)" />
+			<column name="product" type="VARCHAR(512)" />
+			<column name="start" type="datetime" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="end" type="datetime" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_property" labels="version:1.2.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="property" />
+			</not>
+		</preConditions>
+		<createTable tableName="property">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="type" type="VARCHAR(512)" />
+			<column name="reference" type="VARCHAR(512)" />
+			<column name="value" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_quantity" labels="version:1.0.1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="quantity" />
+			</not>
+		</preConditions>
+		<createTable tableName="quantity">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="value" type="decimal(10,2)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="comparator" type="VARCHAR(512)" />
+			<column name="unit" type="VARCHAR(256)" />
+			<column name="system_" type="VARCHAR(512)" />
+			<column name="code" type="VARCHAR(16)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_reference_identity" labels="version:">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="reference_identity" />
+			</not>
+		</preConditions>
+		<createTable tableName="reference_identity">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="resource_id" type="VARCHAR(512)" />
+			<column name="name" type="VARCHAR(512)" />
+			<column name="description" type="VARCHAR(512)" />
+			<column name="type" type="VARCHAR(512)" />
+			<column name="uri" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.6.1">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="parent_id" type="${UUID}"/>
+			<column name="parent_name" type="VARCHAR(512)"/>
+			<column name="parent_description" type="VARCHAR(4096)"/>
+			<column name="type" type="VARCHAR(512)" />
+			<column name="state" type="VARCHAR(512)" />
+			<column name="alias" type="${JSON_OBJECT}"/>
+			<column name="token" type="VARCHAR(512)" />
+			<column name="containing_folder" type="${UUID}" />
+			<column name="managing_organization" type="VARCHAR(512)" />
+			<column name="source" type="VARCHAR(512)" />
+			<column name="created_at" type="datetime"/>
+			<column name="created_by" type="VARCHAR(256)"/>
+			<column name="updated_at" type="datetime"/>
+			<column name="updated_by" type="VARCHAR(256)"/>
+			<column name="updated_note" type="VARCHAR(512)"/>
+			<column name="updated_message" type="VARCHAR(512)"/>
+			<column name="reviewed_at" type="datetime"/>
+			<column name="reviewed_by" type="VARCHAR(256)"/>
+			<column name="retired_at" type="datetime"/>
+			<column name="retired_by" type="VARCHAR(256)"/>
+			<column name="completions" type="${JSON_OBJECT}"/>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="CodeGeneration" id="create_generated_join_table_binding_to_entity">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="binding_to_entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="binding_to_entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="entity"/>
+			</column>
+			<column name="binding_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="binding"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="entity_id, binding_id"
+					   constraintName="pk_binding_to_entity"
+					   tableName="binding_to_entity"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contract_to_contract_party">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_to_contract_party" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_to_contract_party">
+			<column name="contract_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contract"/>
+			</column>
+			<column name="contract_party_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contract_party"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contract_id, contract_party_id"
+					   constraintName="pk_contract_to_contract_party"
+					   tableName="contract_to_contract_party"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contract_to_product_line">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_to_product_line" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_to_product_line">
+			<column name="contract_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contract"/>
+			</column>
+			<column name="product_line_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product_line"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contract_id, product_line_id"
+					   constraintName="pk_contract_to_product_line"
+					   tableName="contract_to_product_line"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contract_to_discount">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_to_discount" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_to_discount">
+			<column name="contract_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contract"/>
+			</column>
+			<column name="discount_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="discount"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contract_id, discount_id"
+					   constraintName="pk_contract_to_discount"
+					   tableName="contract_to_discount"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contract_to_fee">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_to_fee" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_to_fee">
+			<column name="contract_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contract"/>
+			</column>
+			<column name="fee_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="fee"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contract_id, fee_id"
+					   constraintName="pk_contract_to_fee"
+					   tableName="contract_to_fee"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contract_item_to_discount">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_item_to_discount" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_item_to_discount">
+			<column name="contract_item_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contract_item"/>
+			</column>
+			<column name="discount_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="discount"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contract_item_id, discount_id"
+					   constraintName="pk_contract_item_to_discount"
+					   tableName="contract_item_to_discount"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contract_item_to_fee">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contract_item_to_fee" />
+			</not>
+		</preConditions>
+		<createTable tableName="contract_item_to_fee">
+			<column name="contract_item_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contract_item"/>
+			</column>
+			<column name="fee_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="fee"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="contract_item_id, fee_id"
+					   constraintName="pk_contract_item_to_fee"
+					   tableName="contract_item_to_fee"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_product_sku_to_property">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product_sku_to_property" />
+			</not>
+		</preConditions>
+		<createTable tableName="product_sku_to_property">
+			<column name="product_sku_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product_sku"/>
+			</column>
+			<column name="property_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="property"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="product_sku_id, property_id"
+					   constraintName="pk_product_sku_to_property"
+					   tableName="product_sku_to_property"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_product_to_product_ref">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product_to_product_ref" />
+			</not>
+		</preConditions>
+		<createTable tableName="product_to_product_ref">
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product"/>
+			</column>
+			<column name="product_ref_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product_ref"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="product_id, product_ref_id"
+					   constraintName="pk_product_to_product_ref"
+					   tableName="product_to_product_ref"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_contact_point_to_product">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="contact_point_to_product" />
+			</not>
+		</preConditions>
+		<createTable tableName="contact_point_to_product">
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product"/>
+			</column>
+			<column name="contact_point_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="contact_point"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="product_id, contact_point_id"
+					   constraintName="pk_contact_point_to_product"
+					   tableName="contact_point_to_product"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_communication_language_to_product">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="communication_language_to_product" />
+			</not>
+		</preConditions>
+		<createTable tableName="communication_language_to_product">
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product"/>
+			</column>
+			<column name="communication_language_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="communication_language"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="product_id, communication_language_id"
+					   constraintName="pk_communication_language_to_product"
+					   tableName="communication_language_to_product"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_location_to_product">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="location_to_product" />
+			</not>
+		</preConditions>
+		<createTable tableName="location_to_product">
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product"/>
+			</column>
+			<column name="location_id" type="${UUID}">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="product_id, location_id"
+					   constraintName="pk_location_to_product"
+					   tableName="location_to_product"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_available_time_to_product">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="available_time_to_product" />
+			</not>
+		</preConditions>
+		<createTable tableName="available_time_to_product">
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product"/>
+			</column>
+			<column name="available_time_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="available_time"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="product_id, available_time_id"
+					   constraintName="pk_available_time_to_product"
+					   tableName="available_time_to_product"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_not_available_time_to_product">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="not_available_time_to_product" />
+			</not>
+		</preConditions>
+		<createTable tableName="not_available_time_to_product">
+			<column name="product_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="product"/>
+			</column>
+			<column name="not_available_time_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="not_available_time"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="product_id, not_available_time_id"
+					   constraintName="pk_not_available_time_to_product"
+					   tableName="not_available_time_to_product"/>
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,401 @@
+group_name,code,name,description
+LOCALE,af,Afrikaans,af
+LOCALE,sq,Albanian,sq
+LOCALE,am,Amharic,am
+LOCALE,ar-dz,Arabic - Algeria,ar-dz
+LOCALE,ar-bh,Arabic - Bahrain,ar-bh
+LOCALE,ar-eg,Arabic - Egypt,ar-eg
+LOCALE,ar-iq,Arabic - Iraq,ar-iq
+LOCALE,ar-jo,Arabic - Jordan,ar-jo
+LOCALE,ar-kw,Arabic - Kuwait,ar-kw
+LOCALE,ar-lb,Arabic - Lebanon,ar-lb
+LOCALE,ar-ly,Arabic - Libya,ar-ly
+LOCALE,ar-ma,Arabic - Morocco,ar-ma
+LOCALE,ar-om,Arabic - Oman,ar-om
+LOCALE,ar-qa,Arabic - Qatar,ar-qa
+LOCALE,ar-sa,Arabic - Saudi Arabia,ar-sa
+LOCALE,ar-sy,Arabic - Syria,ar-sy
+LOCALE,ar-tn,Arabic - Tunisia,ar-tn
+LOCALE,ar-ae,Arabic - United Arab Emirates,ar-ae
+LOCALE,ar-ye,Arabic - Yemen,ar-ye
+LOCALE,hy,Armenian,hy
+LOCALE,as,Assamese,as
+LOCALE,az-az,Azeri - Cyrillic,az-az
+LOCALE,az-az,Azeri - Latin,az-az
+LOCALE,eu,Basque,eu
+LOCALE,be,Belarusian,be
+LOCALE,bn,Bengali - Bangladesh,bn
+LOCALE,bn,Bengali - India,bn
+LOCALE,bs,Bosnian,bs
+LOCALE,bg,Bulgarian,bg
+LOCALE,my,Burmese,my
+LOCALE,ca,Catalan,ca
+LOCALE,zh-cn,Chinese - China,zh-cn
+LOCALE,zh-hk,Chinese - Hong Kong SAR,zh-hk
+LOCALE,zh-mo,Chinese - Macau SAR,zh-mo
+LOCALE,zh-sg,Chinese - Singapore,zh-sg
+LOCALE,zh-tw,Chinese - Taiwan,zh-tw
+LOCALE,cs,Croatian,cs
+LOCALE,da,Danish,da
+LOCALE,nl-be,Dutch - Belgium,nl-be
+LOCALE,nl-nl,Dutch - Netherlands,nl-nl
+LOCALE,en-au,English - Australia,en-au
+LOCALE,en-bz,English - Belize,en-bz
+LOCALE,en-ca,English - Canada,en-ca
+LOCALE,en-cb,English - Caribbean,en-cb
+LOCALE,en-gb,English - Great Britain,en-gb
+LOCALE,en-in,English - India,en-in
+LOCALE,en-ie,English - Ireland,en-ie
+LOCALE,en-jm,English - Jamaica,en-jm
+LOCALE,en-nz,English - New Zealand,en-nz
+LOCALE,en-ph,English - Phillippines,en-ph
+LOCALE,en-za,English - Southern Africa,en-za
+LOCALE,en-tt,English - Trinidad,en-tt
+LOCALE,en-us,English - United States,en-us
+LOCALE,,English - Zimbabwe,
+LOCALE,et,Estonian,et
+LOCALE,mk,FYRO Macedonia,mk
+LOCALE,fo,Faroese,fo
+LOCALE,fa,Farsi - Persian,fa
+LOCALE,,Filipino,
+LOCALE,fi,Finnish,fi
+LOCALE,fr-be,French - Belgium,fr-be
+LOCALE,,French - Cameroon,
+LOCALE,fr-ca,French - Canada,fr-ca
+LOCALE,,French - Congo,
+LOCALE,,French - Cote d'Ivoire,
+LOCALE,fr-fr,French - France,fr-fr
+LOCALE,fr-lu,French - Luxembourg,fr-lu
+LOCALE,,French - Mali,
+LOCALE,,French - Morocco,
+LOCALE,,French - Senegal,
+LOCALE,fr-ch,French - Switzerland,fr-ch
+LOCALE,,French - West Indies,
+LOCALE,,Frisian - Netherlands,
+LOCALE,gd-ie,Gaelic - Ireland,gd-ie
+LOCALE,gd,Gaelic - Scotland,gd
+LOCALE,,Galician,
+LOCALE,ka,Georgian,ka
+LOCALE,de-at,German - Austria,de-at
+LOCALE,de-de,German - Germany,de-de
+LOCALE,de-li,German - Liechtenstein,de-li
+LOCALE,de-lu,German - Luxembourg,de-lu
+LOCALE,de-ch,German - Switzerland,de-ch
+LOCALE,el,Greek,el
+LOCALE,gn,Guarani - Paraguay,gn
+LOCALE,gu,Gujarati,gu
+LOCALE,he,Hebrew,he
+LOCALE,hi,Hindi,hi
+LOCALE,hu,Hungarian,hu
+LOCALE,is,Icelandic,is
+LOCALE,,Igbo - Nigeria,
+LOCALE,id,Indonesian,id
+LOCALE,it-it,Italian - Italy,it-it
+LOCALE,it-ch,Italian - Switzerland,it-ch
+LOCALE,ja,Japanese,ja
+LOCALE,kn,Kannada,kn
+LOCALE,ks,Kashmiri,ks
+LOCALE,kk,Kazakh,kk
+LOCALE,km,Khmer,km
+LOCALE,,Konkani,
+LOCALE,ko,Korean,ko
+LOCALE,,Kyrgyz - Cyrillic,
+LOCALE,lo,Lao,lo
+LOCALE,la,Latin,la
+LOCALE,lt,Latvian,lt
+LOCALE,ms-bn,Malay - Brunei,ms-bn
+LOCALE,ms-my,Malay - Malaysia,ms-my
+LOCALE,ml,Malayalam,ml
+LOCALE,mt,Maltese,mt
+LOCALE,,Manipuri,
+LOCALE,mi,Maori,mi
+LOCALE,mr,Marathi,mr
+LOCALE,mn,Mongolian,mn
+LOCALE,ne,Nepali,ne
+LOCALE,no-no,Norwegian - Bokml,no-no
+LOCALE,no-no,Norwegian - Nynorsk,no-no
+LOCALE,or,Oriya,or
+LOCALE,pl,Polish,pl
+LOCALE,pt-br,Portuguese - Brazil,pt-br
+LOCALE,pt-pt,Portuguese - Portugal,pt-pt
+LOCALE,pa,Punjabi,pa
+LOCALE,rm,Raeto-Romance,rm
+LOCALE,ro-mo,Romanian - Moldova,ro-mo
+LOCALE,ro,Romanian - Romania,ro
+LOCALE,ru,Russian,ru
+LOCALE,ru-mo,Russian - Moldova,ru-mo
+LOCALE,,Sami Lappish,
+LOCALE,sa,Sanskrit,sa
+LOCALE,sr-sp,Serbian - Cyrillic,sr-sp
+LOCALE,sr-sp,Serbian - Latin,sr-sp
+LOCALE,,Sesotho (Sutu),
+LOCALE,tn,Setsuana,tn
+LOCALE,sd,Sindhi,sd
+LOCALE,si,Sinhala Sinhalese,si
+LOCALE,sk,Slovak,sk
+LOCALE,sl,Slovenian,sl
+LOCALE,so,Somali,so
+LOCALE,sb,Sorbian,sb
+LOCALE,es-ar,Spanish - Argentina,es-ar
+LOCALE,es-bo,Spanish - Bolivia,es-bo
+LOCALE,es-cl,Spanish - Chile,es-cl
+LOCALE,es-co,Spanish - Colombia,es-co
+LOCALE,es-cr,Spanish - Costa Rica,es-cr
+LOCALE,es-do,Spanish - Dominican Republic,es-do
+LOCALE,es-ec,Spanish - Ecuador,es-ec
+LOCALE,es-sv,Spanish - El Salvador,es-sv
+LOCALE,es-gt,Spanish - Guatemala,es-gt
+LOCALE,es-hn,Spanish - Honduras,es-hn
+LOCALE,es-mx,Spanish - Mexico,es-mx
+LOCALE,es-ni,Spanish - Nicaragua,es-ni
+LOCALE,es-pa,Spanish - Panama,es-pa
+LOCALE,es-py,Spanish - Paraguay,es-py
+LOCALE,es-pe,Spanish - Peru,es-pe
+LOCALE,es-pr,Spanish - Puerto Rico,es-pr
+LOCALE,es-es,Spanish - Spain (Traditional),es-es
+LOCALE,es-uy,Spanish - Uruguay,es-uy
+LOCALE,es-ve,Spanish - Venezuela,es-ve
+LOCALE,sw,Swahili,sw
+LOCALE,sv-fi,Swedish - Finland,sv-fi
+LOCALE,sv-se,Swedish - Sweden,sv-se
+LOCALE,,Syriac,
+LOCALE,tg,Tajik,tg
+LOCALE,ta,Tamil,ta
+LOCALE,tt,Tatar,tt
+LOCALE,te,Telugu,te
+LOCALE,th,Thai,th
+LOCALE,bo,Tibetan,bo
+LOCALE,ts,Tsonga,ts
+LOCALE,tr,Turkish,tr
+LOCALE,tk,Turkmen,tk
+LOCALE,uk,Ukrainian,uk
+LOCALE,ur,Urdu,ur
+LOCALE,uz-uz,Uzbek - Cyrillic,uz-uz
+LOCALE,,Venda,
+LOCALE,vi,Vietnamese,vi
+LOCALE,cy,Welsh,cy
+LOCALE,xh,Zulu,xh
+LOCALE,yi,Yiddish,yi
+WEEK_DAY,MONDAY,Monday,First day of the week by ISO 8601.
+WEEK_DAY,TUESDAT,Tuesday,Second day of the week by ISO 8601.
+WEEK_DAY,WEDNESDAY,Wednesday,Third day of the week by ISO 8601.
+WEEK_DAY,THURSDAY,Thursday,Fourth day of the week by ISO 8601.
+WEEK_DAY,FRIDAY,Friday,Fifth day of the week by ISO 8601.
+WEEK_DAY,SATURDAY,Saturday,Sixth day of the week by ISO 8601.
+WEEK_DAY,SUNDAY,Sunday,Seventh day of the week by ISO 8601.
+CONTACT_POINT_USE,home,Home,A communication contact point at a home; attempted contacts for business purposes might intrude privacy and chances are one will contact family or other household members instead of the person one wishes to call. Typically used with urgent cases, or if no other contacts are available
+CONTACT_POINT_USE,work,Work,An office contact point. First choice for business related contacts during business hours.
+
+CONTACT_POINT_USE,temp,Temp,A temporary contact point. The period can provide more detailed information.
+
+CONTACT_POINT_USE,old,Old,This contact point is no longer in use (or was never correct, but retained for records).
+
+
+CONTACT_POINT_USE,mobile,Mobile,A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable for urgent matters, not the first choice for routine business.
+ 
+PRODUCT_LINE_TYPE,goods,Goods,Product line represent goods supplied by party organizations. 
+PRODUCT_LINE_TYPE,services,Services,Product line represent services provided by party organizations.
+PRODUCT_LINE_TYPE,goods-and-services,Goods And Services,Product line contains mix of product  of goods and services.
+QUANTITY_COMPARATOR,<,Less than,The actual value is less than the given value.
+QUANTITY_COMPARATOR,<=,Less or Equal to,The actual value is less than or equal to the given value.
+QUANTITY_COMPARATOR,>=,Greater or Equal to,The actual value is greater than or equal to the given value.
+QUANTITY_COMPARATOR,>,Greater than,The actual value is greater than the given value.
+BINDING_TYPE,ERP,ERP ,Corporate ERP system used in company.
+CONTACT_POINT_SYSTEM,phone,Phone,The value is a telephone number used for voice calls. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.
+CONTACT_POINT_SYSTEM,fax,Fax,The value is a fax machine. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.
+
+CONTACT_POINT_SYSTEM,email,Email,The value is an email address.
+CONTACT_POINT_SYSTEM,pager,Pager,The value is a pager number. These may be local pager numbers that are only usable on a particular pager system.
+
+CONTACT_POINT_SYSTEM,url,URL,A contact that is not a phone, fax, pager or email address and is expressed as a URL. This is intended for various personal contacts including blogs, Skype, Twitter, Facebook, etc. Do not use for email addresses.
+CONTACT_POINT_SYSTEM,sms,SMS,A contact that can be used for sending an sms message (e.g. mobile phones, some landlines)
+other
+CONTACT_POINT_SYSTEM,other,Other,A contact that is not a phone, fax, page or email address and is not expressible as a URL. E.g. Internal mail address. This SHOULD NOT be used for contacts that are expressible as a URL (e.g. Skype, Twitter, Facebook, etc.) Extensions may be used to distinguish 'other' contact types.
+ 
+CURRENCY,AED,AED,United Arab Emirates dirham
+CURRENCY,AFN,AFN,Afghan afghani
+CURRENCY,ALL,ALL,Albanian lek
+CURRENCY,AMD,AMD,Armenian dram
+CURRENCY,ANG,ANG,Netherlands Antillean guilder
+CURRENCY,AOA,AOA,Angolan kwanza
+CURRENCY,ARS,ARS,Argentine peso
+CURRENCY,AUD,AUD,Australian dollar
+CURRENCY,AWG,AWG,Aruban florin
+CURRENCY,AZN,AZN,Azerbaijani manat
+CURRENCY,BAM,BAM,Bosnia and Herzegovina convertible mark
+CURRENCY,BBD,BBD,Barbados dollar
+CURRENCY,BDT,BDT,Bangladeshi taka
+CURRENCY,BGN,Currency,Bulgarian lev
+CURRENCY,BGN,BGN,Bulgarian lev
+CURRENCY,BHD,BHD,Bahraini dinar
+CURRENCY,BIF,BIF,Burundian franc
+CURRENCY,BMD,BMD,Bermudian dollar
+CURRENCY,BND,BND,Brunei dollar
+CURRENCY,BOB,BOB,Boliviano
+CURRENCY,BOV,BOV,Bolivian Mvdol
+CURRENCY,BRL,BRL,Brazilian real
+CURRENCY,BSD,BSD,Bahamian dollar
+CURRENCY,BWP,BWP,Botswana pula
+CURRENCY,BYN,BYN,Belarusian ruble
+CURRENCY,BZD,BZD,Belize dollar
+CURRENCY,CAD,CAD,Canadian dollar
+CURRENCY,CDF,CDF,Congolese franc
+CURRENCY,CHE,CHE,WIR Euro (complementary currency)
+CURRENCY,CHF,CHF,Swiss franc
+CURRENCY,CHW,CHW,WIR Franc (complementary currency)
+CURRENCY,CLF,CLF,Unidad de Fomento (funds code)
+CURRENCY,CLP,CLP,Chilean peso
+CURRENCY,CNY,CNY,Chinese yuan
+CURRENCY,COP,COP,Colombian peso
+CURRENCY,COU,COU,Unidad de Valor Real (UVR) (funds code)
+CURRENCY,CRC,CRC,Costa Rican colon
+CURRENCY,CUC,CUC,Cuban convertible peso
+CURRENCY,CUP,CUP,Cuban peso
+CURRENCY,CVE,CVE,Cape Verde escudo
+CURRENCY,CZK,CZK,Czech koruna
+CURRENCY,DJF,DJF,Djiboutian franc
+CURRENCY,DKK,DKK,Danish krone
+CURRENCY,DOP,DOP,Dominican peso
+CURRENCY,DZD,DZD,Algerian dinar
+CURRENCY,EGP,EGP,Egyptian pound
+CURRENCY,ERN,ERN,Eritrean nakfa
+CURRENCY,ETB,ETB,Ethiopian birr
+CURRENCY,EUR,EUR,Euro
+CURRENCY,FJD,FJD,Fiji dollar
+CURRENCY,FKP,FKP,Falkland Islands pound
+CURRENCY,GBP,GBP,Pound sterling
+CURRENCY,GEL,GEL,Georgian lari
+CURRENCY,GHS,GHS,Ghanaian cedi
+CURRENCY,GIP,GIP,Gibraltar pound
+CURRENCY,GMD,GMD,Gambian dalasi
+CURRENCY,GNF,GNF,Guinean franc
+CURRENCY,GTQ,GTQ,Guatemalan quetzal
+CURRENCY,GYD,GYD,Guyanese dollar
+CURRENCY,HKD,HKD,Hong Kong dollar
+CURRENCY,HNL,HNL,Honduran lempira
+CURRENCY,HRK,HRK,Croatian kuna
+CURRENCY,HTG,HTG,Haitian gourde
+CURRENCY,HUF,HUF,Hungarian forint
+CURRENCY,IDR,IDR,Indonesian rupiah
+CURRENCY,ILS,ILS,Israeli new shekel
+CURRENCY,INR,INR,Indian rupee
+CURRENCY,IQD,IQD,Iraqi dinar
+CURRENCY,IRR,IRR,Iranian rial
+CURRENCY,ISK,ISK,Icelandic króna
+CURRENCY,JMD,JMD,Jamaican dollar
+CURRENCY,JOD,JOD,Jordanian dinar
+CURRENCY,JPY,JPY,Japanese yen
+CURRENCY,KES,KES,Kenyan shilling
+CURRENCY,KGS,KGS,Kyrgyzstani som
+CURRENCY,KHR,KHR,Cambodian riel
+CURRENCY,KMF,KMF,Comoro franc
+CURRENCY,KPW,KPW,North Korean won
+CURRENCY,KRW,KRW,South Korean won
+CURRENCY,KWD,KWD,Kuwaiti dinar
+CURRENCY,KYD,KYD,Cayman Islands dollar
+CURRENCY,KZT,KZT,Kazakhstani tenge
+CURRENCY,LAK,LAK,Lao kip
+CURRENCY,LBP,LBP,Lebanese pound
+CURRENCY,LKR,LKR,Sri Lankan rupee
+CURRENCY,LRD,LRD,Liberian dollar
+CURRENCY,LSL,LSL,Lesotho loti
+CURRENCY,LYD,LYD,Libyan dinar
+CURRENCY,MAD,MAD,Moroccan dirham
+CURRENCY,MDL,MDL,Moldovan leu
+CURRENCY,MGA,MGA,Malagasy ariary
+CURRENCY,MKD,MKD,Macedonian denar
+CURRENCY,MMK,MMK,Myanmar kyat
+CURRENCY,MNT,MNT,Mongolian tögrög
+CURRENCY,MOP,MOP,Macanese pataca
+CURRENCY,MRO,MRO,Mauritanian ouguiya
+CURRENCY,MUR,MUR,Mauritian rupee
+CURRENCY,MVR,MVR,Maldivian rufiyaa
+CURRENCY,MWK,MWK,Malawian kwacha
+CURRENCY,MXN,MXN,Mexican peso
+CURRENCY,MXV,MXV,Mexican Unidad de Inversion (UDI) (funds code)
+CURRENCY,MYR,MYR,Malaysian ringgit
+CURRENCY,MZN,MZN,Mozambican metical
+CURRENCY,NAD,NAD,Namibian dollar
+CURRENCY,NGN,NGN,Nigerian naira
+CURRENCY,NIO,NIO,Nicaraguan córdoba
+CURRENCY,NOK,NOK,Norwegian krone
+CURRENCY,NPR,NPR,Nepalese rupee
+CURRENCY,NZD,NZD,New Zealand dollar
+CURRENCY,OMR,OMR,Omani rial
+CURRENCY,PAB,PAB,Panamanian balboa
+CURRENCY,PEN,PEN,Peruvian Sol
+CURRENCY,PHP,PHP,Philippine piso
+CURRENCY,PKR,PKR,Pakistani rupee
+CURRENCY,PLN,PLN,Polish złoty
+CURRENCY,PYG,PYG,Paraguayan guaraní
+CURRENCY,QAR,QAR,Qatari riyal
+CURRENCY,RON,RON,Romanian leu
+CURRENCY,RSD,RSD,Serbian dinar
+CURRENCY,RUB,RUB,Russian ruble
+CURRENCY,RWF,RWF,Rwandan franc
+CURRENCY,SAR,SAR,Saudi riyal
+CURRENCY,SBD,SBD,Solomon Islands dollar
+CURRENCY,SCR,SCR,Seychelles rupee
+CURRENCY,SDG,SDG,Sudanese pound
+CURRENCY,SEK,SEK,Swedish krona/kronor
+CURRENCY,SGD,SGD,Singapore dollar
+CURRENCY,SHP,SHP,Saint Helena pound
+CURRENCY,SLL,SLL,Sierra Leonean leone
+CURRENCY,SOS,SOS,Somali shilling
+CURRENCY,SRD,SRD,Surinamese dollar
+CURRENCY,SSP,SSP,South Sudanese pound
+CURRENCY,STD,STD,São Tomé and Príncipe dobra
+CURRENCY,SVC,SVC,Salvadoran colón
+CURRENCY,SYP,SYP,Syrian pound
+CURRENCY,SZL,SZL,Swazi lilangeni
+CURRENCY,THB,THB,Thai baht
+CURRENCY,TJS,TJS,Tajikistani somoni
+CURRENCY,TMT,TMT,Turkmenistan manat
+CURRENCY,TND,TND,Tunisian dinar
+CURRENCY,TOP,TOP,Tongan paʻanga
+CURRENCY,TRY,TRY,Turkish lira
+CURRENCY,TTD,TTD,Trinidad and Tobago dollar
+CURRENCY,TWD,TWD,New Taiwan dollar
+CURRENCY,TZS,TZS,Tanzanian shilling
+CURRENCY,UAH,UAH,Ukrainian hryvnia
+CURRENCY,UGX,UGX,Ugandan shilling
+CURRENCY,USD,USD,United States dollar
+CURRENCY,USN,USN,United States dollar (next day) (funds code)
+CURRENCY,UYI,UYI,Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code),
+CURRENCY,UYU,UYU,Uruguayan peso
+CURRENCY,UZS,UZS,Uzbekistan som
+CURRENCY,VEF,VEF,Venezuelan bolívar
+CURRENCY,VND,VND,Vietnamese đồng
+CURRENCY,VUV,VUV,Vanuatu vatu
+CURRENCY,WST,WST,Samoan tala
+CURRENCY,XAF,XAF,CFA franc BEAC
+CURRENCY,XAG,XAG,Silver (one troy ounce)
+CURRENCY,XAU,XAU,Gold (one troy ounce)
+CURRENCY,XBA,XBA,European Composite Unit (EURCO) (bond market unit)
+CURRENCY,XBB,XBB,European Monetary Unit (E.M.U.-6) (bond market unit)
+CURRENCY,XBC,XBC,European Unit of Account 9 (E.U.A.-9) (bond market unit)
+CURRENCY,XCD,XCD,East Caribbean dollar
+CURRENCY,XDR,XDR,Special drawing rights
+CURRENCY,XOF,XOF,CFA franc BCEAO
+CURRENCY,XPD,XPD,Palladium (one troy ounce)
+CURRENCY,XPF,XPF,CFP franc (franc Pacifique)
+CURRENCY,XPT,XPT,Platinum (one troy ounce)
+CURRENCY,XSU,XSU,SUCRE
+CURRENCY,XTS,XTS,Code reserved for testing purposes
+CURRENCY,XUA,XUA,ADB Unit of Account
+CURRENCY,XXX,XXX,No currency
+CURRENCY,YER,YER,Yemeni rial
+CURRENCY,ZAR,ZAR,South African rand
+CURRENCY,ZMW,ZMW,Zambian kwacha
+CURRENCY,ZWL,ZWL,Zimbabwean dollar
+PRODUCT_TYPE,GOOD,Good,Product represent actual entity supplied by party organizations. 
+PRODUCT_TYPE,SERVICE,Service,Product represent services provided by party organizations.
+PRODUCT_TYPE,PACKAGE,Package,Product is a package of other products. Usually package created to provide discount to products in the package.
+CONTRACT_TYPE,NETWORK,Network,Contract to supply or distribute products to the network. 
+CONTRACT_TYPE,PARTY,Party,Contract to distribute or supply product signed by parties directly. It allows party to negotiate favorable compare to general distribution.
+PRODUCT_LINE_CATEGORY,Healthcare,Healthcare,Product and services from healthcare industry. 
+ENTITY_STATE,DRAFT,Draft,Entity in draft state and not ready yet for approval.
+ENTITY_STATE,PENDING,Pending,Entity pending approval and can't be used.
+ENTITY_STATE,ACTIVE,Active,Entity in active state and can be used.
+ENTITY_STATE,RETIRED,Retired,Entity retired and cannot be executed any more.
+ENTITY_STATE,ERROR,Error,Entity in have error and can't be used.

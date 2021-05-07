@@ -3,6 +3,7 @@ package com.client.party.controller
 import com.client.party.domain.Account
 import com.client.party.service.PartyAccountsService
 import com.client.party.controller.api.PartyAccountsApi
+import io.swagger.annotations.ApiParam
 import com.client.controller.AbstractController
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

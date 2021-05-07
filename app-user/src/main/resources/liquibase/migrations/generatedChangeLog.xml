@@ -16,15 +16,16 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
 			<column name="header_period_start" type="datetime"/>
 			<column name="header_period_end" type="datetime"/>
-			<column name="use_" type="VARCHAR(255)" />
-			<column name="type" type="VARCHAR(255)" />
+			<column name="use_" type="VARCHAR(512)" />
+			<column name="type" type="VARCHAR(512)" />
 			<column name="text" type="VARCHAR(256)" />
 			<column name="district" type="VARCHAR(100)" />
 			<column name="state" type="VARCHAR(100)" />
 			<column name="postal_code" type="VARCHAR(64)" />
-			<column name="country" type="VARCHAR(255)" />
+			<column name="country" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_attachment" labels="version:1.3.0">
@@ -38,15 +39,16 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
 			<column name="header_period_start" type="datetime"/>
 			<column name="header_period_end" type="datetime"/>
 			<column name="content_type" type="VARCHAR(100)" />
-			<column name="language" type="VARCHAR(255)" />
+			<column name="language" type="VARCHAR(512)" />
 			<column name="data" type="VARCHAR(2048)" />
-			<column name="url" type="VARCHAR(255)" />
+			<column name="url" type="VARCHAR(512)" />
 			<column name="size" type="int" />
 			<column name="hash" type="VARCHAR(2048)" />
-			<column name="title" type="VARCHAR(255)" />
+			<column name="title" type="VARCHAR(512)" />
 			<column name="creation" type="datetime" />
 		</createTable>
 	</changeSet>
@@ -60,10 +62,10 @@
 			<column name="id" type="${UUID}">
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
-			<column name="type" type="VARCHAR(255)" >
+			<column name="type" type="VARCHAR(512)" >
 				<constraints nullable="false"/>
 			</column>
-			<column name="code" type="VARCHAR(255)" />
+			<column name="code" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_contact" labels="version:1.0.0">
@@ -78,8 +80,8 @@
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
 			<column name="description" type="VARCHAR(510)"/>
-			<column name="type" type="VARCHAR(255)" />
-			<column name="person" type="VARCHAR(255)" />
+			<column name="type" type="VARCHAR(512)" />
+			<column name="person" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_contact_point" labels="version:1.0.0">
@@ -93,11 +95,12 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
 			<column name="header_period_start" type="datetime"/>
 			<column name="header_period_end" type="datetime"/>
-			<column name="system_" type="VARCHAR(255)" />
-			<column name="value" type="VARCHAR(255)" />
-			<column name="use_" type="VARCHAR(255)" />
+			<column name="system_" type="VARCHAR(512)" />
+			<column name="value" type="VARCHAR(512)" />
+			<column name="use_" type="VARCHAR(512)" />
 			<column name="rank_" type="int" />
 		</createTable>
 	</changeSet>
@@ -112,12 +115,13 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
 			<column name="header_period_start" type="datetime"/>
 			<column name="header_period_end" type="datetime"/>
 			<column name="days_of_week" type="${JSON_OBJECT}"/>
 			<column name="all_day" type="${BOOLEAN_VALUE}" />
-			<column name="opening_time" type="VARCHAR(255)" />
-			<column name="closing_time" type="VARCHAR(255)" />
+			<column name="opening_time" type="VARCHAR(512)" />
+			<column name="closing_time" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_human_name" labels="version:1.0.0">
@@ -131,9 +135,10 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
 			<column name="header_period_start" type="datetime"/>
 			<column name="header_period_end" type="datetime"/>
-			<column name="use_" type="VARCHAR(255)" />
+			<column name="use_" type="VARCHAR(512)" />
 			<column name="text" type="VARCHAR(1024)" />
 			<column name="family" type="VARCHAR(256)" />
 			<column name="given" type="${JSON_OBJECT}"/>
@@ -152,14 +157,15 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
 			<column name="header_period_start" type="datetime"/>
 			<column name="header_period_end" type="datetime"/>
-			<column name="use_" type="VARCHAR(255)" />
-			<column name="type" type="VARCHAR(255)" />
-			<column name="system_" type="VARCHAR(255)" />
-			<column name="value" type="VARCHAR(255)" />
-			<column name="description" type="VARCHAR(255)" />
-			<column name="assigner" type="VARCHAR(255)" />
+			<column name="use_" type="VARCHAR(512)" />
+			<column name="type" type="VARCHAR(512)" />
+			<column name="system_" type="VARCHAR(512)" />
+			<column name="value" type="VARCHAR(512)" />
+			<column name="description" type="VARCHAR(4096)" />
+			<column name="assigner" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_location" labels="version:1.0.0">
@@ -175,16 +181,16 @@
 			<column name="name" type="VARCHAR(255)"/>
 			<column name="description" type="VARCHAR(510)"/>
 			<column name="type" type="${JSON_OBJECT}"/>
-			<column name="mode" type="VARCHAR(255)" />
-			<column name="status" type="VARCHAR(255)" />
-			<column name="operational_status" type="VARCHAR(255)" />
-			<column name="physical_type" type="VARCHAR(255)" />
-			<column name="address" type="VARCHAR(255)" />
-			<column name="position_longitude" type="VARCHAR(255)"/>
-			<column name="position_altitude" type="VARCHAR(255)"/>
-			<column name="position_latitude" type="VARCHAR(255)"/>
-			<column name="availability_exceptions" type="VARCHAR(255)" />
-			<column name="part_of" type="VARCHAR(255)" />
+			<column name="mode" type="VARCHAR(512)" />
+			<column name="status" type="VARCHAR(512)" />
+			<column name="operational_status" type="VARCHAR(512)" />
+			<column name="physical_type" type="VARCHAR(512)" />
+			<column name="address" type="VARCHAR(512)" />
+			<column name="position_longitude" type="VARCHAR(512)"/>
+			<column name="position_altitude" type="VARCHAR(512)"/>
+			<column name="position_latitude" type="VARCHAR(512)"/>
+			<column name="availability_exceptions" type="VARCHAR(512)" />
+			<column name="part_of" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_person" labels="version:1.0.0">
@@ -199,9 +205,9 @@
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
 			<column name="description" type="VARCHAR(510)"/>
-			<column name="gender" type="VARCHAR(255)" />
+			<column name="gender" type="VARCHAR(512)" />
 			<column name="birth_date" type="datetime" />
-			<column name="photo" type="VARCHAR(255)" />
+			<column name="photo" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_reference_identity" labels="version:">
@@ -214,11 +220,11 @@
 			<column name="id" type="${UUID}">
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
-			<column name="resource_id" type="VARCHAR(255)" />
-			<column name="name" type="VARCHAR(255)" />
-			<column name="description" type="VARCHAR(255)" />
-			<column name="type" type="VARCHAR(255)" />
-			<column name="uri" type="VARCHAR(255)" />
+			<column name="resource_id" type="VARCHAR(512)" />
+			<column name="name" type="VARCHAR(512)" />
+			<column name="description" type="VARCHAR(512)" />
+			<column name="type" type="VARCHAR(512)" />
+			<column name="uri" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.6.1">
@@ -232,21 +238,21 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="parent_id" type="${UUID}"/>
-			<column name="parent_name" type="VARCHAR(255)"/>
-			<column name="parent_description" type="VARCHAR(255)"/>
-			<column name="type" type="VARCHAR(255)" />
-			<column name="state" type="VARCHAR(255)" />
+			<column name="parent_name" type="VARCHAR(512)"/>
+			<column name="parent_description" type="VARCHAR(4096)"/>
+			<column name="type" type="VARCHAR(512)" />
+			<column name="state" type="VARCHAR(512)" />
 			<column name="alias" type="${JSON_OBJECT}"/>
-			<column name="token" type="VARCHAR(255)" />
+			<column name="token" type="VARCHAR(512)" />
 			<column name="containing_folder" type="${UUID}" />
-			<column name="managing_organization" type="VARCHAR(255)" />
-			<column name="source" type="VARCHAR(255)" />
+			<column name="managing_organization" type="VARCHAR(512)" />
+			<column name="source" type="VARCHAR(512)" />
 			<column name="created_at" type="datetime"/>
 			<column name="created_by" type="VARCHAR(256)"/>
 			<column name="updated_at" type="datetime"/>
 			<column name="updated_by" type="VARCHAR(256)"/>
-			<column name="updated_note" type="VARCHAR(255)"/>
-			<column name="updated_message" type="VARCHAR(255)"/>
+			<column name="updated_note" type="VARCHAR(512)"/>
+			<column name="updated_message" type="VARCHAR(512)"/>
 			<column name="reviewed_at" type="datetime"/>
 			<column name="reviewed_by" type="VARCHAR(256)"/>
 			<column name="retired_at" type="datetime"/>
@@ -266,15 +272,15 @@
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
 			<column name="description" type="VARCHAR(510)"/>
-			<column name="email_address" type="VARCHAR(255)"/>
+			<column name="email_address" type="VARCHAR(512)"/>
 			<column name="email_verified" type="${BOOLEAN_VALUE}"/>
 			<column name="email_date_added" type="bigint"/>
 			<column name="email_date_bounced" type="bigint"/>
-			<column name="phone_home" type="VARCHAR(255)"/>
-			<column name="phone_work" type="VARCHAR(255)"/>
-			<column name="profile" type="VARCHAR(255)" />
-			<column name="primary_party" type="VARCHAR(255)" />
-			<column name="provider" type="VARCHAR(255)" />
+			<column name="phone_home" type="VARCHAR(512)"/>
+			<column name="phone_work" type="VARCHAR(512)"/>
+			<column name="profile" type="VARCHAR(512)" />
+			<column name="primary_party" type="VARCHAR(512)" />
+			<column name="provider" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
 
@@ -367,6 +373,24 @@
 		<addPrimaryKey columnNames="location_id, hours_of_operation_id"
 					   constraintName="pk_hours_of_operation_to_location"
 					   tableName="hours_of_operation_to_location"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_attachment_to_identifier">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment_to_identifier" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment_to_identifier">
+			<column name="identifier_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="identifier"/>
+			</column>
+			<column name="attachment_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="attachment"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="identifier_id, attachment_id"
+					   constraintName="pk_attachment_to_identifier"
+					   tableName="attachment_to_identifier"/>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_join_table_identifier_to_person">
 		<preConditions onFail="MARK_RAN">

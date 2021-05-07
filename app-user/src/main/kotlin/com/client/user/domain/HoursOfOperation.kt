@@ -27,6 +27,7 @@ data class HoursOfOperation(
 
 	@AttributeOverrides(
 		AttributeOverride(name = "order", column = Column(name = "header_order_")),
+		AttributeOverride(name = "rank", column = Column(name = "header_rank_")),
 		AttributeOverride(name = "period.start", column = Column(name = "header_period_start")),
 		AttributeOverride(name = "period.end", column = Column(name = "header_period_end")),
 	)

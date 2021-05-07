@@ -3,6 +3,7 @@ package com.client.organization.controller
 import com.client.organization.domain.Organization
 import com.client.organization.service.PartyOrganizationsService
 import com.client.organization.controller.api.PartyOrganizationsApi
+import io.swagger.annotations.ApiParam
 import com.client.controller.AbstractController
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

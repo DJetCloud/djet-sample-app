@@ -6,7 +6,6 @@ import com.client.user.domain.Attachment
 import com.client.user.domain.ContactPoint
 import com.client.user.domain.HumanName
 import com.client.user.domain.Identifier
-import java.util.Date
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
 import org.hibernate.annotations.LazyCollection

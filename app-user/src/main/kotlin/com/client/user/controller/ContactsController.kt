@@ -3,6 +3,7 @@ package com.client.user.controller
 import com.client.user.domain.Contact
 import com.client.user.service.ContactsService
 import com.client.user.controller.api.ContactsApi
+import io.swagger.annotations.ApiParam
 import com.client.controller.AbstractController
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

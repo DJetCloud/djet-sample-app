@@ -3,6 +3,7 @@ package com.client.party.controller
 import com.client.party.domain.LegalEntity
 import com.client.party.service.PartyLegalEntitiesService
 import com.client.party.controller.api.PartyLegalEntitiesApi
+import io.swagger.annotations.ApiParam
 import com.client.controller.AbstractController
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable

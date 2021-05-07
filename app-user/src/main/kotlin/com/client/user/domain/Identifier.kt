@@ -1,6 +1,7 @@
 package com.client.user.domain
 
 import com.client.domain.BaseDomain
+import com.client.user.domain.Attachment
 import com.client.user.domain.Element
 import com.client.user.domain.ReferenceIdentity
 import java.util.UUID
@@ -18,10 +19,11 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param value The value that is unique.
 * @param description Description of identifier. Provide additional information about identifier.
 * @param assigner Organization that issued id (may be just text)
+* @param attachment Image or copy of the document to support identifier.
 */
 @javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.5.0")
 
-@JsonPropertyOrder("header", "use", "type", "system", "value", "description", "id", "assigner")
+@JsonPropertyOrder("id", "header", "use", "type", "system", "value", "description", "assigner", "attachment")
 
 @Entity
 @Table(name = "identifier")
@@ -29,6 +31,7 @@ data class Identifier(
 
 	@AttributeOverrides(
 		AttributeOverride(name = "order", column = Column(name = "header_order_")),
+		AttributeOverride(name = "rank", column = Column(name = "header_rank_")),
 		AttributeOverride(name = "period.start", column = Column(name = "header_period_start")),
 		AttributeOverride(name = "period.end", column = Column(name = "header_period_end")),
 	)
@@ -52,7 +55,16 @@ data class Identifier(
 
 	@OneToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
 	@JoinColumn(name = "assigner", referencedColumnName = "id")
-	var assigner: ReferenceIdentity?
+	var assigner: ReferenceIdentity?,
+
+	@OneToMany(cascade = [CascadeType.ALL])
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@JoinTable(
+			name = "attachment_to_identifier",
+			joinColumns = [JoinColumn(name = "identifier_id", referencedColumnName = "id")],
+			inverseJoinColumns = [JoinColumn(name = "attachment_id", referencedColumnName = "id")]
+	)
+	var attachment: List<Attachment>?
 
 ) : BaseDomain()
 
