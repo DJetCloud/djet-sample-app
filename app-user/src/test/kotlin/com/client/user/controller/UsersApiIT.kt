@@ -44,6 +44,16 @@ class UsersApiIT : AbstractIntegrationTest<User>() {
 	}
 
 	@Test
+	fun `usersDeleteUser api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `usersGetUser with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)

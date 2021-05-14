@@ -42,6 +42,16 @@ class PartyOrganizationsApiIT : AbstractIntegrationTest<Organization>() {
 	}
 
 	@Test
+	fun `partyOrganizationsDeleteOrganization api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `partyOrganizationsGetOrganization with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)

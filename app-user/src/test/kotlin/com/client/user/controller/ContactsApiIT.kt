@@ -45,6 +45,16 @@ class ContactsApiIT : AbstractIntegrationTest<Contact>() {
 	}
 
 	@Test
+	fun `contactsDeleteContact api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `contactsGetContact with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)
@@ -148,6 +158,7 @@ class ContactsApiIT : AbstractIntegrationTest<Contact>() {
 				telecom = listOf(ContactPoint(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -161,6 +172,7 @@ class ContactsApiIT : AbstractIntegrationTest<Contact>() {
 				address = listOf(Address(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()

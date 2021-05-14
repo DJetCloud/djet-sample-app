@@ -49,6 +49,16 @@ class OrganizationRolesApiIT : AbstractIntegrationTest<OrganizationRole>() {
 	}
 
 	@Test
+	fun `organizationRolesDeleteOrganizationRole api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `organizationRolesGetOrganizationRole with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)
@@ -168,6 +178,7 @@ class OrganizationRolesApiIT : AbstractIntegrationTest<OrganizationRole>() {
 				telecom = listOf(CodeableConcept(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -176,6 +187,7 @@ class OrganizationRolesApiIT : AbstractIntegrationTest<OrganizationRole>() {
 					coding = listOf(Coding(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -193,6 +205,7 @@ class OrganizationRolesApiIT : AbstractIntegrationTest<OrganizationRole>() {
 				availableTime = listOf(AvailableTime(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -206,6 +219,7 @@ class OrganizationRolesApiIT : AbstractIntegrationTest<OrganizationRole>() {
 				notAvailable = listOf(NotAvailableTime(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()

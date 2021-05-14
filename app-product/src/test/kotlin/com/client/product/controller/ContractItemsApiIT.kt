@@ -214,7 +214,7 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 					end = Date()
 				)
 				),
-					party = "f8156a0a-bfd3-478d-8803-60e9eaf2faad",
+					party = "4c0bed7f-9931-4f6d-af3b-f4cde411bdf3",
 					value = 777.toBigDecimal(),
 					ratio = "test string (was object) value"
 				)),
@@ -227,11 +227,11 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 					end = Date()
 				)
 				),
-					payParty = "dc4fe015-3b14-424b-8b95-6f6194059ae6",
-					receiveParty = "4d7ff0cc-0dd8-4247-9f07-6bef76691852",
+					payParty = "ded5be06-41b7-4d59-bb89-982e5f3a6cf4",
+					receiveParty = "5b68acc4-976d-4f0e-847d-4b7cf650a0ba",
 					value = 777.toBigDecimal(),
 					ratio = "test string (was object) value",
-					base = "3bd16a97-3b7a-4aa3-a27d-616fb5383e9f"
+					base = "03895f85-b8ac-4a26-abcc-b042db9d3b08"
 				))
 		).apply {
 			this.identity.name = "test user name"

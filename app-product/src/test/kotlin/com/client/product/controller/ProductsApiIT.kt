@@ -162,6 +162,9 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 		assertEquals(savedResource.availabilityExceptions, getValue(result, "$prefix.availabilityExceptions"))
 		assertObjectEquals(savedResource.price, getValue(result, "$prefix.price"))
 		assertEquals(savedResource.partyId, getValue(result, "$prefix.partyId"))
+		assertEquals(savedResource.critical, getValue(result, "$prefix.critical"))
+		assertEquals(savedResource.rank, getValue(result, "$prefix.rank") as Int?)
+		assertEquals(savedResource.estimation, getValue(result, "$prefix.estimation"))
 	}
 
 	private fun createWithRequiredFields(): Product {
@@ -192,7 +195,10 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 				notAvailable = null,
 				availabilityExceptions = null,
 				price = null,
-				partyId = null
+				partyId = null,
+				critical = null,
+				rank = null,
+				estimation = null
 		).apply {
 			this.identity.name = "test name"
 			this.identity.description = "test description"
@@ -204,7 +210,7 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 	private fun createWithAllFields(): Product {
 		return Product(
 				type = "test_enum_value",
-				category = "a1cb11bd-f54c-415a-813a-44477fd10386",
+				category = "ab6749eb-9f70-4eae-881c-3f23a4622ade",
 				reference = ReferenceIdentity(
 					resourceId = "test string value",
 					name = "test string value",
@@ -248,7 +254,7 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 					end = Date()
 				)
 				),
-					party = "0eed972f-5355-4c71-86db-b9f9ea8d66fb",
+					party = "11c3225b-7e70-4898-bc18-207ee0eed02d",
 					value = 777.toBigDecimal(),
 					ratio = "test string (was object) value"
 				)
@@ -341,7 +347,10 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 					code = "test string valu",
 				)
 				),
-				partyId = "305fe2d0-4224-405e-8067-afeb547cfb88"
+				partyId = "fa359642-914e-4d51-8219-23761bd8873c",
+				critical = false,
+				rank = 8,
+				estimation = "test string value"
 		).apply {
 			this.identity.name = "test user name"
 			this.identity.description = "test user description"

@@ -47,6 +47,16 @@ class LocationsApiIT : AbstractIntegrationTest<Location>() {
 	}
 
 	@Test
+	fun `locationsDeleteLocation api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `locationsGetLocation with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)
@@ -168,6 +178,7 @@ class LocationsApiIT : AbstractIntegrationTest<Location>() {
 				telecom = listOf(ContactPoint(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -181,6 +192,7 @@ class LocationsApiIT : AbstractIntegrationTest<Location>() {
 				address = Address(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -202,6 +214,7 @@ class LocationsApiIT : AbstractIntegrationTest<Location>() {
 				hoursOfOperation = listOf(HoursOfOperation(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()

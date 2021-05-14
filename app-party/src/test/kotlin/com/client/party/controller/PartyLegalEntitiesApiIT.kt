@@ -43,6 +43,16 @@ class PartyLegalEntitiesApiIT : AbstractIntegrationTest<LegalEntity>() {
 	}
 
 	@Test
+	fun `partyLegalEntitiesDeleteLegalEntity api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `partyLegalEntitiesGetLegalEntity with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)

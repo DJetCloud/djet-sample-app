@@ -172,9 +172,6 @@
 			<column name="header_rank_" type="int"/>
 			<column name="header_period_start" type="datetime"/>
 			<column name="header_period_end" type="datetime"/>
-			<column name="role" type="VARCHAR(512)" >
-				<constraints nullable="false"/>
-			</column>
 			<column name="party" type="VARCHAR(512)" >
 				<constraints nullable="false"/>
 			</column>
@@ -284,6 +281,9 @@
 			<column name="availability_exceptions" type="VARCHAR(512)" />
 			<column name="price" type="VARCHAR(512)" />
 			<column name="party_id" type="${UUID}" />
+			<column name="critical" type="${BOOLEAN_VALUE}" />
+			<column name="rank_" type="int" />
+			<column name="estimation" type="VARCHAR(100)" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_product_category" labels="version:1.0.0">

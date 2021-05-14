@@ -46,6 +46,16 @@ class OrganizationEmployeesApiIT : AbstractIntegrationTest<Employee>() {
 	}
 
 	@Test
+	fun `organizationEmployeesDeleteEmployee api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `organizationEmployeesGetEmployee with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)
@@ -153,6 +163,7 @@ class OrganizationEmployeesApiIT : AbstractIntegrationTest<Employee>() {
 				role = listOf(EmployeeRole(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()

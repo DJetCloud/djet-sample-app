@@ -705,6 +705,10 @@ paths:
       operationId: productsGetProduct
       parameters:
       - $ref: '#/components/parameters/partyId'
+      - $ref: '#/components/parameters/type'
+      - $ref: '#/components/parameters/critical'
+      - $ref: '#/components/parameters/rank'
+      - $ref: '#/components/parameters/estimation'
       responses:
         "200":
           description: Contact is found and returned.
@@ -814,6 +818,10 @@ paths:
       parameters:
       - $ref: '#/components/parameters/search'
       - $ref: '#/components/parameters/partyId'
+      - $ref: '#/components/parameters/type'
+      - $ref: '#/components/parameters/critical'
+      - $ref: '#/components/parameters/rank'
+      - $ref: '#/components/parameters/estimation'
       responses:
         "200":
           description: Contact is found and returned.
@@ -1409,7 +1417,6 @@ components:
       required:
       - id
       - party
-      - role
       type: object
       properties:
         id:
@@ -1424,12 +1431,6 @@ components:
           - $ref: '#/components/schemas/Element'
           x-data-type: Structure
           x-usage: Property
-        role:
-          description: Role of the party in the contract.
-          allOf:
-          - $ref: '#/components/schemas/ContractPartyRole'
-          x-data-type: Enum
-          x-usage: Value
         party:
           type: string
           description: 'Reference to party legal entity playing this role in the contract.
@@ -4149,8 +4150,25 @@ components:
           x-usage: Property
         partyId:
           type: string
+          description: a sample of Guid
           format: uuid
           x-data-type: Guid
+          x-usage: Property
+        critical:
+          type: boolean
+          description: a sample of a boolean flag
+          x-data-type: Boolean
+          x-usage: Property
+        rank:
+          type: integer
+          description: a sample of number property
+          x-data-type: Integer
+          x-usage: Property
+        estimation:
+          maxLength: 100
+          type: string
+          description: a sample of String
+          x-data-type: String
           x-usage: Property
       description: Products represent goods or services supplied by organizations
         of the party.
@@ -4395,7 +4413,7 @@ components:
     partyId:
       name: partyId
       in: header
-      description: for filtering
+      description: for filtering as a sample of Guid
       required: false
       schema:
         type: string
@@ -4404,6 +4422,35 @@ components:
       in: path
       description: Product Id to fetch and put records
       required: true
+      schema:
+        type: string
+    critical:
+      name: critical
+      in: header
+      description: for filtering as a sample of boolean
+      required: false
+      schema:
+        type: boolean
+    type:
+      name: type
+      in: header
+      description: for filtering as a sample of Enum
+      required: false
+      schema:
+        type: string
+    rank:
+      name: rank
+      in: header
+      description: for filtering as a sample of Integer
+      required: false
+      schema:
+        type: integer
+        format: int32
+    estimation:
+      name: estimation
+      in: header
+      description: for filtering as a sample of String
+      required: false
       schema:
         type: string
   requestBodies:

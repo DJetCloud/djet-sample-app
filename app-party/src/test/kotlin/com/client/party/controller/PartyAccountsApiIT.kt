@@ -47,6 +47,16 @@ class PartyAccountsApiIT : AbstractIntegrationTest<Account>() {
 	}
 
 	@Test
+	fun `partyAccountsDeleteAccount api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
 	fun `partyAccountsGetAccount with required fields`() {
 		val res = createWithRequiredFields()
 		val savedRes = repository.save(res)
@@ -156,6 +166,7 @@ class PartyAccountsApiIT : AbstractIntegrationTest<Account>() {
 				paymentInstruments = listOf(PaymentInstrument(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()

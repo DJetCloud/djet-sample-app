@@ -102,6 +102,9 @@ class ProductsReadOnlyApiIT : AbstractIntegrationTest<Product>() {
 		assertEquals(savedResource.availabilityExceptions, getValue(result, "$prefix.availabilityExceptions"))
 		assertObjectEquals(savedResource.price, getValue(result, "$prefix.price"))
 		assertEquals(savedResource.partyId, getValue(result, "$prefix.partyId"))
+		assertEquals(savedResource.critical, getValue(result, "$prefix.critical"))
+		assertEquals(savedResource.rank, getValue(result, "$prefix.rank") as Int?)
+		assertEquals(savedResource.estimation, getValue(result, "$prefix.estimation"))
 	}
 
 	private fun createWithRequiredFields(): Product {
@@ -132,7 +135,10 @@ class ProductsReadOnlyApiIT : AbstractIntegrationTest<Product>() {
 				notAvailable = null,
 				availabilityExceptions = null,
 				price = null,
-				partyId = null
+				partyId = null,
+				critical = null,
+				rank = null,
+				estimation = null
 		).apply {
 			this.identity.name = "test name"
 			this.identity.description = "test description"
@@ -143,7 +149,7 @@ class ProductsReadOnlyApiIT : AbstractIntegrationTest<Product>() {
 	private fun createWithAllFields(): Product {
 		return Product(
 				type = "test_enum_value",
-				category = "3657e511-a107-4e41-9c1f-f44491e9a88b",
+				category = "654b9da1-660b-448d-97c3-a678d505d213",
 				reference = ReferenceIdentity(
 					resourceId = "test string value",
 					name = "test string value",
@@ -187,7 +193,7 @@ class ProductsReadOnlyApiIT : AbstractIntegrationTest<Product>() {
 					end = Date()
 				)
 				),
-					party = "af116b62-34b1-4067-9653-6a6a37d2f0eb",
+					party = "4d113be8-8622-4076-a2f8-11aa207c0ba5",
 					value = 777.toBigDecimal(),
 					ratio = "test string (was object) value"
 				)
@@ -280,7 +286,10 @@ class ProductsReadOnlyApiIT : AbstractIntegrationTest<Product>() {
 					code = "test string valu",
 				)
 				),
-				partyId = "59540029-421d-4ac8-80e1-859b6b16948c"
+				partyId = "9ba79fe8-a5f2-4db0-9077-9c6351d48f1e",
+				critical = false,
+				rank = 8,
+				estimation = "test string value"
 		).apply {
 			this.identity.name = "test user name"
 			this.identity.description = "test user description"

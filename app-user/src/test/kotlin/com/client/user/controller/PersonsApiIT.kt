@@ -5,10 +5,10 @@ import com.client.user.domain.Identifier
 import com.client.user.domain.Element
 import com.client.user.domain.Period
 import com.client.user.domain.ReferenceIdentity
+import com.client.user.domain.Attachment
 import com.client.user.domain.HumanName
 import com.client.user.domain.ContactPoint
 import com.client.user.domain.Address
-import com.client.user.domain.Attachment
 import com.client.user.UserApplication
 import com.client.user.repository.PersonsRepository
 import org.junit.jupiter.api.Test
@@ -45,6 +45,16 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
 		val savedRes = repository.getOne(findIdentityId(result))
+		resourceAsserts(savedRes, result)
+	}
+
+	@Test
+	fun `personsDeletePerson api`() {
+		val res = createWithRequiredFields()
+		val savedRes = repository.save(res)
+
+		val result = super.delete(url, savedRes.id!!)
+		savedRes.entity.state = "deleted"
 		resourceAsserts(savedRes, result)
 	}
 
@@ -157,6 +167,7 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 				identifier = listOf(Identifier(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -173,11 +184,30 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 					description = "test string value",
 					type = "test string value",
 					uri = "test string value"
+				),
+					attachment = listOf(Attachment(
+					header = Element(
+					order = 8,
+					rank = 8,
+					period = Period(
+					start = Date(),
+					end = Date()
 				)
+				),
+					contentType = "test string value",
+					language = "test_enum_value",
+					data = "test string value",
+					url = "test string value",
+					size = 8,
+					hash = "test string value",
+					title = "test string value",
+					creation = Date()
+				))
 				)),
 				name = listOf(HumanName(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -193,6 +223,7 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 				telecom = listOf(ContactPoint(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -208,6 +239,7 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 				address = listOf(Address(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
@@ -224,6 +256,7 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 				photo = Attachment(
 					header = Element(
 					order = 8,
+					rank = 8,
 					period = Period(
 					start = Date(),
 					end = Date()
