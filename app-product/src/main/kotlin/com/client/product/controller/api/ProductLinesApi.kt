@@ -28,7 +28,7 @@ interface ProductLinesApi {
     @PostMapping("/parties/{partyId}/productlines")
     fun productLinesCreateProductLine(
 			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -41,7 +41,7 @@ interface ProductLinesApi {
     @DeleteMapping("/parties/{partyId}/productlines/{productLineId}")
     fun productLinesDeleteProductLine(
 			@PathVariable("productLineId") productLineId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -54,7 +54,7 @@ interface ProductLinesApi {
     @GetMapping("/parties/{partyId}/productlines/{productLineId}")
     fun productLinesGetProductLine(
 			@PathVariable("productLineId") productLineId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -66,7 +66,7 @@ interface ProductLinesApi {
     )
     @GetMapping("/parties/{partyId}/productlines")
     fun productLinesGetProductLineList(
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<ProductLine>> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
@@ -82,7 +82,7 @@ interface ProductLinesApi {
     fun productLinesModifyProductLine(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -96,7 +96,7 @@ interface ProductLinesApi {
     fun productLinesUpdateProductLine(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
