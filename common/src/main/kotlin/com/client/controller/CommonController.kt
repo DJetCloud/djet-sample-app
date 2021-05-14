@@ -22,4 +22,6 @@ interface CommonController<E : BaseResource> {
     fun modify(id: String, domain: E, filter: Map<String, Any?>): ResponseEntity<E>
     fun saveAll(domains: List<E>, filter: Map<String, Any?>): List<E>
     fun deleteAll(ids: List<String>, filter: Map<String, Any?>): List<E>
+
+	fun getAll(search: String?, pageable: Pageable, filter: CommonFilter<E>): ResponseEntity<Page<E>>
 }

@@ -1,5 +1,6 @@
 package com.client.product.controller.api
 
+import com.client.product.controller.filter.ProductFilterOnPartyIdTypeCriticalRankEstimation
 import com.client.product.domain.Product
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
@@ -71,14 +72,10 @@ interface ProductsApi {
     )
     @GetMapping("/productlines/{productLineId}/products")
     fun productsGetProductList(
-			@PathVariable("productLineId") productLineId: String,
-			@RequestParam(value = "search", required = false) search: String?,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
-			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
-			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
-			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
-			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?,
-			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
+		@PathVariable("productLineId") productLineId: String,
+		@RequestParam(value = "search", required = false) search: String?,
+		filter: ProductFilterOnPartyIdTypeCriticalRankEstimation,
+		@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 

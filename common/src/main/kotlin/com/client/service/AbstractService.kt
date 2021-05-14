@@ -1,5 +1,6 @@
 package com.client.service
 
+import com.client.controller.CommonFilter
 import com.client.domain.BaseResource
 import com.client.repository.CommonRepository
 import com.github.ichanzhar.rsql.JpaRsqlVisitor
@@ -9,7 +10,6 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.domain.Specification
 import org.springframework.data.repository.findByIdOrNull
-import java.util.*
 
 abstract class AbstractService<E: BaseResource, R: CommonRepository<E>>(protected val repository: R): CommonService<E> {
 
@@ -76,5 +76,13 @@ abstract class AbstractService<E: BaseResource, R: CommonRepository<E>>(protecte
 		val rootNode: Node = RsqlParserFactory.instance().parse("id==$id;(entity.state=isNull=true,entity.state!=deleted);$filter")
 		val spec: Specification<E> = rootNode.accept(JpaRsqlVisitor())
 		return repository.findOne(spec).orElse(null)
+	}
+
+	override fun getAll(pageable: Pageable, query: String?, filter: CommonFilter<E>): Page<E> {
+		val queryStr = if(query.isNullOrBlank()) "" else ";$query"
+		val rootNode: Node = RsqlParserFactory.instance().parse("(entity.state=isNull=true,entity.state!=deleted)$queryStr")
+		val baseSpec: Specification<E> = rootNode.accept(JpaRsqlVisitor())
+		val spec = baseSpec.and(filter.toSpecification())
+		return repository.findAll(spec, pageable)
 	}
 }

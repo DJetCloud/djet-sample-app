@@ -293,4 +293,13 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		}
 		return result
 	}
+
+	override fun getAll(search: String?, pageable: Pageable, filter: CommonFilter<E>): ResponseEntity<Page<E>> {
+		return ResponseEntity(service.getAll(pageable, search, filter), HttpStatus.OK)
+	}
+
+	override fun getAll(parentId: String, search: String?, pageable: Pageable, filter: CommonFilter<E>): ResponseEntity<Page<E>> {
+		val searchCriteria = getSearchCriteria(search, parentId)
+		return ResponseEntity(service.getAll(pageable, searchCriteria, filter), HttpStatus.OK)
+	}
 }
