@@ -21,35 +21,35 @@ class PersonsController(service: PersonsService)
 
     override fun personsCreatePerson(
 			@RequestBody person: Person): ResponseEntity<Person> {
-        return super.create(person)
+		return super.create(person)
     }
 
     override fun personsDeletePerson(
 			@PathVariable("personId") personId: String): ResponseEntity<Person> {
-        return super.delete(personId)
+		return super.delete(personId)
     }
 
     override fun personsGetPerson(
 			@PathVariable("personId") personId: String): ResponseEntity<Person> {
-        return super.getById(personId)
+		return super.getById(personId)
     }
 
     override fun personsGetPersonList(
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Person>> {
-        return getAll(search, page)
+		return getAll(search, page)
     }
 
     override fun personsModifyPerson(
 			@PathVariable("personId") personId: String,
 			@RequestBody person: Person): ResponseEntity<Person> {
-        return super.modify(personId, person)
+		return super.modify(personId, person)
     }
 
     override fun personsUpdatePerson(
 			@PathVariable("personId") personId: String,
 			@RequestBody person: Person): ResponseEntity<Person> {
-        return super.update(personId, person)
+		return super.update(personId, person)
     }
 
 }

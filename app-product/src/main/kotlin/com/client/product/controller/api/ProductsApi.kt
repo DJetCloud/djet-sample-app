@@ -1,9 +1,6 @@
 package com.client.product.controller.api
 
 import com.client.product.domain.Product
-import com.client.product.controller.filter.ProductFilterOnCriticalEstimationPartyIdRankType
-import com.client.product.controller.filter.ProductFilterOnPartyIdRank
-import com.client.product.controller.filter.ProductFilterOnPartyId
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import io.swagger.annotations.ApiResponse
@@ -58,7 +55,11 @@ interface ProductsApi {
     fun productsGetProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			filter: ProductFilterOnCriticalEstimationPartyIdRankType): ResponseEntity<Product> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?): ResponseEntity<Product> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -72,8 +73,12 @@ interface ProductsApi {
     fun productsGetProductList(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestParam(value = "search", required = false) search: String?,
-			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable,
-			filter: ProductFilterOnCriticalEstimationPartyIdRankType): ResponseEntity<Page<Product>> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?,
+			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -88,7 +93,8 @@ interface ProductsApi {
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
 			@RequestBody product: Product,
-			filter: ProductFilterOnPartyIdRank): ResponseEntity<Product> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?): ResponseEntity<Product> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -103,7 +109,7 @@ interface ProductsApi {
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
 			@RequestBody product: Product,
-			filter: ProductFilterOnPartyId): ResponseEntity<Product> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<Product> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 

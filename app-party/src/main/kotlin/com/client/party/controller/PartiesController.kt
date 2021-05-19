@@ -21,35 +21,35 @@ class PartiesController(service: PartiesService)
 
     override fun partiesCreateParty(
 			@RequestBody party: Party): ResponseEntity<Party> {
-        return super.create(party)
+		return super.create(party)
     }
 
     override fun partiesDeleteParty(
 			@PathVariable("partyId") partyId: String): ResponseEntity<Party> {
-        return super.delete(partyId)
+		return super.delete(partyId)
     }
 
     override fun partiesGetParty(
 			@PathVariable("partyId") partyId: String): ResponseEntity<Party> {
-        return super.getById(partyId)
+		return super.getById(partyId)
     }
 
     override fun partiesGetPartyList(
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Party>> {
-        return getAll(search, page)
+		return getAll(search, page)
     }
 
     override fun partiesModifyParty(
 			@PathVariable("partyId") partyId: String,
 			@RequestBody party: Party): ResponseEntity<Party> {
-        return super.modify(partyId, party)
+		return super.modify(partyId, party)
     }
 
     override fun partiesUpdateParty(
 			@PathVariable("partyId") partyId: String,
 			@RequestBody party: Party): ResponseEntity<Party> {
-        return super.update(partyId, party)
+		return super.update(partyId, party)
     }
 
 }

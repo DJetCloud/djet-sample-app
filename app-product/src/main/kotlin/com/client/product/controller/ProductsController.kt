@@ -25,44 +25,57 @@ class ProductsController(service: ProductsService)
     override fun productsCreateProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestBody product: Product): ResponseEntity<Product> {
-        return super.create(productLineId, product)
+		return super.create(productLineId, product)
     }
 
     override fun productsDeleteProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String): ResponseEntity<Product> {
-        return super.delete(productLineId, productId)
+		return super.delete(productLineId, productId)
     }
 
     override fun productsGetProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			filter: ProductFilterOnCriticalEstimationPartyIdRankType): ResponseEntity<Product> {
-        return super.getById(productLineId, productId, filter)
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?): ResponseEntity<Product> {
+		val filter = ProductFilterOnCriticalEstimationPartyIdRankType(partyId, type, critical, rank, estimation)
+		return super.getById(productLineId, productId, filter)
     }
 
     override fun productsGetProductList(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestParam(value = "search", required = false) search: String?,
-			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable,
-			filter: ProductFilterOnCriticalEstimationPartyIdRankType): ResponseEntity<Page<Product>> {
-        return getAll(productLineId, search, page, filter)
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?,
+			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
+		val filter = ProductFilterOnCriticalEstimationPartyIdRankType(partyId, type, critical, rank, estimation)
+		return getAll(productLineId, search, page, filter)
     }
 
     override fun productsModifyProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
 			@RequestBody product: Product,
-			filter: ProductFilterOnPartyIdRank): ResponseEntity<Product> {
-        return super.modify(productLineId, productId, product, filter)
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?): ResponseEntity<Product> {
+		val filter = ProductFilterOnPartyIdRank(partyId, rank)
+		return super.modify(productLineId, productId, product, filter)
     }
 
     override fun productsUpdateProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
 			@RequestBody product: Product,
-			filter: ProductFilterOnPartyId): ResponseEntity<Product> {
-        return super.update(productLineId, productId, product, filter)
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<Product> {
+		val filter = ProductFilterOnPartyId(partyId)
+		return super.update(productLineId, productId, product, filter)
     }
 
 }

@@ -22,40 +22,40 @@ class PartyAccountsController(service: PartyAccountsService)
     override fun partyAccountsCreateAccount(
 			@PathVariable("partyId") partyId: String,
 			@RequestBody account: Account): ResponseEntity<Account> {
-        return super.create(partyId, account)
+		return super.create(partyId, account)
     }
 
     override fun partyAccountsDeleteAccount(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("accountId") accountId: String): ResponseEntity<Account> {
-        return super.delete(partyId, accountId)
+		return super.delete(partyId, accountId)
     }
 
     override fun partyAccountsGetAccount(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("accountId") accountId: String): ResponseEntity<Account> {
-        return super.getById(partyId, accountId)
+		return super.getById(partyId, accountId)
     }
 
     override fun partyAccountsGetAccountList(
 			@PathVariable("partyId") partyId: String,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Account>> {
-        return getAll(partyId, search, page)
+		return getAll(partyId, search, page)
     }
 
     override fun partyAccountsModifyAccount(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("accountId") accountId: String,
 			@RequestBody account: Account): ResponseEntity<Account> {
-        return super.modify(partyId, accountId, account)
+		return super.modify(partyId, accountId, account)
     }
 
     override fun partyAccountsUpdateAccount(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("accountId") accountId: String,
 			@RequestBody account: Account): ResponseEntity<Account> {
-        return super.update(partyId, accountId, account)
+		return super.update(partyId, accountId, account)
     }
 
 }

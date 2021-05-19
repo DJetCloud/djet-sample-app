@@ -22,40 +22,40 @@ class PartyLegalEntitiesController(service: PartyLegalEntitiesService)
     override fun partyLegalEntitiesCreateLegalEntity(
 			@PathVariable("partyId") partyId: String,
 			@RequestBody legalEntity: LegalEntity): ResponseEntity<LegalEntity> {
-        return super.create(partyId, legalEntity)
+		return super.create(partyId, legalEntity)
     }
 
     override fun partyLegalEntitiesDeleteLegalEntity(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("legalentityId") legalentityId: String): ResponseEntity<LegalEntity> {
-        return super.delete(partyId, legalentityId)
+		return super.delete(partyId, legalentityId)
     }
 
     override fun partyLegalEntitiesGetLegalEntity(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("legalentityId") legalentityId: String): ResponseEntity<LegalEntity> {
-        return super.getById(partyId, legalentityId)
+		return super.getById(partyId, legalentityId)
     }
 
     override fun partyLegalEntitiesGetLegalEntityList(
 			@PathVariable("partyId") partyId: String,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<LegalEntity>> {
-        return getAll(partyId, search, page)
+		return getAll(partyId, search, page)
     }
 
     override fun partyLegalEntitiesModifyLegalEntity(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("legalentityId") legalentityId: String,
 			@RequestBody legalEntity: LegalEntity): ResponseEntity<LegalEntity> {
-        return super.modify(partyId, legalentityId, legalEntity)
+		return super.modify(partyId, legalentityId, legalEntity)
     }
 
     override fun partyLegalEntitiesUpdateLegalEntity(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("legalentityId") legalentityId: String,
 			@RequestBody legalEntity: LegalEntity): ResponseEntity<LegalEntity> {
-        return super.update(partyId, legalentityId, legalEntity)
+		return super.update(partyId, legalentityId, legalEntity)
     }
 
 }

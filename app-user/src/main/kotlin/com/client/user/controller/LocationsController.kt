@@ -21,35 +21,35 @@ class LocationsController(service: LocationsService)
 
     override fun locationsCreateLocation(
 			@RequestBody location: Location): ResponseEntity<Location> {
-        return super.create(location)
+		return super.create(location)
     }
 
     override fun locationsDeleteLocation(
 			@PathVariable("locationId") locationId: String): ResponseEntity<Location> {
-        return super.delete(locationId)
+		return super.delete(locationId)
     }
 
     override fun locationsGetLocation(
 			@PathVariable("locationId") locationId: String): ResponseEntity<Location> {
-        return super.getById(locationId)
+		return super.getById(locationId)
     }
 
     override fun locationsGetLocationList(
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Location>> {
-        return getAll(search, page)
+		return getAll(search, page)
     }
 
     override fun locationsModifyLocation(
 			@PathVariable("locationId") locationId: String,
 			@RequestBody location: Location): ResponseEntity<Location> {
-        return super.modify(locationId, location)
+		return super.modify(locationId, location)
     }
 
     override fun locationsUpdateLocation(
 			@PathVariable("locationId") locationId: String,
 			@RequestBody location: Location): ResponseEntity<Location> {
-        return super.update(locationId, location)
+		return super.update(locationId, location)
     }
 
 }

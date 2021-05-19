@@ -21,13 +21,13 @@ class ProductsReadOnlyController(service: ProductsReadOnlyService)
 
     override fun productsReadOnlyGetProduct(
 			@PathVariable("productId") productId: String): ResponseEntity<Product> {
-        return super.getById(productId)
+		return super.getById(productId)
     }
 
     override fun productsReadOnlyGetProductList(
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
-        return getAll(search, page)
+		return getAll(search, page)
     }
 
 }

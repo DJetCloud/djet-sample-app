@@ -22,40 +22,40 @@ class ProductLinesController(service: ProductLinesService)
     override fun productLinesCreateProductLine(
 			@RequestBody productLine: ProductLine,
 			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.create(productLine)
+		return super.create(productLine)
     }
 
     override fun productLinesDeleteProductLine(
 			@PathVariable("productLineId") productLineId: String,
 			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.delete(productLineId)
+		return super.delete(productLineId)
     }
 
     override fun productLinesGetProductLine(
 			@PathVariable("productLineId") productLineId: String,
 			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.getById(productLineId)
+		return super.getById(productLineId)
     }
 
     override fun productLinesGetProductLineList(
 			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<ProductLine>> {
-        return getAll(search, page)
+		return getAll(search, page)
     }
 
     override fun productLinesModifyProductLine(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestBody productLine: ProductLine,
 			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.modify(productLineId, productLine)
+		return super.modify(productLineId, productLine)
     }
 
     override fun productLinesUpdateProductLine(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestBody productLine: ProductLine,
 			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.update(productLineId, productLine)
+		return super.update(productLineId, productLine)
     }
 
 }
