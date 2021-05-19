@@ -4,6 +4,7 @@ import com.client.controller.CommonFilter
 import com.client.domain.BaseResource
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
+import java.util.*
 
 interface CommonService<E: BaseResource> {
 	fun save(domain: E): E?
@@ -14,6 +15,6 @@ interface CommonService<E: BaseResource> {
 	fun getAll(pageable: Pageable, query: String?): Page<E>
 	fun getByIds(ids: List<String>): List<E>
 	fun deleteAll(domains: List<E>)
-	fun getByIdAndFilter(id: String, filter: String): E?
 	fun getAll(pageable: Pageable, query: String?, filter: CommonFilter<E>): Page<E>
+	fun getById(id: String, filter: CommonFilter<E>): E?
 }

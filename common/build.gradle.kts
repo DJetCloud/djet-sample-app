@@ -10,7 +10,7 @@ plugins {
 dependencies {
 	implementation(kotlin("stdlib-jdk8"))
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	kapt( "org.hibernate:hibernate-jpamodelgen:5.4.30.Final")
+	kapt("org.hibernate:hibernate-jpamodelgen:5.4.30.Final")
 
 	api("io.springfox:springfox-boot-starter:3.0.0")
 	api("com.vladmihalcea:hibernate-types-52:2.9.13")

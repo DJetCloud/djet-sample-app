@@ -8,12 +8,12 @@ import javax.persistence.criteria.CriteriaBuilder
 import javax.persistence.criteria.CriteriaQuery
 import javax.persistence.criteria.Root
 
-class ProductFilterOnPartyIdTypeCriticalRankEstimation(
-	val partyId: String?,
-	val type: String?,
-	val critical: Boolean?,
-	val rank: Int?,
-	val estimation: String?
+class ProductFilterOnCriticalEstimationPartyIdRankType (
+	val partyId:String?,
+	val type:String?,
+	val critical:Boolean?,
+	val rank:Int?,
+	val estimation:String?
 ) : CommonFilter<Product> {
 	override fun toSpecification(): Specification<Product> {
 		return byPartyId().and(byType()).and(byCritical()).and(byRank()).and(byEstimation())
@@ -56,5 +56,49 @@ class ProductFilterOnPartyIdTypeCriticalRankEstimation(
 		val rankQuery = if (rank != null) "rank==$rank;" else ""
 		val estimationQuery = if (estimation != null) "estimation==$estimation" else ""
 		return partyIdQuery + typeQuery + criticalQuery + rankQuery + estimationQuery
+	}
+}
+class ProductFilterOnPartyIdRank (
+	val partyId:String?,
+	val rank:Int?
+) : CommonFilter<Product> {
+	override fun toSpecification(): Specification<Product> {
+		return byPartyId().and(byRank())
+	}
+
+	private fun byPartyId(): Specification<Product> {
+		return Specification { root: Root<Product>, _: CriteriaQuery<*>, builder: CriteriaBuilder ->
+			partyId?.let { builder.equal(root.get(Product_.partyId), it) }
+		}
+	}
+
+	private fun byRank(): Specification<Product> {
+		return Specification { root: Root<Product>, _: CriteriaQuery<*>, builder: CriteriaBuilder ->
+			rank?.let { builder.equal(root.get(Product_.rank), it) }
+		}
+	}
+
+	override fun getQuery(): String {
+		val partyIdQuery = if (partyId != null) "partyId==$partyId;" else ""
+		val rankQuery = if (rank != null) "rank==$rank" else ""
+		return partyIdQuery + rankQuery
+	}
+}
+class ProductFilterOnPartyId (
+	val partyId:String?
+) : CommonFilter<Product> {
+	override fun toSpecification(): Specification<Product> {
+		return byPartyId()
+	}
+
+	private fun byPartyId(): Specification<Product> {
+		return Specification { root: Root<Product>, _: CriteriaQuery<*>, builder: CriteriaBuilder ->
+			partyId?.let { builder.equal(root.get(Product_.partyId), it) }
+		}
+	}
+
+	override fun getQuery(): String {
+		val partyIdQuery = if (partyId != null) "partyId==$partyId" else ""
+		return partyIdQuery
 	}
 }

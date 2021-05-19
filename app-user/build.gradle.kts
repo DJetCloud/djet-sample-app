@@ -15,7 +15,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
-	kapt( "org.hibernate:hibernate-jpamodelgen:5.4.30.Final")
+	kapt("org.hibernate:hibernate-jpamodelgen:5.4.30.Final")
 
 	testImplementation("org.springframework.boot:spring-boot-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
