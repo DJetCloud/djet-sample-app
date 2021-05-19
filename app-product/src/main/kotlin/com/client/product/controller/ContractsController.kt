@@ -21,35 +21,35 @@ class ContractsController(service: ContractsService)
 
     override fun contractsCreateContract(
 			@RequestBody contract: Contract): ResponseEntity<Contract> {
-        return super.create(contract)
+		return super.create(contract)
     }
 
     override fun contractsDeleteContract(
 			@PathVariable("contractId") contractId: String): ResponseEntity<Contract> {
-        return super.delete(contractId)
+		return super.delete(contractId)
     }
 
     override fun contractsGetContract(
 			@PathVariable("contractId") contractId: String): ResponseEntity<Contract> {
-        return super.getById(contractId)
+		return super.getById(contractId)
     }
 
     override fun contractsGetContractList(
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Contract>> {
-        return getAll(search, page)
+		return getAll(search, page)
     }
 
     override fun contractsModifyContract(
 			@PathVariable("contractId") contractId: String,
 			@RequestBody contract: Contract): ResponseEntity<Contract> {
-        return super.modify(contractId, contract)
+		return super.modify(contractId, contract)
     }
 
     override fun contractsUpdateContract(
 			@PathVariable("contractId") contractId: String,
 			@RequestBody contract: Contract): ResponseEntity<Contract> {
-        return super.update(contractId, contract)
+		return super.update(contractId, contract)
     }
 
 }

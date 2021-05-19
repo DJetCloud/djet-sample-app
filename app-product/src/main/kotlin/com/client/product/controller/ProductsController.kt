@@ -1,6 +1,9 @@
 package com.client.product.controller
 
 import com.client.product.domain.Product
+import com.client.product.controller.filter.ProductFilterOnCriticalEstimationPartyIdRankType
+import com.client.product.controller.filter.ProductFilterOnPartyIdRank
+import com.client.product.controller.filter.ProductFilterOnPartyId
 import com.client.product.service.ProductsService
 import com.client.product.controller.api.ProductsApi
 import io.swagger.annotations.ApiParam
@@ -22,50 +25,57 @@ class ProductsController(service: ProductsService)
     override fun productsCreateProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestBody product: Product): ResponseEntity<Product> {
-        return super.create(productLineId, product)
+		return super.create(productLineId, product)
     }
 
     override fun productsDeleteProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String): ResponseEntity<Product> {
-        return super.delete(productLineId, productId)
+		return super.delete(productLineId, productId)
     }
 
     override fun productsGetProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
-			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value="type", required=false) type: String?,
-			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value="critical", required=false) critical: Boolean?,
-			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value="rank", required=false) rank: Integer?,
-			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value="estimation", required=false) estimation: String?): ResponseEntity<Product> {
-        return super.getById(productLineId, productId)
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?): ResponseEntity<Product> {
+		val filter = ProductFilterOnCriticalEstimationPartyIdRankType(partyId, type, critical, rank, estimation)
+		return super.getById(productLineId, productId, filter)
     }
 
     override fun productsGetProductList(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestParam(value = "search", required = false) search: String?,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
-			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value="type", required=false) type: String?,
-			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value="critical", required=false) critical: Boolean?,
-			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value="rank", required=false) rank: Integer?,
-			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value="estimation", required=false) estimation: String?,
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
-        return getAll(productLineId, search, page)
+		val filter = ProductFilterOnCriticalEstimationPartyIdRankType(partyId, type, critical, rank, estimation)
+		return getAll(productLineId, search, page, filter)
     }
 
     override fun productsModifyProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			@RequestBody product: Product): ResponseEntity<Product> {
-        return super.modify(productLineId, productId, product)
+			@RequestBody product: Product,
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?): ResponseEntity<Product> {
+		val filter = ProductFilterOnPartyIdRank(partyId, rank)
+		return super.modify(productLineId, productId, product, filter)
     }
 
     override fun productsUpdateProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			@RequestBody product: Product): ResponseEntity<Product> {
-        return super.update(productLineId, productId, product)
+			@RequestBody product: Product,
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<Product> {
+		val filter = ProductFilterOnPartyId(partyId)
+		return super.update(productLineId, productId, product, filter)
     }
 
 }

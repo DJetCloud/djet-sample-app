@@ -55,11 +55,11 @@ interface ProductsApi {
     fun productsGetProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
-			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value="type", required=false) type: String?,
-			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value="critical", required=false) critical: Boolean?,
-			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value="rank", required=false) rank: Integer?,
-			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value="estimation", required=false) estimation: String?): ResponseEntity<Product> {
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?): ResponseEntity<Product> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -73,11 +73,11 @@ interface ProductsApi {
     fun productsGetProductList(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestParam(value = "search", required = false) search: String?,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
-			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value="type", required=false) type: String?,
-			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value="critical", required=false) critical: Boolean?,
-			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value="rank", required=false) rank: Integer?,
-			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value="estimation", required=false) estimation: String?,
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value = "type", required = false) type: String?,
+			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value = "critical", required = false) critical: Boolean?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?,
+			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value = "estimation", required = false) estimation: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
@@ -92,7 +92,9 @@ interface ProductsApi {
     fun productsModifyProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			@RequestBody product: Product): ResponseEntity<Product> {
+			@RequestBody product: Product,
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?,
+			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value = "rank", required = false) rank: Int?): ResponseEntity<Product> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -106,7 +108,8 @@ interface ProductsApi {
     fun productsUpdateProduct(
 			@PathVariable("productLineId") productLineId: String,
 			@PathVariable("productId") productId: String,
-			@RequestBody product: Product): ResponseEntity<Product> {
+			@RequestBody product: Product,
+			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value = "partyId", required = false) partyId: String?): ResponseEntity<Product> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 

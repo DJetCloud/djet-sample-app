@@ -736,6 +736,8 @@ paths:
       summary: UpdateProduct
       description: Change the product specification.
       operationId: productsUpdateProduct
+      parameters:
+      - $ref: '#/components/parameters/partyId'
       requestBody:
         $ref: '#/components/requestBodies/product'
       responses:
@@ -785,6 +787,9 @@ paths:
       description: Change Product properties to values specified in the request. Property
         not specified will remain the same. No element of any collection will be deleted.
       operationId: productsModifyProduct
+      parameters:
+      - $ref: '#/components/parameters/partyId'
+      - $ref: '#/components/parameters/rank'
       requestBody:
         $ref: '#/components/requestBodies/product'
       responses:

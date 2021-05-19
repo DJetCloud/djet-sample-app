@@ -22,40 +22,40 @@ class OrganizationEmployeesController(service: OrganizationEmployeesService)
     override fun organizationEmployeesCreateEmployee(
 			@PathVariable("organizationId") organizationId: String,
 			@RequestBody employee: Employee): ResponseEntity<Employee> {
-        return super.create(organizationId, employee)
+		return super.create(organizationId, employee)
     }
 
     override fun organizationEmployeesDeleteEmployee(
 			@PathVariable("employeeId") employeeId: String,
 			@PathVariable("organizationId") organizationId: String): ResponseEntity<Employee> {
-        return super.delete(organizationId, employeeId)
+		return super.delete(organizationId, employeeId)
     }
 
     override fun organizationEmployeesGetEmployee(
 			@PathVariable("employeeId") employeeId: String,
 			@PathVariable("organizationId") organizationId: String): ResponseEntity<Employee> {
-        return super.getById(organizationId, employeeId)
+		return super.getById(organizationId, employeeId)
     }
 
     override fun organizationEmployeesGetEmployeeList(
 			@PathVariable("organizationId") organizationId: String,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Employee>> {
-        return getAll(organizationId, search, page)
+		return getAll(organizationId, search, page)
     }
 
     override fun organizationEmployeesModifyEmployee(
 			@PathVariable("employeeId") employeeId: String,
 			@PathVariable("organizationId") organizationId: String,
 			@RequestBody employee: Employee): ResponseEntity<Employee> {
-        return super.modify(organizationId, employeeId, employee)
+		return super.modify(organizationId, employeeId, employee)
     }
 
     override fun organizationEmployeesUpdateEmployee(
 			@PathVariable("employeeId") employeeId: String,
 			@PathVariable("organizationId") organizationId: String,
 			@RequestBody employee: Employee): ResponseEntity<Employee> {
-        return super.update(organizationId, employeeId, employee)
+		return super.update(organizationId, employeeId, employee)
     }
 
 }

@@ -22,40 +22,40 @@ class PartyOrganizationsController(service: PartyOrganizationsService)
     override fun partyOrganizationsCreateOrganization(
 			@PathVariable("partyId") partyId: String,
 			@RequestBody organization: Organization): ResponseEntity<Organization> {
-        return super.create(partyId, organization)
+		return super.create(partyId, organization)
     }
 
     override fun partyOrganizationsDeleteOrganization(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("organizationtId") organizationtId: String): ResponseEntity<Organization> {
-        return super.delete(partyId, organizationtId)
+		return super.delete(partyId, organizationtId)
     }
 
     override fun partyOrganizationsGetOrganization(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("organizationtId") organizationtId: String): ResponseEntity<Organization> {
-        return super.getById(partyId, organizationtId)
+		return super.getById(partyId, organizationtId)
     }
 
     override fun partyOrganizationsGetOrganizationList(
 			@PathVariable("partyId") partyId: String,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Organization>> {
-        return getAll(partyId, search, page)
+		return getAll(partyId, search, page)
     }
 
     override fun partyOrganizationsModifyOrganization(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("organizationtId") organizationtId: String,
 			@RequestBody organization: Organization): ResponseEntity<Organization> {
-        return super.modify(partyId, organizationtId, organization)
+		return super.modify(partyId, organizationtId, organization)
     }
 
     override fun partyOrganizationsUpdateOrganization(
 			@PathVariable("partyId") partyId: String,
 			@PathVariable("organizationtId") organizationtId: String,
 			@RequestBody organization: Organization): ResponseEntity<Organization> {
-        return super.update(partyId, organizationtId, organization)
+		return super.update(partyId, organizationtId, organization)
     }
 
 }
