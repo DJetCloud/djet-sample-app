@@ -1,5 +1,6 @@
 package com.client.service
 
+import com.client.controller.CommonFilter
 import com.client.domain.BaseResource
 import com.client.repository.CommonRepository
 import com.github.ichanzhar.rsql.JpaRsqlVisitor
@@ -72,9 +73,18 @@ abstract class AbstractService<E: BaseResource, R: CommonRepository<E>>(protecte
 		return repository.findAll(spec, pageable)
 	}
 
-	override fun getByIdAndFilter(id: String, filter: String): E? {
-		val rootNode: Node = RsqlParserFactory.instance().parse("id==$id;(entity.state=isNull=true,entity.state!=deleted);$filter")
-		val spec: Specification<E> = rootNode.accept(JpaRsqlVisitor())
+	override fun getAll(pageable: Pageable, query: String?, filter: CommonFilter<E>): Page<E> {
+		val queryStr = if(query.isNullOrBlank()) "" else ";$query"
+		val rootNode: Node = RsqlParserFactory.instance().parse("(entity.state=isNull=true,entity.state!=deleted)$queryStr")
+		val baseSpec: Specification<E> = rootNode.accept(JpaRsqlVisitor())
+		val spec = baseSpec.and(filter.toSpecification())
+		return repository.findAll(spec, pageable)
+	}
+
+	override fun getById(id: String, filter: CommonFilter<E>): E? {
+		val rootNode: Node = RsqlParserFactory.instance().parse("id==$id;entity.state=isNull=true,entity.state!=deleted")
+		val baseSpec: Specification<E> = rootNode.accept(JpaRsqlVisitor())
+		val spec = baseSpec.and(filter.toSpecification())
 		return repository.findOne(spec).orElse(null)
 	}
 }

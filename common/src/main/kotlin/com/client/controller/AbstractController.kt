@@ -26,14 +26,9 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(entity, HttpStatus.OK)
 	}
 
-	override fun delete(id: String, filter: Map<String, Any?>): ResponseEntity<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (filterQuery.isEmpty()) {
-			return delete(id)
-		}
-		val entity = service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-		service.delete(entity)
-		return ResponseEntity(entity, HttpStatus.OK)
+	override fun delete(id: String,  filter: CommonFilter<E>): ResponseEntity<E> {
+		// TO DO: add filtering
+		return delete(id)
 	}
 
 	override fun getById(id: String): ResponseEntity<E> {
@@ -41,12 +36,8 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(entity, HttpStatus.OK)
 	}
 
-	override fun getById(id: String, filter: Map<String, Any?>): ResponseEntity<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (filterQuery.isEmpty()) {
-			return getById(id)
-		}
-		val entity = service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
+	override fun getById(id: String,  filter: CommonFilter<E>): ResponseEntity<E> {
+		val entity = service.getById(id, filter)?: throw ResourceNotFoundException()
 		return ResponseEntity(entity, HttpStatus.OK)
 	}
 
@@ -54,9 +45,8 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(service.getAll(pageable, search), HttpStatus.OK)
 	}
 
-	override fun getAll(search: String?, pageable : Pageable, filter: Map<String, Any?>): ResponseEntity<Page<E>> {
-		val searchCriteria = getSearchCriteria(search, filter)
-		return ResponseEntity(service.getAll(pageable, searchCriteria), HttpStatus.OK)
+	override fun getAll(search: String?, pageable : Pageable,  filter: CommonFilter<E>): ResponseEntity<Page<E>> {
+		return ResponseEntity(service.getAll(pageable, search, filter), HttpStatus.OK)
 	}
 
 	override fun update(id: String, domain: E): ResponseEntity<E> {
@@ -66,21 +56,16 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(result, HttpStatus.OK)
 	}
 
-	override fun update(id: String, domain: E, filter: Map<String, Any?>): ResponseEntity<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (!filterQuery.isEmpty()) {
-			service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-		}
-		domain.id = id
-		val result = service.update(domain)?: throw InvalidRequestException()
-		return ResponseEntity(result, HttpStatus.OK)
+	override fun update(id: String, domain: E,  filter: CommonFilter<E>): ResponseEntity<E> {
+		// TO DO: add filtering
+		return update(id, domain)
 	}
 
 	override fun modify(id: String, domain: E): ResponseEntity<E> {
 		return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
 	}
 
-	override fun modify(id: String, domain: E, filter: Map<String, Any?>): ResponseEntity<E> {
+	override fun modify(id: String, domain: E,  filter: CommonFilter<E>): ResponseEntity<E> {
 		return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
 	}
 
@@ -88,15 +73,9 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return service.saveAll(domains)
 	}
 
-	override fun saveAll(domains: List<E>, filter: Map<String, Any?>): List<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (!filterQuery.isEmpty()) {
-			domains.forEach {
-				val id = it.id ?: throw ResourceNotFoundException()
-				service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-			}
-		}
-		return service.saveAll(domains)
+	override fun saveAll(domains: List<E>,  filter: CommonFilter<E>): List<E> {
+		// TO DO: add filtering
+		return saveAll(domains)
 	}
 
 	override fun deleteAll(@RequestParam ids: List<String>): List<E> {
@@ -105,17 +84,9 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return domains
 	}
 
-	override fun deleteAll(@RequestParam ids: List<String>, filter: Map<String, Any?>): List<E> {
-		val domains = service.getByIds(ids)
-		val filterQuery = getFilterQuery(filter)
-		if (!filterQuery.isEmpty()) {
-			domains.forEach{
-				val id = it.id ?: throw ResourceNotFoundException()
-				service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-			}
-		}
-		service.deleteAll(domains)
-		return domains
+	override fun deleteAll(@RequestParam ids: List<String>,  filter: CommonFilter<E>): List<E> {
+		// TO DO: add filtering
+		return deleteAll(ids)
 	}
 
 	override fun create(parentId: String, domain: E): ResponseEntity<E> {
@@ -134,12 +105,8 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(domain, HttpStatus.OK)
 	}
 
-	override fun getById(parentId: String, id: String, filter: Map<String, Any?>): ResponseEntity<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (filterQuery.isEmpty()) {
-			return getById(parentId, id)
-		}
-		val domain = service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
+	override fun getById(parentId: String, id: String,  filter: CommonFilter<E>): ResponseEntity<E> {
+		val domain = service.getById(id, filter) ?: throw ResourceNotFoundException()
 		Assert.isTrue(parentId == domain.entity.parent?.id, "parent $parentId is not valid")
 		return ResponseEntity(domain, HttpStatus.OK)
 	}
@@ -151,15 +118,9 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(domain, HttpStatus.OK)
 	}
 
-	override fun delete(parentId: String, id: String, filter: Map<String, Any?>): ResponseEntity<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (filterQuery.isEmpty()) {
-			return delete(parentId, id)
-		}
-		val domain = service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-		validateParent(domain, parentId)
-		service.delete(domain)
-		return ResponseEntity(domain, HttpStatus.OK)
+	override fun delete(parentId: String, id: String,  filter: CommonFilter<E>): ResponseEntity<E> {
+		// TO DO: add filtering
+		return delete(parentId, id)
 	}
 
 	override fun update(parentId: String, id: String, domain: E): ResponseEntity<E> {
@@ -169,22 +130,16 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(updatedEntity, HttpStatus.OK)
 	}
 
-	override fun update(parentId: String, id: String, domain: E, filter: Map<String, Any?>): ResponseEntity<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (!filterQuery.isEmpty()) {
-			service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-		}
-		validateParent(domain, parentId)
-		domain.id = id
-		val updatedEntity = service.update(domain)
-		return ResponseEntity(updatedEntity, HttpStatus.OK)
+	override fun update(parentId: String, id: String, domain: E,  filter: CommonFilter<E>): ResponseEntity<E> {
+		// TO DO: add filtering
+		return update(parentId, id, domain)
 	}
 
 	override fun modify(parentId: String, id: String, domain: E): ResponseEntity<E> {
 		return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
 	}
 
-	override fun modify(parentId: String, id: String, domain: E, filter: Map<String, Any?>): ResponseEntity<E> {
+	override fun modify(parentId: String, id: String, domain: E,  filter: CommonFilter<E>): ResponseEntity<E> {
 		return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
 	}
 
@@ -196,18 +151,9 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return service.saveAll(domains)
 	}
 
-	override fun saveAll(parentId: String, domains: List<E>, filter: Map<String, Any?>): List<E> {
-		val filterQuery = getFilterQuery(filter)
-		if (filterQuery.isEmpty()) {
-			return saveAll(parentId, domains)
-		}
-		domains.forEach {
-			val id = it.id ?: throw ResourceNotFoundException()
-			service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-			validateParent(it, parentId)
-			it.id = it.identity.id
-		}
-		return service.saveAll(domains)
+	override fun saveAll(parentId: String, domains: List<E>,  filter: CommonFilter<E>): List<E> {
+		// TO DO: add filtering
+		return saveAll(parentId, domains)
 	}
 
 	override fun deleteAll(parentId: String, ids: List<String>): List<E> {
@@ -219,19 +165,9 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return entities
 	}
 
-	override fun deleteAll(parentId: String, ids: List<String>, filter: Map<String, Any?>): List<E> {
-		val entities = service.getByIds(ids)
-		val filterQuery = getFilterQuery(filter)
-		if (filterQuery.isEmpty()) {
-			return deleteAll(parentId, ids)
-		}
-		entities.forEach {
-			val id = it.id ?: throw ResourceNotFoundException()
-			service.getByIdAndFilter(id, filterQuery) ?: throw ResourceNotFoundException()
-			validateParent(it, parentId)
-		}
-		service.deleteAll(entities)
-		return entities
+	override fun deleteAll(parentId: String, ids: List<String>,  filter: CommonFilter<E>): List<E> {
+		// TO DO: add filtering
+		return deleteAll(parentId, ids)
 	}
 
 	override fun getAll(parentId: String, search: String?, pageable: Pageable): ResponseEntity<Page<E>> {
@@ -239,9 +175,9 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		return ResponseEntity(service.getAll(pageable, searchCriteria), HttpStatus.OK)
 	}
 
-	override fun getAll(parentId: String, search: String?, pageable: Pageable, filter: Map<String, Any?>): ResponseEntity<Page<E>> {
-		val searchCriteria = getSearchCriteria(search, parentId, filter)
-		return ResponseEntity(service.getAll(pageable, searchCriteria), HttpStatus.OK)
+	override fun getAll(parentId: String, search: String?, pageable: Pageable,  filter: CommonFilter<E>): ResponseEntity<Page<E>> {
+		val searchCriteria = getSearchCriteria(search, parentId)
+		return ResponseEntity(service.getAll(pageable, searchCriteria, filter), HttpStatus.OK)
 	}
 
 	private fun validateParent(domain: E, parentId: String) {
@@ -257,40 +193,5 @@ abstract class AbstractController<E: BaseResource, S: CommonService<E>>(val  ser
 		} else {
 			"$underParentSearchCriteria;$query"
 		}
-	}
-
-	private fun getSearchCriteria(query: String?, filter: Map<String, Any?>): String? {
-		val filterQuery = getFilterQuery(filter)
-		return if (filterQuery.isEmpty()) {
-			if (query.isNullOrBlank()) {
-				null
-			} else {
-				query
-			}
-		} else if (query.isNullOrBlank()) {
-			filterQuery
-		} else {
-			"$filterQuery;$query"
-		}
-	}
-
-	private fun getSearchCriteria(query: String?, parentId: String, filter: Map<String, Any?>): String {
-		val baseSearchCriteria = getSearchCriteria(query, filter)
-		val underParentSearchCriteria = "entity.parent.id==$parentId"
-		return if (baseSearchCriteria.isNullOrBlank()) {
-			underParentSearchCriteria
-		} else {
-			"$underParentSearchCriteria;$baseSearchCriteria"
-		}
-	}
-
-	private fun getFilterQuery(filter: Map<String, Any?>): String {
-		var result = ""
-		filter.forEach { (key, value) ->
-			if (key != null && value != null) {
-				result = "$result;$key==$value"
-			}
-		}
-		return result
 	}
 }
