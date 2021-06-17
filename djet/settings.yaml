@@ -1,0 +1,21 @@
+organization: DJet
+system: Client
+application:
+- Organization
+- Party
+- Product
+- User
+groupId: com.client
+artifactId: client
+artifactVersion: 0.0.1-SNAPSHOT
+artifactDescription: Client System
+title: Client System
+basePackage: com.client
+dbName: ""
+database: MySQL
+defaultStringSize: 512
+addKotlin: true
+dateLibrary: default
+addBindingEntity: true
+authorizationEnabled: false
+overwriteTests: true
