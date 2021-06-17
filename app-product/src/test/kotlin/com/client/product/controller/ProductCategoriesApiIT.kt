@@ -1,8 +1,8 @@
 package com.client.product.controller
 
 import com.client.product.domain.ProductCategory
-import com.client.product.domain.Element
-import com.client.product.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.domain.Identity
 import com.client.product.ProductApplication
 import com.client.product.repository.ProductCategoriesRepository
@@ -31,7 +31,7 @@ class ProductCategoriesApiIT : AbstractIntegrationTest<ProductCategory>() {
 	fun `productCategoriesCreateProductCategory with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -39,7 +39,7 @@ class ProductCategoriesApiIT : AbstractIntegrationTest<ProductCategory>() {
 	fun `productCategoriesCreateProductCategory with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 

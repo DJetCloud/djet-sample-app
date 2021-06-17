@@ -6,7 +6,7 @@ import org.hibernate.annotations.LazyCollection
 import org.hibernate.annotations.LazyCollectionOption
 
 /**
-* Binding represents connection of entity to entity in other external systems. It can be system where entity actually originated ond from which it was imported or system where entity exported. 
+* Binding represents connection of entity to entity in other external systems. It can be system where entity actually originated ond from which it was imported or system where entity exported.
 * @param type Type of binding defines system we bind to.
 * @param code Code of object in system we bind to if different from id.
 */

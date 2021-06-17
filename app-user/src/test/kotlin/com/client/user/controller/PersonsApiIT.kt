@@ -2,10 +2,10 @@ package com.client.user.controller
 
 import com.client.user.domain.Person
 import com.client.user.domain.Identifier
-import com.client.user.domain.Element
-import com.client.user.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.user.domain.ReferenceIdentity
-import com.client.user.domain.Attachment
+import com.client.domain.Attachment
 import com.client.user.domain.HumanName
 import com.client.user.domain.ContactPoint
 import com.client.user.domain.Address
@@ -36,7 +36,7 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 	fun `personsCreatePerson with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -44,7 +44,7 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 	fun `personsCreatePerson with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -231,8 +231,7 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 				),
 					system = "test_enum_value",
 					value = "test string value",
-					use = "test_enum_value",
-					rank = 8
+					use = "test_enum_value"
 				)),
 				gender = "test_enum_value",
 				birthDate = Date(),
@@ -248,6 +247,8 @@ class PersonsApiIT : AbstractIntegrationTest<Person>() {
 					use = "test_enum_value",
 					type = "test_enum_value",
 					text = "test string value",
+					line = listOf("test_list_string_value"),
+					city = "test string value",
 					district = "test string value",
 					state = "test string value",
 					postalCode = "test string value",

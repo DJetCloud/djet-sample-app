@@ -3,8 +3,8 @@ package com.client.organization.controller
 import com.client.organization.domain.OrganizationRole
 import com.client.organization.domain.ReferenceIdentity
 import com.client.organization.domain.CodeableConcept
-import com.client.organization.domain.Element
-import com.client.organization.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.organization.domain.Coding
 import com.client.organization.domain.AvailableTime
 import com.client.organization.domain.NotAvailableTime
@@ -36,7 +36,7 @@ class OrganizationRolesApiIT : AbstractIntegrationTest<OrganizationRole>() {
 	fun `organizationRolesCreateOrganizationRole with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -44,7 +44,7 @@ class OrganizationRolesApiIT : AbstractIntegrationTest<OrganizationRole>() {
 	fun `organizationRolesCreateOrganizationRole with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 

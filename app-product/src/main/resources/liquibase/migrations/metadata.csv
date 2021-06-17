@@ -1,4 +1,5 @@
 group_name,code,name,description
+LOCALE,Locale id,Locale Name,Locale id
 LOCALE,af,Afrikaans,af
 LOCALE,sq,Albanian,sq
 LOCALE,am,Amharic,am
@@ -176,14 +177,8 @@ LOCALE,vi,Vietnamese,vi
 LOCALE,cy,Welsh,cy
 LOCALE,xh,Zulu,xh
 LOCALE,yi,Yiddish,yi
-WEEK_DAY,MONDAY,Monday,First day of the week by ISO 8601.
-WEEK_DAY,TUESDAT,Tuesday,Second day of the week by ISO 8601.
-WEEK_DAY,WEDNESDAY,Wednesday,Third day of the week by ISO 8601.
-WEEK_DAY,THURSDAY,Thursday,Fourth day of the week by ISO 8601.
-WEEK_DAY,FRIDAY,Friday,Fifth day of the week by ISO 8601.
-WEEK_DAY,SATURDAY,Saturday,Sixth day of the week by ISO 8601.
-WEEK_DAY,SUNDAY,Sunday,Seventh day of the week by ISO 8601.
-CONTACT_POINT_USE,home,Home,A communication contact point at a home; attempted contacts for business purposes might intrude privacy and chances are one will contact family or other household members instead of the person one wishes to call. Typically used with urgent cases, or if no other contacts are available
+CONTACT_POINT_USE,home,Home,A communication contact point at a home; attempted contacts for business purposes might intrude privacy and chances are one will contact family or other household members instead of the person one wishes to call. Typically used with urgent cases, or if no other contacts are available.
+work
 CONTACT_POINT_USE,work,Work,An office contact point. First choice for business related contacts during business hours.
 
 CONTACT_POINT_USE,temp,Temp,A temporary contact point. The period can provide more detailed information.
@@ -193,14 +188,10 @@ CONTACT_POINT_USE,old,Old,This contact point is no longer in use (or was never c
 
 CONTACT_POINT_USE,mobile,Mobile,A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable for urgent matters, not the first choice for routine business.
  
-PRODUCT_LINE_TYPE,goods,Goods,Product line represent goods supplied by party organizations. 
-PRODUCT_LINE_TYPE,services,Services,Product line represent services provided by party organizations.
-PRODUCT_LINE_TYPE,goods-and-services,Goods And Services,Product line contains mix of product  of goods and services.
 QUANTITY_COMPARATOR,<,Less than,The actual value is less than the given value.
 QUANTITY_COMPARATOR,<=,Less or Equal to,The actual value is less than or equal to the given value.
-QUANTITY_COMPARATOR,>=,Greater or Equal to,The actual value is greater than or equal to the given value.
 QUANTITY_COMPARATOR,>,Greater than,The actual value is greater than the given value.
-BINDING_TYPE,ERP,ERP ,Corporate ERP system used in company.
+QUANTITY_COMPARATOR,>=,Greater or Equal to,The actual value is greater than or equal to the given value.
 CONTACT_POINT_SYSTEM,phone,Phone,The value is a telephone number used for voice calls. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.
 CONTACT_POINT_SYSTEM,fax,Fax,The value is a fax machine. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.
 
@@ -212,6 +203,29 @@ CONTACT_POINT_SYSTEM,sms,SMS,A contact that can be used for sending an sms messa
 other
 CONTACT_POINT_SYSTEM,other,Other,A contact that is not a phone, fax, page or email address and is not expressible as a URL. E.g. Internal mail address. This SHOULD NOT be used for contacts that are expressible as a URL (e.g. Skype, Twitter, Facebook, etc.) Extensions may be used to distinguish 'other' contact types.
  
+PRODUCT_TYPE,GOOD,Good,Product represent actual entity supplied by party organizations. 
+PRODUCT_TYPE,SERVICE,Service,Product represent services provided by party organizations.
+PRODUCT_TYPE,PACKAGE,Package,Product is a package of other products. Usually package created to provide discount to products in the package.
+ENTITY_STATE,DRAFT,Draft,Entity in draft state and not ready yet for approval.
+ENTITY_STATE,PENDING,Pending,Entity pending approval and can't be used.
+ENTITY_STATE,ACTIVE,Active,Entity in active state and can be used.
+ENTITY_STATE,RETIRED,Retired,Entity retired and cannot be executed any more.
+ENTITY_STATE,ERROR,Error,Entity in have error and can't be used.
+WEEK_DAY,MONDAY,Monday,First day of the week by ISO 8601.
+WEEK_DAY,TUESDAT,Tuesday,Second day of the week by ISO 8601.
+WEEK_DAY,WEDNESDAY,Wednesday,Third day of the week by ISO 8601.
+WEEK_DAY,THURSDAY,Thursday,Fourth day of the week by ISO 8601.
+WEEK_DAY,FRIDAY,Friday,Fifth day of the week by ISO 8601.
+WEEK_DAY,SATURDAY,Saturday,Sixth day of the week by ISO 8601.
+WEEK_DAY,SUNDAY,Sunday,Seventh day of the week by ISO 8601.
+PRODUCT_LINE_TYPE,goods,Goods,Product line represent goods supplied by party organizations. 
+PRODUCT_LINE_TYPE,services,Services,Product line represent services provided by party organizations.
+PRODUCT_LINE_TYPE,goods-and-services,Goods And Services,Product line contains mix of product  of goods and services.
+CONTRACT_PARTY_ROLE,SUPPLIER,Supplier,Party to supply products to the network or other network party. Product defined by supplier and his contract with network.
+CONTRACT_PARTY_ROLE,DISTRIBUTER,Distributor,Party distribute product from supplier. Distributor can use general contract of supplier with network or sign specific contract for distribution.
+CONTRACT_PARTY_ROLE,PROVIDER,Provider,Party define product or service and deliver it to consumer. Provider contract specify conditions of providing services through the network.
+CONTRACT_PARTY_ROLE,NETWORK,Network,Network party facilitate product distribution. Network organized and managed parties contract and support parties execution.
+BINDING_TYPE,ERP,ERP ,Corporate ERP system used in company.
 CURRENCY,AED,AED,United Arab Emirates dirham
 CURRENCY,AFN,AFN,Afghan afghani
 CURRENCY,ALL,ALL,Albanian lek
@@ -388,14 +402,6 @@ CURRENCY,YER,YER,Yemeni rial
 CURRENCY,ZAR,ZAR,South African rand
 CURRENCY,ZMW,ZMW,Zambian kwacha
 CURRENCY,ZWL,ZWL,Zimbabwean dollar
-PRODUCT_TYPE,GOOD,Good,Product represent actual entity supplied by party organizations. 
-PRODUCT_TYPE,SERVICE,Service,Product represent services provided by party organizations.
-PRODUCT_TYPE,PACKAGE,Package,Product is a package of other products. Usually package created to provide discount to products in the package.
 CONTRACT_TYPE,NETWORK,Network,Contract to supply or distribute products to the network. 
 CONTRACT_TYPE,PARTY,Party,Contract to distribute or supply product signed by parties directly. It allows party to negotiate favorable compare to general distribution.
 PRODUCT_LINE_CATEGORY,Healthcare,Healthcare,Product and services from healthcare industry. 
-ENTITY_STATE,DRAFT,Draft,Entity in draft state and not ready yet for approval.
-ENTITY_STATE,PENDING,Pending,Entity pending approval and can't be used.
-ENTITY_STATE,ACTIVE,Active,Entity in active state and can be used.
-ENTITY_STATE,RETIRED,Retired,Entity retired and cannot be executed any more.
-ENTITY_STATE,ERROR,Error,Entity in have error and can't be used.

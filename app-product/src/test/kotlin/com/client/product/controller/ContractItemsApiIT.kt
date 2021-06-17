@@ -6,8 +6,8 @@ import com.client.product.domain.Price
 import com.client.product.domain.Amount
 import com.client.product.domain.Quantity
 import com.client.product.domain.Discount
-import com.client.product.domain.Element
-import com.client.product.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.product.domain.Fee
 import com.client.domain.Identity
 import com.client.product.ProductApplication
@@ -37,7 +37,7 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 	fun `contractItemsCreateContractItem with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -45,7 +45,7 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 	fun `contractItemsCreateContractItem with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -160,15 +160,15 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 				product = "test string value",
 				price = Price(
 					amount = Amount(
-					amount = 777.toBigDecimal(),
+					amount = 777.77.toBigDecimal(),
 					currency = "test_enum_value"
 				),
 					quantity = Quantity(
-					value = 777.toBigDecimal(),
+					value = 777.77.toBigDecimal(),
 					comparator = "test_enum_value",
 					unit = "test string value",
 					system = "test string value",
-					code = "test string valu",
+					code = "test string valu"
 				)
 				),
 				discounts = null,
@@ -194,15 +194,15 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 				product = "test string value",
 				price = Price(
 					amount = Amount(
-					amount = 777.toBigDecimal(),
+					amount = 777.77.toBigDecimal(),
 					currency = "test_enum_value"
 				),
 					quantity = Quantity(
-					value = 777.toBigDecimal(),
+					value = 777.77.toBigDecimal(),
 					comparator = "test_enum_value",
 					unit = "test string value",
 					system = "test string value",
-					code = "test string valu",
+					code = "test string valu"
 				)
 				),
 				discounts = listOf(Discount(
@@ -214,8 +214,8 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 					end = Date()
 				)
 				),
-					party = "4c0bed7f-9931-4f6d-af3b-f4cde411bdf3",
-					value = 777.toBigDecimal(),
+					party = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
+					value = 777.77.toBigDecimal(),
 					ratio = "test string (was object) value"
 				)),
 				fees = listOf(Fee(
@@ -227,11 +227,11 @@ class ContractItemsApiIT : AbstractIntegrationTest<ContractItem>() {
 					end = Date()
 				)
 				),
-					payParty = "ded5be06-41b7-4d59-bb89-982e5f3a6cf4",
-					receiveParty = "5b68acc4-976d-4f0e-847d-4b7cf650a0ba",
-					value = 777.toBigDecimal(),
+					payParty = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
+					receiveParty = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
+					value = 777.77.toBigDecimal(),
 					ratio = "test string (was object) value",
-					base = "03895f85-b8ac-4a26-abcc-b042db9d3b08"
+					base = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff"
 				))
 		).apply {
 			this.identity.name = "test user name"

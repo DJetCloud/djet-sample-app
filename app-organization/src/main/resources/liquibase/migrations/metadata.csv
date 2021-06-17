@@ -1,4 +1,182 @@
 group_name,code,name,description
+LOCALE,Locale id,Locale Name,Locale id
+LOCALE,af,Afrikaans,af
+LOCALE,sq,Albanian,sq
+LOCALE,am,Amharic,am
+LOCALE,ar-dz,Arabic - Algeria,ar-dz
+LOCALE,ar-bh,Arabic - Bahrain,ar-bh
+LOCALE,ar-eg,Arabic - Egypt,ar-eg
+LOCALE,ar-iq,Arabic - Iraq,ar-iq
+LOCALE,ar-jo,Arabic - Jordan,ar-jo
+LOCALE,ar-kw,Arabic - Kuwait,ar-kw
+LOCALE,ar-lb,Arabic - Lebanon,ar-lb
+LOCALE,ar-ly,Arabic - Libya,ar-ly
+LOCALE,ar-ma,Arabic - Morocco,ar-ma
+LOCALE,ar-om,Arabic - Oman,ar-om
+LOCALE,ar-qa,Arabic - Qatar,ar-qa
+LOCALE,ar-sa,Arabic - Saudi Arabia,ar-sa
+LOCALE,ar-sy,Arabic - Syria,ar-sy
+LOCALE,ar-tn,Arabic - Tunisia,ar-tn
+LOCALE,ar-ae,Arabic - United Arab Emirates,ar-ae
+LOCALE,ar-ye,Arabic - Yemen,ar-ye
+LOCALE,hy,Armenian,hy
+LOCALE,as,Assamese,as
+LOCALE,az-az,Azeri - Cyrillic,az-az
+LOCALE,az-az,Azeri - Latin,az-az
+LOCALE,eu,Basque,eu
+LOCALE,be,Belarusian,be
+LOCALE,bn,Bengali - Bangladesh,bn
+LOCALE,bn,Bengali - India,bn
+LOCALE,bs,Bosnian,bs
+LOCALE,bg,Bulgarian,bg
+LOCALE,my,Burmese,my
+LOCALE,ca,Catalan,ca
+LOCALE,zh-cn,Chinese - China,zh-cn
+LOCALE,zh-hk,Chinese - Hong Kong SAR,zh-hk
+LOCALE,zh-mo,Chinese - Macau SAR,zh-mo
+LOCALE,zh-sg,Chinese - Singapore,zh-sg
+LOCALE,zh-tw,Chinese - Taiwan,zh-tw
+LOCALE,cs,Croatian,cs
+LOCALE,da,Danish,da
+LOCALE,nl-be,Dutch - Belgium,nl-be
+LOCALE,nl-nl,Dutch - Netherlands,nl-nl
+LOCALE,en-au,English - Australia,en-au
+LOCALE,en-bz,English - Belize,en-bz
+LOCALE,en-ca,English - Canada,en-ca
+LOCALE,en-cb,English - Caribbean,en-cb
+LOCALE,en-gb,English - Great Britain,en-gb
+LOCALE,en-in,English - India,en-in
+LOCALE,en-ie,English - Ireland,en-ie
+LOCALE,en-jm,English - Jamaica,en-jm
+LOCALE,en-nz,English - New Zealand,en-nz
+LOCALE,en-ph,English - Phillippines,en-ph
+LOCALE,en-za,English - Southern Africa,en-za
+LOCALE,en-tt,English - Trinidad,en-tt
+LOCALE,en-us,English - United States,en-us
+LOCALE,,English - Zimbabwe,
+LOCALE,et,Estonian,et
+LOCALE,mk,FYRO Macedonia,mk
+LOCALE,fo,Faroese,fo
+LOCALE,fa,Farsi - Persian,fa
+LOCALE,,Filipino,
+LOCALE,fi,Finnish,fi
+LOCALE,fr-be,French - Belgium,fr-be
+LOCALE,,French - Cameroon,
+LOCALE,fr-ca,French - Canada,fr-ca
+LOCALE,,French - Congo,
+LOCALE,,French - Cote d'Ivoire,
+LOCALE,fr-fr,French - France,fr-fr
+LOCALE,fr-lu,French - Luxembourg,fr-lu
+LOCALE,,French - Mali,
+LOCALE,,French - Morocco,
+LOCALE,,French - Senegal,
+LOCALE,fr-ch,French - Switzerland,fr-ch
+LOCALE,,French - West Indies,
+LOCALE,,Frisian - Netherlands,
+LOCALE,gd-ie,Gaelic - Ireland,gd-ie
+LOCALE,gd,Gaelic - Scotland,gd
+LOCALE,,Galician,
+LOCALE,ka,Georgian,ka
+LOCALE,de-at,German - Austria,de-at
+LOCALE,de-de,German - Germany,de-de
+LOCALE,de-li,German - Liechtenstein,de-li
+LOCALE,de-lu,German - Luxembourg,de-lu
+LOCALE,de-ch,German - Switzerland,de-ch
+LOCALE,el,Greek,el
+LOCALE,gn,Guarani - Paraguay,gn
+LOCALE,gu,Gujarati,gu
+LOCALE,he,Hebrew,he
+LOCALE,hi,Hindi,hi
+LOCALE,hu,Hungarian,hu
+LOCALE,is,Icelandic,is
+LOCALE,,Igbo - Nigeria,
+LOCALE,id,Indonesian,id
+LOCALE,it-it,Italian - Italy,it-it
+LOCALE,it-ch,Italian - Switzerland,it-ch
+LOCALE,ja,Japanese,ja
+LOCALE,kn,Kannada,kn
+LOCALE,ks,Kashmiri,ks
+LOCALE,kk,Kazakh,kk
+LOCALE,km,Khmer,km
+LOCALE,,Konkani,
+LOCALE,ko,Korean,ko
+LOCALE,,Kyrgyz - Cyrillic,
+LOCALE,lo,Lao,lo
+LOCALE,la,Latin,la
+LOCALE,lt,Latvian,lt
+LOCALE,ms-bn,Malay - Brunei,ms-bn
+LOCALE,ms-my,Malay - Malaysia,ms-my
+LOCALE,ml,Malayalam,ml
+LOCALE,mt,Maltese,mt
+LOCALE,,Manipuri,
+LOCALE,mi,Maori,mi
+LOCALE,mr,Marathi,mr
+LOCALE,mn,Mongolian,mn
+LOCALE,ne,Nepali,ne
+LOCALE,no-no,Norwegian - Bokml,no-no
+LOCALE,no-no,Norwegian - Nynorsk,no-no
+LOCALE,or,Oriya,or
+LOCALE,pl,Polish,pl
+LOCALE,pt-br,Portuguese - Brazil,pt-br
+LOCALE,pt-pt,Portuguese - Portugal,pt-pt
+LOCALE,pa,Punjabi,pa
+LOCALE,rm,Raeto-Romance,rm
+LOCALE,ro-mo,Romanian - Moldova,ro-mo
+LOCALE,ro,Romanian - Romania,ro
+LOCALE,ru,Russian,ru
+LOCALE,ru-mo,Russian - Moldova,ru-mo
+LOCALE,,Sami Lappish,
+LOCALE,sa,Sanskrit,sa
+LOCALE,sr-sp,Serbian - Cyrillic,sr-sp
+LOCALE,sr-sp,Serbian - Latin,sr-sp
+LOCALE,,Sesotho (Sutu),
+LOCALE,tn,Setsuana,tn
+LOCALE,sd,Sindhi,sd
+LOCALE,si,Sinhala Sinhalese,si
+LOCALE,sk,Slovak,sk
+LOCALE,sl,Slovenian,sl
+LOCALE,so,Somali,so
+LOCALE,sb,Sorbian,sb
+LOCALE,es-ar,Spanish - Argentina,es-ar
+LOCALE,es-bo,Spanish - Bolivia,es-bo
+LOCALE,es-cl,Spanish - Chile,es-cl
+LOCALE,es-co,Spanish - Colombia,es-co
+LOCALE,es-cr,Spanish - Costa Rica,es-cr
+LOCALE,es-do,Spanish - Dominican Republic,es-do
+LOCALE,es-ec,Spanish - Ecuador,es-ec
+LOCALE,es-sv,Spanish - El Salvador,es-sv
+LOCALE,es-gt,Spanish - Guatemala,es-gt
+LOCALE,es-hn,Spanish - Honduras,es-hn
+LOCALE,es-mx,Spanish - Mexico,es-mx
+LOCALE,es-ni,Spanish - Nicaragua,es-ni
+LOCALE,es-pa,Spanish - Panama,es-pa
+LOCALE,es-py,Spanish - Paraguay,es-py
+LOCALE,es-pe,Spanish - Peru,es-pe
+LOCALE,es-pr,Spanish - Puerto Rico,es-pr
+LOCALE,es-es,Spanish - Spain (Traditional),es-es
+LOCALE,es-uy,Spanish - Uruguay,es-uy
+LOCALE,es-ve,Spanish - Venezuela,es-ve
+LOCALE,sw,Swahili,sw
+LOCALE,sv-fi,Swedish - Finland,sv-fi
+LOCALE,sv-se,Swedish - Sweden,sv-se
+LOCALE,,Syriac,
+LOCALE,tg,Tajik,tg
+LOCALE,ta,Tamil,ta
+LOCALE,tt,Tatar,tt
+LOCALE,te,Telugu,te
+LOCALE,th,Thai,th
+LOCALE,bo,Tibetan,bo
+LOCALE,ts,Tsonga,ts
+LOCALE,tr,Turkish,tr
+LOCALE,tk,Turkmen,tk
+LOCALE,uk,Ukrainian,uk
+LOCALE,ur,Urdu,ur
+LOCALE,uz-uz,Uzbek - Cyrillic,uz-uz
+LOCALE,,Venda,
+LOCALE,vi,Vietnamese,vi
+LOCALE,cy,Welsh,cy
+LOCALE,xh,Zulu,xh
+LOCALE,yi,Yiddish,yi
 WEEK_DAY,MONDAY,Monday,First day of the week by ISO 8601.
 WEEK_DAY,TUESDAT,Tuesday,Second day of the week by ISO 8601.
 WEEK_DAY,WEDNESDAY,Wednesday,Third day of the week by ISO 8601.

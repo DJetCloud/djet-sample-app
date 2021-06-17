@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "PartyLegalEntities", tags = ["PartyLegalEntities"], description = "the PartyLegalEntities API")
 interface PartyLegalEntitiesApi {
 
-    @ApiOperation(value = "CreateLegalEntity", nickname = "partyLegalEntitiesCreateLegalEntity", notes = "Create new legal entity. Validate legal entity not exist for this client", tags=["PartyLegalEntities"],)
+    @ApiOperation(value = "CreateLegalEntity", nickname = "partyLegalEntitiesCreateLegalEntity", notes = "Create new legal entity. Validate legal entity not exist for this client", tags=["PartyLegalEntities"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Create operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -33,7 +33,7 @@ interface PartyLegalEntitiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteLegalEntity", nickname = "partyLegalEntitiesDeleteLegalEntity", notes = "Delete legal entity of the party if the legal entity exists", tags=["PartyLegalEntities"],)
+    @ApiOperation(value = "DeleteLegalEntity", nickname = "partyLegalEntitiesDeleteLegalEntity", notes = "Delete legal entity of the party if the legal entity exists", tags=["PartyLegalEntities"])
     @ApiResponses(
         ApiResponse(code = 200, message = "LegalEntity is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -47,7 +47,7 @@ interface PartyLegalEntitiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetLegalEntity", nickname = "partyLegalEntitiesGetLegalEntity", notes = "Get legal entity or list of legal entities from service.", tags=["PartyLegalEntities"],)
+    @ApiOperation(value = "GetLegalEntity", nickname = "partyLegalEntitiesGetLegalEntity", notes = "Get legal entity or list of legal entities from service.", tags=["PartyLegalEntities"])
     @ApiResponses(
         ApiResponse(code = 200, message = "LegalEntity is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -61,7 +61,7 @@ interface PartyLegalEntitiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetLegalEntityList", nickname = "partyLegalEntitiesGetLegalEntityList", notes = "Get legal entity or list of legal entities from service.", tags=["PartyLegalEntities"],)
+    @ApiOperation(value = "GetLegalEntityList", nickname = "partyLegalEntitiesGetLegalEntityList", notes = "Get legal entity or list of legal entities from service.", tags=["PartyLegalEntities"])
     @ApiResponses(
         ApiResponse(code = 200, message = "LegalEntity is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -76,7 +76,7 @@ interface PartyLegalEntitiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyLegalEntity", nickname = "partyLegalEntitiesModifyLegalEntity", notes = "Change legal entity properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["PartyLegalEntities"],)
+    @ApiOperation(value = "ModifyLegalEntity", nickname = "partyLegalEntitiesModifyLegalEntity", notes = "Change legal entity properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["PartyLegalEntities"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

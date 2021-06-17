@@ -1,8 +1,9 @@
 package com.client.user.domain
 
 import com.client.domain.BaseDomain
-import com.client.user.domain.Element
+import com.client.domain.Element
 import java.util.UUID
+import org.hibernate.annotations.Type
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
 import org.hibernate.annotations.LazyCollection
@@ -14,6 +15,8 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param use What address use for.
 * @param type Type of address.
 * @param text Text representation of the address
+* @param line Street name, number, direction & P.O. Box etc. This repeating element order: The order in which lines should appear in an address label
+* @param city Name of city, town etc.
 * @param district District name (aka county)
 * @param state Address state. Sub-unit of country (abbreviations ok)
 * @param postalCode Postal code for area
@@ -21,7 +24,7 @@ import org.hibernate.annotations.LazyCollectionOption
 */
 @javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
-@JsonPropertyOrder("id", "header", "use", "type", "text", "district", "state", "postalCode", "country")
+@JsonPropertyOrder("id", "header", "use", "type", "text", "line", "city", "district", "state", "postalCode", "country")
 
 @Entity
 @Table(name = "address")
@@ -44,6 +47,13 @@ data class Address(
 
 	@Column(name = "text")
 	var text: String?,
+
+	@Type(type = "json")
+	@Column(name = "line", columnDefinition = "json")
+	var line: List<String>?,
+
+	@Column(name = "city")
+	var city: String?,
 
 	@Column(name = "district")
 	var district: String?,

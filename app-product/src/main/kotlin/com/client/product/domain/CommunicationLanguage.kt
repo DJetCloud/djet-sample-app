@@ -1,7 +1,7 @@
 package com.client.product.domain
 
 import com.client.domain.BaseDomain
-import com.client.product.domain.Element
+import com.client.domain.Element
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
@@ -13,7 +13,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param header This header of element with id and period of element activity.
 * @param language The language which can be used to communicate with the patient about his or her health
 */
-@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.1.0")
+@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
 @JsonPropertyOrder("id", "header", "language")
 

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "Locations", tags = ["Locations"], description = "the Locations API")
 interface LocationsApi {
 
-    @ApiOperation(value = "CreateLocation", nickname = "locationsCreateLocation", notes = "Create new Location. Validate Location not yet exist.", tags=["Locations"],)
+    @ApiOperation(value = "CreateLocation", nickname = "locationsCreateLocation", notes = "Create new Location. Validate Location not yet exist.", tags=["Locations"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -32,7 +32,7 @@ interface LocationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteLocation", nickname = "locationsDeleteLocation", notes = "Delete location if it exists", tags=["Locations"],)
+    @ApiOperation(value = "DeleteLocation", nickname = "locationsDeleteLocation", notes = "Delete location if it exists", tags=["Locations"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Person is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -45,7 +45,7 @@ interface LocationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetLocation", nickname = "locationsGetLocation", notes = "Get location or list of locations from service.", tags=["Locations"],)
+    @ApiOperation(value = "GetLocation", nickname = "locationsGetLocation", notes = "Get location or list of locations from service.", tags=["Locations"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Person is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -58,7 +58,7 @@ interface LocationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetLocationList", nickname = "locationsGetLocationList", notes = "Get location or list of locations from service.", tags=["Locations"],)
+    @ApiOperation(value = "GetLocationList", nickname = "locationsGetLocationList", notes = "Get location or list of locations from service.", tags=["Locations"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Person is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -72,7 +72,7 @@ interface LocationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyLocation", nickname = "locationsModifyLocation", notes = "Change Location properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Locations"],)
+    @ApiOperation(value = "ModifyLocation", nickname = "locationsModifyLocation", notes = "Change Location properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Locations"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

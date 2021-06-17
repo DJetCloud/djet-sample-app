@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "Users", tags = ["Users"], description = "the Users API")
 interface UsersApi {
 
-    @ApiOperation(value = "CreateUser", nickname = "usersCreateUser", notes = "Create new User. Validate User not yet exist.", tags=["Users"],)
+    @ApiOperation(value = "CreateUser", nickname = "usersCreateUser", notes = "Create new User. Validate User not yet exist.", tags=["Users"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -32,7 +32,7 @@ interface UsersApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteUser", nickname = "usersDeleteUser", notes = "Delete user on id if user exists", tags=["Users"],)
+    @ApiOperation(value = "DeleteUser", nickname = "usersDeleteUser", notes = "Delete user on id if user exists", tags=["Users"])
     @ApiResponses(
         ApiResponse(code = 200, message = "User is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -45,7 +45,7 @@ interface UsersApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetUser", nickname = "usersGetUser", notes = "Get user or list of users from service.", tags=["Users"],)
+    @ApiOperation(value = "GetUser", nickname = "usersGetUser", notes = "Get user or list of users from service.", tags=["Users"])
     @ApiResponses(
         ApiResponse(code = 200, message = "User is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -58,7 +58,7 @@ interface UsersApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetUserList", nickname = "usersGetUserList", notes = "Get user or list of users from service.", tags=["Users"],)
+    @ApiOperation(value = "GetUserList", nickname = "usersGetUserList", notes = "Get user or list of users from service.", tags=["Users"])
     @ApiResponses(
         ApiResponse(code = 200, message = "User is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -72,7 +72,7 @@ interface UsersApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyUser", nickname = "usersModifyUser", notes = "Change User properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Users"],)
+    @ApiOperation(value = "ModifyUser", nickname = "usersModifyUser", notes = "Change User properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Users"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

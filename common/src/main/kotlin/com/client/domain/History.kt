@@ -11,7 +11,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * Structure for object history. Object history provides information when object was updated and in what completion state it is now.
 * @param createdAt Date of object creation.
 * @param createdBy User created object.
-* @param updatedAt Date of object last update. This is important value as it is flag for optimistic commit to detect overriding changes. 
+* @param updatedAt Date of object last update. This is important value as it is flag for optimistic commit to detect overriding changes.
 * @param updatedBy User last updated object.
 * @param updatedNote Mote about goal of object update.
 * @param updatedMessage Message in issue associated with changes in object.

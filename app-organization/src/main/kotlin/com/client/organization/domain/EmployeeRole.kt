@@ -1,7 +1,8 @@
 package com.client.organization.domain
 
 import com.client.domain.BaseDomain
-import com.client.organization.domain.Element
+import com.client.domain.Element
+import com.client.organization.domain.ReferenceOrganizationRole
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
@@ -32,8 +33,9 @@ data class EmployeeRole(
 	@Embedded
 	var header: Element?,
 
-	@Column(name = "assigned_role")
-	var assignedRole: String?,
+	@OneToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+	@JoinColumn(name = "assigned_role", referencedColumnName = "id")
+	var assignedRole: ReferenceOrganizationRole?,
 
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)

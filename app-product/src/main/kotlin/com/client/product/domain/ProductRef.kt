@@ -1,8 +1,8 @@
 package com.client.product.domain
 
 import com.client.domain.BaseDomain
+import com.client.domain.Element
 import com.client.product.domain.Discount
-import com.client.product.domain.Element
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*

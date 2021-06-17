@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "Parties", tags = ["Parties"], description = "the Parties API")
 interface PartiesApi {
 
-    @ApiOperation(value = "CreateParty", nickname = "partiesCreateParty", notes = "Create new party. Validate party not exist yet.", tags=["Parties"],)
+    @ApiOperation(value = "CreateParty", nickname = "partiesCreateParty", notes = "Create new party. Validate party not exist yet.", tags=["Parties"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Create operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -32,7 +32,7 @@ interface PartiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteParty", nickname = "partiesDeleteParty", notes = "Delete party if it exists", tags=["Parties"],)
+    @ApiOperation(value = "DeleteParty", nickname = "partiesDeleteParty", notes = "Delete party if it exists", tags=["Parties"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Party is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -45,7 +45,7 @@ interface PartiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetParty", nickname = "partiesGetParty", notes = "Get party or list of parties from service.", tags=["Parties"],)
+    @ApiOperation(value = "GetParty", nickname = "partiesGetParty", notes = "Get party or list of parties from service.", tags=["Parties"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Party is found and returned."),
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
@@ -59,7 +59,7 @@ interface PartiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetPartyList", nickname = "partiesGetPartyList", notes = "Get party or list of parties from service.", tags=["Parties"],)
+    @ApiOperation(value = "GetPartyList", nickname = "partiesGetPartyList", notes = "Get party or list of parties from service.", tags=["Parties"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Party is found and returned."),
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
@@ -74,7 +74,7 @@ interface PartiesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyParty", nickname = "partiesModifyParty", notes = "Change party properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Parties"],)
+    @ApiOperation(value = "ModifyParty", nickname = "partiesModifyParty", notes = "Change party properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Parties"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

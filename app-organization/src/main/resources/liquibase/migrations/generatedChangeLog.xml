@@ -5,7 +5,31 @@
 				   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
-	<changeSet author="CodeGeneration" id="create_generated_table_available_time" labels="version:1.0.1">
+	<changeSet author="CodeGeneration" id="create_generated_table_attachment" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="content_type" type="VARCHAR(100)" />
+			<column name="language" type="VARCHAR(512)" />
+			<column name="data" type="VARCHAR(2048)" />
+			<column name="url" type="VARCHAR(512)" />
+			<column name="size" type="int" />
+			<column name="hash" type="VARCHAR(2048)" />
+			<column name="title" type="VARCHAR(512)" />
+			<column name="creation" type="datetime" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_available_time" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="available_time" />
@@ -25,7 +49,7 @@
 			<column name="available_end_time" type="datetime" />
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.1.0">
+	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="binding" />
@@ -90,7 +114,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="VARCHAR(512)" />
 			<column name="reference" type="VARCHAR(512)" />
 			<column name="schedule" type="VARCHAR(512)" />
@@ -146,7 +170,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="${JSON_OBJECT}"/>
 			<column name="part_of" type="VARCHAR(512)" />
 			<column name="legal" type="VARCHAR(512)" />
@@ -164,7 +188,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="VARCHAR(512)" />
 			<column name="reference" type="VARCHAR(512)" />
 			<column name="location" type="VARCHAR(512)" />
@@ -188,7 +212,41 @@
 			<column name="uri" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.6.1">
+	<changeSet author="CodeGeneration" id="create_generated_table_reference_location" labels="version:">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="reference_location" />
+			</not>
+		</preConditions>
+		<createTable tableName="reference_location">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="resource_id" type="VARCHAR(512)" />
+			<column name="name" type="VARCHAR(512)" />
+			<column name="description" type="VARCHAR(512)" />
+			<column name="type" type="VARCHAR(512)" />
+			<column name="uri" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_reference_organization_role" labels="version:">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="reference_organization_role" />
+			</not>
+		</preConditions>
+		<createTable tableName="reference_organization_role">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="resource_id" type="VARCHAR(512)" />
+			<column name="name" type="VARCHAR(512)" />
+			<column name="description" type="VARCHAR(512)" />
+			<column name="type" type="VARCHAR(512)" />
+			<column name="uri" type="VARCHAR(512)" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="entity" />
@@ -239,6 +297,24 @@
 		<addPrimaryKey columnNames="entity_id, binding_id"
 					   constraintName="pk_binding_to_entity"
 					   tableName="binding_to_entity"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_attachment_to_entity">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment_to_entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment_to_entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="entity"/>
+			</column>
+			<column name="attachment_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="attachment"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="entity_id, attachment_id"
+					   constraintName="pk_attachment_to_entity"
+					   tableName="attachment_to_entity"/>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_join_table_employee_role_to_product">
 		<preConditions onFail="MARK_RAN">
@@ -294,23 +370,23 @@
 					   constraintName="pk_employee_to_employee_role"
 					   tableName="employee_to_employee_role"/>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_join_table_location_to_organization">
+	<changeSet author="CodeGeneration" id="create_generated_join_table_organization_to_reference_location">
 		<preConditions onFail="MARK_RAN">
 			<not>
-				<tableExists tableName="location_to_organization" />
+				<tableExists tableName="organization_to_reference_location" />
 			</not>
 		</preConditions>
-		<createTable tableName="location_to_organization">
+		<createTable tableName="organization_to_reference_location">
 			<column name="organization_id" type="${UUID}">
 				<constraints nullable="false" referencedTableName="organization"/>
 			</column>
-			<column name="location_id" type="${UUID}">
-				<constraints nullable="false"/>
+			<column name="reference_location_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="reference_location"/>
 			</column>
 		</createTable>
-		<addPrimaryKey columnNames="organization_id, location_id"
-					   constraintName="pk_location_to_organization"
-					   tableName="location_to_organization"/>
+		<addPrimaryKey columnNames="organization_id, reference_location_id"
+					   constraintName="pk_organization_to_reference_location"
+					   tableName="organization_to_reference_location"/>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_join_table_contact_to_organization">
 		<preConditions onFail="MARK_RAN">

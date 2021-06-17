@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "Contacts", tags = ["Contacts"], description = "the Contacts API")
 interface ContactsApi {
 
-    @ApiOperation(value = "CreateContact", nickname = "contactsCreateContact", notes = "Create new Contact. Validate Contact not yet exist.", tags=["Contacts"],)
+    @ApiOperation(value = "CreateContact", nickname = "contactsCreateContact", notes = "Create new Contact. Validate Contact not yet exist.", tags=["Contacts"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -32,7 +32,7 @@ interface ContactsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteContact", nickname = "contactsDeleteContact", notes = "Delete contact if it exist", tags=["Contacts"],)
+    @ApiOperation(value = "DeleteContact", nickname = "contactsDeleteContact", notes = "Delete contact if it exist", tags=["Contacts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -45,7 +45,7 @@ interface ContactsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetContact", nickname = "contactsGetContact", notes = "Get contact or list of contacts from service.", tags=["Contacts"],)
+    @ApiOperation(value = "GetContact", nickname = "contactsGetContact", notes = "Get contact or list of contacts from service.", tags=["Contacts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -58,7 +58,7 @@ interface ContactsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetContactList", nickname = "contactsGetContactList", notes = "Get contact or list of contacts from service.", tags=["Contacts"],)
+    @ApiOperation(value = "GetContactList", nickname = "contactsGetContactList", notes = "Get contact or list of contacts from service.", tags=["Contacts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -72,7 +72,7 @@ interface ContactsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyContact", nickname = "contactsModifyContact", notes = "Change Contact properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Contacts"],)
+    @ApiOperation(value = "ModifyContact", nickname = "contactsModifyContact", notes = "Change Contact properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Contacts"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

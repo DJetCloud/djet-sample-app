@@ -2,8 +2,8 @@ package com.client.party.controller
 
 import com.client.party.domain.Account
 import com.client.party.domain.PaymentInstrument
-import com.client.party.domain.Element
-import com.client.party.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.party.domain.PaymentInstrumentSpec
 import com.client.party.domain.BankSpec
 import com.client.domain.Identity
@@ -34,7 +34,7 @@ class PartyAccountsApiIT : AbstractIntegrationTest<Account>() {
 	fun `partyAccountsCreateAccount with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -42,7 +42,7 @@ class PartyAccountsApiIT : AbstractIntegrationTest<Account>() {
 	fun `partyAccountsCreateAccount with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 

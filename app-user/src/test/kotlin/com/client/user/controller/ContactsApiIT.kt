@@ -2,8 +2,8 @@ package com.client.user.controller
 
 import com.client.user.domain.Contact
 import com.client.user.domain.ContactPoint
-import com.client.user.domain.Element
-import com.client.user.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.user.domain.Address
 import com.client.user.UserApplication
 import com.client.user.repository.ContactsRepository
@@ -32,7 +32,7 @@ class ContactsApiIT : AbstractIntegrationTest<Contact>() {
 	fun `contactsCreateContact with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -40,7 +40,7 @@ class ContactsApiIT : AbstractIntegrationTest<Contact>() {
 	fun `contactsCreateContact with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -166,8 +166,7 @@ class ContactsApiIT : AbstractIntegrationTest<Contact>() {
 				),
 					system = "test_enum_value",
 					value = "test string value",
-					use = "test_enum_value",
-					rank = 8
+					use = "test_enum_value"
 				)),
 				address = listOf(Address(
 					header = Element(
@@ -181,6 +180,8 @@ class ContactsApiIT : AbstractIntegrationTest<Contact>() {
 					use = "test_enum_value",
 					type = "test_enum_value",
 					text = "test string value",
+					line = listOf("test_list_string_value"),
+					city = "test string value",
 					district = "test string value",
 					state = "test string value",
 					postalCode = "test string value",

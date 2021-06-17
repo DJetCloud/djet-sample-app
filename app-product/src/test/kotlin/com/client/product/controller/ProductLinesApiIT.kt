@@ -1,6 +1,7 @@
 package com.client.product.controller
 
 import com.client.product.domain.ProductLine
+import com.client.domain.Identity
 import com.client.product.ProductApplication
 import com.client.product.repository.ProductLinesRepository
 import org.junit.jupiter.api.Test
@@ -19,7 +20,7 @@ import kotlin.test.*
 @AutoConfigureMockMvc
 class ProductLinesApiIT : AbstractIntegrationTest<ProductLine>() {
 
-	private val url = "/parties/{partyId}/productlines"
+	private val url = "/parties/parent-id/productlines"
 
 	@Autowired
 	lateinit var repository: ProductLinesRepository
@@ -28,7 +29,7 @@ class ProductLinesApiIT : AbstractIntegrationTest<ProductLine>() {
 	fun `productLinesCreateProductLine with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -36,7 +37,7 @@ class ProductLinesApiIT : AbstractIntegrationTest<ProductLine>() {
 	fun `productLinesCreateProductLine with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -145,6 +146,7 @@ class ProductLinesApiIT : AbstractIntegrationTest<ProductLine>() {
 			this.identity.name = "test name"
 			this.identity.description = "test description"
 			this.entity.state = "active"
+			this.entity.parent = Identity(id = "parent-id")
 		}
 	}
 
@@ -158,6 +160,7 @@ class ProductLinesApiIT : AbstractIntegrationTest<ProductLine>() {
 			this.identity.name = "test user name"
 			this.identity.description = "test user description"
 			this.entity.state = "active"
+			this.entity.parent = Identity(id = "parent-id")
 		}
 	}
 

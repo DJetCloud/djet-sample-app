@@ -12,7 +12,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param revision Object revision. Introduced for bag fixes with backward compatability garantee. Revision can be created for any version of the object.
 * @param label Version label. Human friendly label for the version. Label need to be unique for all object versions.
 */
-@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.1.0")
+@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
 @JsonPropertyOrder("major", "minor", "revision", "label")
 

@@ -12,7 +12,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param reference Reference to structure for types of structure, field or enum. Reference can be complete and include organization name, system name, application name and dataset name. Reference can be short and contain only dataset name. Version identify structure currently used and if not specified, it means last approved version.
 * @param value Property value.
 */
-@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.2.0")
+@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
 @JsonPropertyOrder("identity", "type", "reference", "value")
 

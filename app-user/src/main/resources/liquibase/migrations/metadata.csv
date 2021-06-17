@@ -1,4 +1,5 @@
 group_name,code,name,description
+LOCALE,Locale id,Locale Name,Locale id
 LOCALE,af,Afrikaans,af
 LOCALE,sq,Albanian,sq
 LOCALE,am,Amharic,am

@@ -22,13 +22,15 @@
 			<column name="use_" type="VARCHAR(512)" />
 			<column name="type" type="VARCHAR(512)" />
 			<column name="text" type="VARCHAR(256)" />
+			<column name="line" type="${JSON_OBJECT}"/>
+			<column name="city" type="VARCHAR(100)" />
 			<column name="district" type="VARCHAR(100)" />
 			<column name="state" type="VARCHAR(100)" />
 			<column name="postal_code" type="VARCHAR(64)" />
 			<column name="country" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_attachment" labels="version:1.3.0">
+	<changeSet author="CodeGeneration" id="create_generated_table_attachment" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="attachment" />
@@ -52,7 +54,7 @@
 			<column name="creation" type="datetime" />
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.1.0">
+	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="binding" />
@@ -79,7 +81,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="VARCHAR(512)" />
 			<column name="person" type="VARCHAR(512)" />
 		</createTable>
@@ -101,7 +103,6 @@
 			<column name="system_" type="VARCHAR(512)" />
 			<column name="value" type="VARCHAR(512)" />
 			<column name="use_" type="VARCHAR(512)" />
-			<column name="rank_" type="int" />
 		</createTable>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_table_hours_of_operation" labels="version:1.0.0">
@@ -146,7 +147,7 @@
 			<column name="suffix" type="${JSON_OBJECT}"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_identifier" labels="version:1.5.0">
+	<changeSet author="CodeGeneration" id="create_generated_table_identifier" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="identifier" />
@@ -179,7 +180,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="${JSON_OBJECT}"/>
 			<column name="mode" type="VARCHAR(512)" />
 			<column name="status" type="VARCHAR(512)" />
@@ -204,7 +205,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="gender" type="VARCHAR(512)" />
 			<column name="birth_date" type="datetime" />
 			<column name="photo" type="VARCHAR(512)" />
@@ -227,7 +228,7 @@
 			<column name="uri" type="VARCHAR(512)" />
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.6.1">
+	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="entity" />
@@ -271,7 +272,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="email_address" type="VARCHAR(512)"/>
 			<column name="email_verified" type="${BOOLEAN_VALUE}"/>
 			<column name="email_date_added" type="bigint"/>
@@ -301,6 +302,24 @@
 		<addPrimaryKey columnNames="entity_id, binding_id"
 					   constraintName="pk_binding_to_entity"
 					   tableName="binding_to_entity"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_attachment_to_entity">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment_to_entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment_to_entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="entity"/>
+			</column>
+			<column name="attachment_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="attachment"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="entity_id, attachment_id"
+					   constraintName="pk_attachment_to_entity"
+					   tableName="attachment_to_entity"/>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_join_table_contact_to_contact_point">
 		<preConditions onFail="MARK_RAN">

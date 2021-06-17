@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "ProductLines", tags = ["ProductLines"], description = "the ProductLines API")
 interface ProductLinesApi {
 
-    @ApiOperation(value = "CreateProductLine", nickname = "productLinesCreateProductLine", notes = "Create a new ProductLine. Validate ProductLine not yet exist.", tags=["ProductLines"],)
+    @ApiOperation(value = "CreateProductLine", nickname = "productLinesCreateProductLine", notes = "Create a new ProductLine. Validate ProductLine not yet exist.", tags=["ProductLines"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -27,12 +27,12 @@ interface ProductLinesApi {
     )
     @PostMapping("/parties/{partyId}/productlines")
     fun productLinesCreateProductLine(
-			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@PathVariable("partyId") partyId: String,
+			@RequestBody productLine: ProductLine): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteProductLine", nickname = "productLinesDeleteProductLine", notes = "Soft delete of the productLine by id.", tags=["ProductLines"],)
+    @ApiOperation(value = "DeleteProductLine", nickname = "productLinesDeleteProductLine", notes = "Soft delete of the productLine by id.", tags=["ProductLines"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -40,12 +40,12 @@ interface ProductLinesApi {
     )
     @DeleteMapping("/parties/{partyId}/productlines/{productLineId}")
     fun productLinesDeleteProductLine(
-			@PathVariable("productLineId") productLineId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("productLineId") productLineId: String): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetProductLine", nickname = "productLinesGetProductLine", notes = "Get a productLine or list of productLines from the service. ", tags=["ProductLines"],)
+    @ApiOperation(value = "GetProductLine", nickname = "productLinesGetProductLine", notes = "Get a productLine or list of productLines from the service. ", tags=["ProductLines"])
     @ApiResponses(
         ApiResponse(code = 200, message = "ProductLine is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -53,12 +53,12 @@ interface ProductLinesApi {
     )
     @GetMapping("/parties/{partyId}/productlines/{productLineId}")
     fun productLinesGetProductLine(
-			@PathVariable("productLineId") productLineId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("productLineId") productLineId: String): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetProductLineList", nickname = "productLinesGetProductLineList", notes = "Get a productLine or list of productLines from the service. ", tags=["ProductLines"],)
+    @ApiOperation(value = "GetProductLineList", nickname = "productLinesGetProductLineList", notes = "Get a productLine or list of productLines from the service. ", tags=["ProductLines"])
     @ApiResponses(
         ApiResponse(code = 200, message = "ProductLine is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -66,13 +66,13 @@ interface ProductLinesApi {
     )
     @GetMapping("/parties/{partyId}/productlines")
     fun productLinesGetProductLineList(
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
+			@PathVariable("partyId") partyId: String,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<ProductLine>> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyProductLine", nickname = "productLinesModifyProductLine", notes = "Change ProductLine properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["ProductLines"],)
+    @ApiOperation(value = "ModifyProductLine", nickname = "productLinesModifyProductLine", notes = "Change ProductLine properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["ProductLines"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -80,9 +80,9 @@ interface ProductLinesApi {
     )
     @PatchMapping("/parties/{partyId}/productlines/{productLineId}")
     fun productLinesModifyProductLine(
+			@PathVariable("partyId") partyId: String,
 			@PathVariable("productLineId") productLineId: String,
-			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@RequestBody productLine: ProductLine): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
@@ -94,9 +94,9 @@ interface ProductLinesApi {
     )
     @PutMapping("/parties/{partyId}/productlines/{productLineId}")
     fun productLinesUpdateProductLine(
+			@PathVariable("partyId") partyId: String,
 			@PathVariable("productLineId") productLineId: String,
-			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
+			@RequestBody productLine: ProductLine): ResponseEntity<ProductLine> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 

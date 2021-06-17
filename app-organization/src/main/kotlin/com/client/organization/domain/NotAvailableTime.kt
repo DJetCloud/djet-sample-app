@@ -1,8 +1,8 @@
 package com.client.organization.domain
 
 import com.client.domain.BaseDomain
-import com.client.organization.domain.Element
-import com.client.organization.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*

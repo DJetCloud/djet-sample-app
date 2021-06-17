@@ -11,7 +11,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param amount Amount of money
 * @param currency Currency to represent amount of money. 
 */
-@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.1")
+@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
 @JsonPropertyOrder("amount", "currency")
 

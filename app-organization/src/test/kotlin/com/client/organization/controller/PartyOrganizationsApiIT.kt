@@ -1,6 +1,7 @@
 package com.client.organization.controller
 
 import com.client.organization.domain.Organization
+import com.client.organization.domain.ReferenceLocation
 import com.client.domain.Identity
 import com.client.organization.OrganizationApplication
 import com.client.organization.repository.PartyOrganizationsRepository
@@ -29,7 +30,7 @@ class PartyOrganizationsApiIT : AbstractIntegrationTest<Organization>() {
 	fun `partyOrganizationsCreateOrganization with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -37,7 +38,7 @@ class PartyOrganizationsApiIT : AbstractIntegrationTest<Organization>() {
 	fun `partyOrganizationsCreateOrganization with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -158,7 +159,13 @@ class PartyOrganizationsApiIT : AbstractIntegrationTest<Organization>() {
 		return Organization(
 				type = listOf("test_list_string_value"),
 				partOf = "test string value",
-				location = listOf("test_list_string_value"),
+				location = listOf(ReferenceLocation(
+					resourceId = "test string value",
+					name = "test string value",
+					description = "test string value",
+					type = "test string value",
+					uri = "test string value"
+				)),
 				contact = listOf("test_list_string_value"),
 				legal = "test string value",
 				account = "test string value"

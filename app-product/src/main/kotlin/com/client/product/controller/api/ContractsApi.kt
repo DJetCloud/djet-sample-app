@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "Contracts", tags = ["Contracts"], description = "the Contracts API")
 interface ContractsApi {
 
-    @ApiOperation(value = "CreateContract", nickname = "contractsCreateContract", notes = "Create a new Contract. Validate Contract not yet exist.", tags=["Contracts"],)
+    @ApiOperation(value = "CreateContract", nickname = "contractsCreateContract", notes = "Create a new Contract. Validate Contract not yet exist.", tags=["Contracts"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -31,7 +31,7 @@ interface ContractsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteContract", nickname = "contractsDeleteContract", notes = "Soft delete of the contract by id.", tags=["Contracts"],)
+    @ApiOperation(value = "DeleteContract", nickname = "contractsDeleteContract", notes = "Soft delete of the contract by id.", tags=["Contracts"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -43,7 +43,7 @@ interface ContractsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetContract", nickname = "contractsGetContract", notes = "Get a contract or list of contracts from the service. ", tags=["Contracts"],)
+    @ApiOperation(value = "GetContract", nickname = "contractsGetContract", notes = "Get a contract or list of contracts from the service. ", tags=["Contracts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -55,7 +55,7 @@ interface ContractsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetContractList", nickname = "contractsGetContractList", notes = "Get a contract or list of contracts from the service. ", tags=["Contracts"],)
+    @ApiOperation(value = "GetContractList", nickname = "contractsGetContractList", notes = "Get a contract or list of contracts from the service. ", tags=["Contracts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -68,7 +68,7 @@ interface ContractsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyContract", nickname = "contractsModifyContract", notes = "Change Contract properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["Contracts"],)
+    @ApiOperation(value = "ModifyContract", nickname = "contractsModifyContract", notes = "Change Contract properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["Contracts"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

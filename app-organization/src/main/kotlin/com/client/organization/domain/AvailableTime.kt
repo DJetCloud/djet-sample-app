@@ -1,7 +1,7 @@
 package com.client.organization.domain
 
 import com.client.domain.BaseDomain
-import com.client.organization.domain.Element
+import com.client.domain.Element
 import java.util.Date
 import java.util.UUID
 import org.hibernate.annotations.Type
@@ -18,7 +18,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param availableStartTime The opening time of day. Note: If the AllDay flag is set, then this time is ignored.  
 * @param availableEndTime The closing time of day. Note: If the AllDay flag is set, then this time is ignored.  The time zone is expected to be for where this HealthcareService is provided at.  
 */
-@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.1")
+@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
 @JsonPropertyOrder("id", "header", "daysOfWeek", "allDay", "availableStartTime", "availableEndTime")
 

@@ -2,8 +2,9 @@ package com.client.organization.controller
 
 import com.client.organization.domain.Employee
 import com.client.organization.domain.EmployeeRole
-import com.client.organization.domain.Element
-import com.client.organization.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
+import com.client.organization.domain.ReferenceOrganizationRole
 import com.client.organization.domain.ReferenceIdentity
 import com.client.domain.Identity
 import com.client.organization.OrganizationApplication
@@ -33,7 +34,7 @@ class OrganizationEmployeesApiIT : AbstractIntegrationTest<Employee>() {
 	fun `organizationEmployeesCreateEmployee with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -41,7 +42,7 @@ class OrganizationEmployeesApiIT : AbstractIntegrationTest<Employee>() {
 	fun `organizationEmployeesCreateEmployee with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -169,7 +170,13 @@ class OrganizationEmployeesApiIT : AbstractIntegrationTest<Employee>() {
 					end = Date()
 				)
 				),
-					assignedRole = "test string value",
+					assignedRole = ReferenceOrganizationRole(
+					resourceId = "test string value",
+					name = "test string value",
+					description = "test string value",
+					type = "test string value",
+					uri = "test string value"
+				),
 					excludedServices = listOf("test_list_string_value"),
 					roleSchedule = "test string value"
 				)),

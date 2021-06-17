@@ -1,7 +1,7 @@
 package com.client.product.domain
 
 import com.client.domain.BaseResource
-import com.client.product.domain.Element
+import com.client.domain.Element
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
 import org.hibernate.annotations.LazyCollection

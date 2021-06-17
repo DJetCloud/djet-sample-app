@@ -1,5 +1,6 @@
 package com.client.domain
 
+import com.client.domain.Attachment
 import com.client.domain.Binding
 import com.client.domain.History
 import com.fasterxml.jackson.annotation.JsonIgnore
@@ -11,7 +12,7 @@ import org.hibernate.annotations.LazyCollectionOption
 
 /**
 * Updatable entity. Entity can be accessed by API and referenced.
-* @param parent Reference to id of folder for current entity. It include full URI of parent entity in name always  starting from party.
+* @param parent Reference to id of folder for current entity. It include full URI of parent entity in name always starting from party.
 * @param type Type of the entity.
 * @param state State of the entity
 * @param alias List of additional names for the entity.
@@ -21,6 +22,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param source Source system originated the entity. If not specified entity instantiated by core system.
 * @param bindings Reference to entity system bind to.
 * @param history History of the entity instance.
+* @param attachments Attachments for the entity. It is a Structure to attach data to any Resource in various formats, like URL, base64, etc.
 */
 @javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"])
 
@@ -73,7 +75,16 @@ data class ResourceEntity(
 	var bindings: List<Binding>? = null,
 
 	@Embedded
-	var history: History = History()
+	var history: History = History(),
+
+	@OneToMany(cascade = [CascadeType.ALL])
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@JoinTable(
+			name = "attachment_to_entity",
+			joinColumns = [JoinColumn(name = "entity_id", referencedColumnName = "entity_id")],
+			inverseJoinColumns = [JoinColumn(name = "attachment_id", referencedColumnName = "id")]
+	)
+	var attachments: List<Attachment>? = null
 
 ) 
 

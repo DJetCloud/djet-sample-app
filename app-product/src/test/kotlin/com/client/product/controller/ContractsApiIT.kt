@@ -3,8 +3,8 @@ package com.client.product.controller
 import com.client.product.domain.Contract
 import com.client.product.domain.Version
 import com.client.product.domain.ContractParty
-import com.client.product.domain.Element
-import com.client.product.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.product.domain.Discount
 import com.client.product.domain.Fee
 import com.client.product.ProductApplication
@@ -34,7 +34,7 @@ class ContractsApiIT : AbstractIntegrationTest<Contract>() {
 	fun `contractsCreateContract with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -42,7 +42,7 @@ class ContractsApiIT : AbstractIntegrationTest<Contract>() {
 	fun `contractsCreateContract with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -157,7 +157,7 @@ class ContractsApiIT : AbstractIntegrationTest<Contract>() {
 				),
 				type = null,
 				parties = null,
-				merchant = "ff87b4f3-c37a-4abb-8275-936a92485dce",
+				merchant = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
 				start = Date(),
 				end = null,
 				products = null,
@@ -189,10 +189,11 @@ class ContractsApiIT : AbstractIntegrationTest<Contract>() {
 					end = Date()
 				)
 				),
+					role = "test_enum_value",
 					party = "test string value",
 					account = "test string value"
 				)),
-				merchant = "ff87b4f3-c37a-4abb-8275-936a92485dce",
+				merchant = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
 				start = Date(),
 				end = Date(),
 				products = listOf("test_list_string_value"),
@@ -206,8 +207,8 @@ class ContractsApiIT : AbstractIntegrationTest<Contract>() {
 					end = Date()
 				)
 				),
-					party = "3b3e17ab-3839-4597-ba7c-fe38e5461bc4",
-					value = 777.toBigDecimal(),
+					party = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
+					value = 777.77.toBigDecimal(),
 					ratio = "test string (was object) value"
 				)),
 				fees = listOf(Fee(
@@ -219,11 +220,11 @@ class ContractsApiIT : AbstractIntegrationTest<Contract>() {
 					end = Date()
 				)
 				),
-					payParty = "4c336b8a-8da5-4957-8f76-e86044924f33",
-					receiveParty = "c6b66ae8-2f6c-4c94-9a5b-539b749b33c7",
-					value = 777.toBigDecimal(),
+					payParty = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
+					receiveParty = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
+					value = 777.77.toBigDecimal(),
 					ratio = "test string (was object) value",
-					base = "9e7c0337-0c04-4713-802f-9ec27ef83878"
+					base = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff"
 				))
 		).apply {
 			this.identity.name = "test user name"

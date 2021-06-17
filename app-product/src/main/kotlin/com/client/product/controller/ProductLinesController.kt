@@ -20,42 +20,42 @@ class ProductLinesController(service: ProductLinesService)
 
 
     override fun productLinesCreateProductLine(
-			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.create(productLine)
+			@PathVariable("partyId") partyId: String,
+			@RequestBody productLine: ProductLine): ResponseEntity<ProductLine> {
+        return super.create(partyId, productLine)
     }
 
     override fun productLinesDeleteProductLine(
-			@PathVariable("productLineId") productLineId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.delete(productLineId)
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("productLineId") productLineId: String): ResponseEntity<ProductLine> {
+        return super.delete(partyId, productLineId)
     }
 
     override fun productLinesGetProductLine(
-			@PathVariable("productLineId") productLineId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.getById(productLineId)
+			@PathVariable("partyId") partyId: String,
+			@PathVariable("productLineId") productLineId: String): ResponseEntity<ProductLine> {
+        return super.getById(partyId, productLineId)
     }
 
     override fun productLinesGetProductLineList(
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
+			@PathVariable("partyId") partyId: String,
 			@RequestParam(value = "search", required = false) search: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<ProductLine>> {
-        return getAll(search, page)
+        return getAll(partyId, search, page)
     }
 
     override fun productLinesModifyProductLine(
+			@PathVariable("partyId") partyId: String,
 			@PathVariable("productLineId") productLineId: String,
-			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.modify(productLineId, productLine)
+			@RequestBody productLine: ProductLine): ResponseEntity<ProductLine> {
+        return super.modify(partyId, productLineId, productLine)
     }
 
     override fun productLinesUpdateProductLine(
+			@PathVariable("partyId") partyId: String,
 			@PathVariable("productLineId") productLineId: String,
-			@RequestBody productLine: ProductLine,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?): ResponseEntity<ProductLine> {
-        return super.update(productLineId, productLine)
+			@RequestBody productLine: ProductLine): ResponseEntity<ProductLine> {
+        return super.update(partyId, productLineId, productLine)
     }
 
 }

@@ -1,7 +1,7 @@
 package com.client.product.domain
 
 import com.client.domain.BaseDomain
-import com.client.product.domain.Element
+import com.client.domain.Element
 import java.math.BigDecimal
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "PartyAccounts", tags = ["PartyAccounts"], description = "the PartyAccounts API")
 interface PartyAccountsApi {
 
-    @ApiOperation(value = "CreateAccount", nickname = "partyAccountsCreateAccount", notes = "Create new account. Validate account not exist for this party yet.", tags=["PartyAccounts"],)
+    @ApiOperation(value = "CreateAccount", nickname = "partyAccountsCreateAccount", notes = "Create new account. Validate account not exist for this party yet.", tags=["PartyAccounts"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Create operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -33,7 +33,7 @@ interface PartyAccountsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteAccount", nickname = "partyAccountsDeleteAccount", notes = "Delete the account of party if the account is exists", tags=["PartyAccounts"],)
+    @ApiOperation(value = "DeleteAccount", nickname = "partyAccountsDeleteAccount", notes = "Delete the account of party if the account is exists", tags=["PartyAccounts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -47,7 +47,7 @@ interface PartyAccountsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetAccount", nickname = "partyAccountsGetAccount", notes = "Get account or list of accounts from service.", tags=["PartyAccounts"],)
+    @ApiOperation(value = "GetAccount", nickname = "partyAccountsGetAccount", notes = "Get account or list of accounts from service.", tags=["PartyAccounts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -61,7 +61,7 @@ interface PartyAccountsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetAccountList", nickname = "partyAccountsGetAccountList", notes = "Get account or list of accounts from service.", tags=["PartyAccounts"],)
+    @ApiOperation(value = "GetAccountList", nickname = "partyAccountsGetAccountList", notes = "Get account or list of accounts from service.", tags=["PartyAccounts"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -76,7 +76,7 @@ interface PartyAccountsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyAccount", nickname = "partyAccountsModifyAccount", notes = "Change account properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["PartyAccounts"],)
+    @ApiOperation(value = "ModifyAccount", nickname = "partyAccountsModifyAccount", notes = "Change account properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["PartyAccounts"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

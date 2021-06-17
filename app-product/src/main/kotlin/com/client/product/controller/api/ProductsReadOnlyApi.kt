@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "ProductsReadOnly", tags = ["ProductsReadOnly"], description = "the ProductsReadOnly API")
 interface ProductsReadOnlyApi {
 
-    @ApiOperation(value = "GetProduct", nickname = "productsReadOnlyGetProduct", notes = "Get a product or list of products from the service. ", tags=["ProductsReadOnly"],)
+    @ApiOperation(value = "GetProduct", nickname = "productsReadOnlyGetProduct", notes = "Get a product or list of products from the service. ", tags=["ProductsReadOnly"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

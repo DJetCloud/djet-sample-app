@@ -1,7 +1,7 @@
 package com.client.party.domain
 
 import com.client.domain.BaseDomain
-import com.client.party.domain.Element
+import com.client.domain.Element
 import com.client.party.domain.PaymentInstrumentSpec
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*

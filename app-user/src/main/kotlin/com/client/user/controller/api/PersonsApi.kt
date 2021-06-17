@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "Persons", tags = ["Persons"], description = "the Persons API")
 interface PersonsApi {
 
-    @ApiOperation(value = "CreatePerson", nickname = "personsCreatePerson", notes = "Create new Person. Validate Person not yet exist.", tags=["Persons"],)
+    @ApiOperation(value = "CreatePerson", nickname = "personsCreatePerson", notes = "Create new Person. Validate Person not yet exist.", tags=["Persons"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -32,7 +32,7 @@ interface PersonsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeletePerson", nickname = "personsDeletePerson", notes = "Delete person if it exists", tags=["Persons"],)
+    @ApiOperation(value = "DeletePerson", nickname = "personsDeletePerson", notes = "Delete person if it exists", tags=["Persons"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Person is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -45,7 +45,7 @@ interface PersonsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetPerson", nickname = "personsGetPerson", notes = "Get person or list of persons from service.", tags=["Persons"],)
+    @ApiOperation(value = "GetPerson", nickname = "personsGetPerson", notes = "Get person or list of persons from service.", tags=["Persons"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Person is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -58,7 +58,7 @@ interface PersonsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetPersonList", nickname = "personsGetPersonList", notes = "Get person or list of persons from service.", tags=["Persons"],)
+    @ApiOperation(value = "GetPersonList", nickname = "personsGetPersonList", notes = "Get person or list of persons from service.", tags=["Persons"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Person is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -72,7 +72,7 @@ interface PersonsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyPerson", nickname = "personsModifyPerson", notes = "Change Person properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Persons"],)
+    @ApiOperation(value = "ModifyPerson", nickname = "personsModifyPerson", notes = "Change Person properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["Persons"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

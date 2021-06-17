@@ -1,7 +1,7 @@
 package com.client.user.domain
 
 import com.client.domain.BaseDomain
-import com.client.user.domain.Element
+import com.client.domain.Element
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
@@ -14,11 +14,10 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param system System for contact point
 * @param value The actual contact point details
 * @param use What contact point use for.
-* @param rank Specify preferred order of use (1 = highest).
 */
 @javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
-@JsonPropertyOrder("id", "header", "system", "value", "use", "rank")
+@JsonPropertyOrder("id", "header", "system", "value", "use")
 
 @Entity
 @Table(name = "contact_point")
@@ -40,10 +39,7 @@ data class ContactPoint(
 	var value: String?,
 
 	@Column(name = "use_")
-	var use: String?,
-
-	@Column(name = "rank_")
-	var rank: Int?
+	var use: String?
 
 ) : BaseDomain()
 

@@ -28,7 +28,7 @@ class PartiesApiIT : AbstractIntegrationTest<Party>() {
 	fun `partiesCreateParty with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -36,7 +36,7 @@ class PartiesApiIT : AbstractIntegrationTest<Party>() {
 	fun `partiesCreateParty with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 

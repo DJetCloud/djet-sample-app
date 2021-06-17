@@ -1,7 +1,7 @@
 package com.client.party.controller
 
 import com.client.party.domain.LegalEntity
-import com.client.party.domain.Period
+import com.client.domain.Period
 import com.client.domain.Identity
 import com.client.party.PartyApplication
 import com.client.party.repository.PartyLegalEntitiesRepository
@@ -30,7 +30,7 @@ class PartyLegalEntitiesApiIT : AbstractIntegrationTest<LegalEntity>() {
 	fun `partyLegalEntitiesCreateLegalEntity with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -38,7 +38,7 @@ class PartyLegalEntitiesApiIT : AbstractIntegrationTest<LegalEntity>() {
 	fun `partyLegalEntitiesCreateLegalEntity with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 

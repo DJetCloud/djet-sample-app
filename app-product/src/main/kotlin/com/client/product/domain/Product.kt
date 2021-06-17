@@ -1,7 +1,7 @@
 package com.client.product.domain
 
+import com.client.domain.Attachment
 import com.client.domain.BaseResource
-import com.client.product.domain.Attachment
 import com.client.product.domain.AvailableTime
 import com.client.product.domain.CommunicationLanguage
 import com.client.product.domain.ContactPoint
@@ -34,14 +34,10 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param notAvailable Not available during this time due to provided reason 
 * @param availabilityExceptions A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.  
 * @param price Recommended price for product or service. 
-* @param partyId a sample of Guid
-* @param critical a sample of a boolean flag
-* @param rank a sample of number property
-* @param estimation a sample of String
 */
 @javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
-@JsonPropertyOrder("identity", "entity", "type", "category", "reference", "service", "sku", "products", "photo", "telecom", "communication", "location", "coverageArea", "appointmentRequired", "availableTime", "notAvailable", "availabilityExceptions", "price", "partyId", "critical", "rank", "estimation")
+@JsonPropertyOrder("identity", "entity", "type", "category", "reference", "service", "sku", "products", "photo", "telecom", "communication", "location", "coverageArea", "appointmentRequired", "availableTime", "notAvailable", "availabilityExceptions", "price")
 
 @Entity
 @Table(name = "product")
@@ -133,19 +129,7 @@ data class Product(
 
 	@OneToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
 	@JoinColumn(name = "price", referencedColumnName = "id")
-	var price: Price?,
-
-	@Column(name = "party_id")
-	var partyId: String?,
-
-	@Column(name = "critical")
-	var critical: Boolean?,
-
-	@Column(name = "rank_")
-	var rank: Int?,
-
-	@Column(name = "estimation")
-	var estimation: String?
+	var price: Price?
 
 ) : BaseResource()
 

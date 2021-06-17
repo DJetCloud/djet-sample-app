@@ -5,10 +5,10 @@ import com.client.product.domain.ReferenceIdentity
 import com.client.product.domain.ProductSKU
 import com.client.product.domain.Property
 import com.client.product.domain.ProductRef
-import com.client.product.domain.Element
-import com.client.product.domain.Period
+import com.client.domain.Element
+import com.client.domain.Period
 import com.client.product.domain.Discount
-import com.client.product.domain.Attachment
+import com.client.domain.Attachment
 import com.client.product.domain.ContactPoint
 import com.client.product.domain.CommunicationLanguage
 import com.client.product.domain.AvailableTime
@@ -44,7 +44,7 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 	fun `productsCreateProduct with required fields`() {
 		val res = createWithRequiredFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -52,7 +52,7 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 	fun `productsCreateProduct with all fields`() {
 		val res = createWithAllFields()
 		val result = super.create(url, res)
-		val savedRes = repository.getOne(findIdentityId(result))
+		val savedRes = repository.getById(findIdentityId(result))
 		resourceAsserts(savedRes, result)
 	}
 
@@ -161,10 +161,6 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 		assertListsEquals(savedResource.notAvailable, getValue(result, "$prefix.notAvailable"))
 		assertEquals(savedResource.availabilityExceptions, getValue(result, "$prefix.availabilityExceptions"))
 		assertObjectEquals(savedResource.price, getValue(result, "$prefix.price"))
-		assertEquals(savedResource.partyId, getValue(result, "$prefix.partyId"))
-		assertEquals(savedResource.critical, getValue(result, "$prefix.critical"))
-		assertEquals(savedResource.rank, getValue(result, "$prefix.rank") as Int?)
-		assertEquals(savedResource.estimation, getValue(result, "$prefix.estimation"))
 	}
 
 	private fun createWithRequiredFields(): Product {
@@ -194,11 +190,7 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 				availableTime = null,
 				notAvailable = null,
 				availabilityExceptions = null,
-				price = null,
-				partyId = null,
-				critical = null,
-				rank = null,
-				estimation = null
+				price = null
 		).apply {
 			this.identity.name = "test name"
 			this.identity.description = "test description"
@@ -210,7 +202,7 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 	private fun createWithAllFields(): Product {
 		return Product(
 				type = "test_enum_value",
-				category = "ab6749eb-9f70-4eae-881c-3f23a4622ade",
+				category = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
 				reference = ReferenceIdentity(
 					resourceId = "test string value",
 					name = "test string value",
@@ -254,8 +246,8 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 					end = Date()
 				)
 				),
-					party = "11c3225b-7e70-4898-bc18-207ee0eed02d",
-					value = 777.toBigDecimal(),
+					party = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeffffff",
+					value = 777.77.toBigDecimal(),
 					ratio = "test string (was object) value"
 				)
 				)),
@@ -336,21 +328,17 @@ class ProductsApiIT : AbstractIntegrationTest<Product>() {
 				availabilityExceptions = "test string value",
 				price = Price(
 					amount = Amount(
-					amount = 777.toBigDecimal(),
+					amount = 777.77.toBigDecimal(),
 					currency = "test_enum_value"
 				),
 					quantity = Quantity(
-					value = 777.toBigDecimal(),
+					value = 777.77.toBigDecimal(),
 					comparator = "test_enum_value",
 					unit = "test string value",
 					system = "test string value",
-					code = "test string valu",
+					code = "test string valu"
 				)
-				),
-				partyId = "fa359642-914e-4d51-8219-23761bd8873c",
-				critical = false,
-				rank = 8,
-				estimation = "test string value"
+				)
 		).apply {
 			this.identity.name = "test user name"
 			this.identity.description = "test user description"

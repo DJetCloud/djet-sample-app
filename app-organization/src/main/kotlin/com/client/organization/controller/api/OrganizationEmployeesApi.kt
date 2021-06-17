@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "OrganizationEmployees", tags = ["OrganizationEmployees"], description = "the OrganizationEmployees API")
 interface OrganizationEmployeesApi {
 
-    @ApiOperation(value = "CreateEmployee", nickname = "organizationEmployeesCreateEmployee", notes = "Create new employee. Validate employee not exist for this party yet.", tags=["OrganizationEmployees"],)
+    @ApiOperation(value = "CreateEmployee", nickname = "organizationEmployeesCreateEmployee", notes = "Create new employee. Validate employee not exist for this party yet.", tags=["OrganizationEmployees"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Create operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -33,7 +33,7 @@ interface OrganizationEmployeesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteEmployee", nickname = "organizationEmployeesDeleteEmployee", notes = "Delete employee of organization if the employee exists", tags=["OrganizationEmployees"],)
+    @ApiOperation(value = "DeleteEmployee", nickname = "organizationEmployeesDeleteEmployee", notes = "Delete employee of organization if the employee exists", tags=["OrganizationEmployees"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -47,7 +47,7 @@ interface OrganizationEmployeesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetEmployee", nickname = "organizationEmployeesGetEmployee", notes = "Get employee or list of employees from service.", tags=["OrganizationEmployees"],)
+    @ApiOperation(value = "GetEmployee", nickname = "organizationEmployeesGetEmployee", notes = "Get employee or list of employees from service.", tags=["OrganizationEmployees"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -61,7 +61,7 @@ interface OrganizationEmployeesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetEmployeeList", nickname = "organizationEmployeesGetEmployeeList", notes = "Get employee or list of employees from service.", tags=["OrganizationEmployees"],)
+    @ApiOperation(value = "GetEmployeeList", nickname = "organizationEmployeesGetEmployeeList", notes = "Get employee or list of employees from service.", tags=["OrganizationEmployees"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -76,7 +76,7 @@ interface OrganizationEmployeesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyEmployee", nickname = "organizationEmployeesModifyEmployee", notes = "Change employee properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["OrganizationEmployees"],)
+    @ApiOperation(value = "ModifyEmployee", nickname = "organizationEmployeesModifyEmployee", notes = "Change employee properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["OrganizationEmployees"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

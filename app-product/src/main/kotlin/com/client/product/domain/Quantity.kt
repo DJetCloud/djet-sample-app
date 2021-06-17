@@ -8,14 +8,14 @@ import org.hibernate.annotations.LazyCollection
 import org.hibernate.annotations.LazyCollectionOption
 
 /**
-* A measured amount (or an amount that can potentially be measured). 
+* A measured amount (or an amount that can potentially be measured).
 * @param value Numerical value (with implicit precision)
 * @param comparator How to understand the value
 * @param unit Unit representation
 * @param system System that defines coded unit form
 * @param code Coded form of the unit
 */
-@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.1")
+@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
 @JsonPropertyOrder("value", "comparator", "unit", "system", "code", "id")
 
@@ -36,7 +36,7 @@ data class Quantity(
 	var system: String?,
 
 	@Column(name = "code")
-	var code: String?,
+	var code: String?
 
 ) : BaseDomain()
 

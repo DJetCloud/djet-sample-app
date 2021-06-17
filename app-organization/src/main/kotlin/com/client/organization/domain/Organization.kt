@@ -1,6 +1,7 @@
 package com.client.organization.domain
 
 import com.client.domain.BaseResource
+import com.client.organization.domain.ReferenceLocation
 import org.hibernate.annotations.Type
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
@@ -31,14 +32,14 @@ data class Organization(
 	@Column(name = "part_of")
 	var partOf: String?,
 
-	@ElementCollection
+	@OneToMany(cascade = [CascadeType.ALL])
 	@LazyCollection(LazyCollectionOption.FALSE)
-	@CollectionTable(
-			name = "location_to_organization",
-			joinColumns = [JoinColumn(name = "organization_id")]
+	@JoinTable(
+			name = "organization_to_reference_location",
+			joinColumns = [JoinColumn(name = "organization_id", referencedColumnName = "id")],
+			inverseJoinColumns = [JoinColumn(name = "reference_location_id", referencedColumnName = "id")]
 	)
-	@Column(name = "location_id")
-	var location: List<String>?,
+	var location: List<ReferenceLocation>?,
 
 	@ElementCollection
 	@LazyCollection(LazyCollectionOption.FALSE)

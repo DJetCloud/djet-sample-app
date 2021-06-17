@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "PartyOrganizations", tags = ["PartyOrganizations"], description = "the PartyOrganizations API")
 interface PartyOrganizationsApi {
 
-    @ApiOperation(value = "CreateOrganization", nickname = "partyOrganizationsCreateOrganization", notes = "Create new organization. Validate organization not exist for this party yet.", tags=["PartyOrganizations"],)
+    @ApiOperation(value = "CreateOrganization", nickname = "partyOrganizationsCreateOrganization", notes = "Create new organization. Validate organization not exist for this party yet.", tags=["PartyOrganizations"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Create operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -33,7 +33,7 @@ interface PartyOrganizationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteOrganization", nickname = "partyOrganizationsDeleteOrganization", notes = "Delete organization of party", tags=["PartyOrganizations"],)
+    @ApiOperation(value = "DeleteOrganization", nickname = "partyOrganizationsDeleteOrganization", notes = "Delete organization of party", tags=["PartyOrganizations"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -47,7 +47,7 @@ interface PartyOrganizationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetOrganization", nickname = "partyOrganizationsGetOrganization", notes = "Get organization or list of organizations from service.", tags=["PartyOrganizations"],)
+    @ApiOperation(value = "GetOrganization", nickname = "partyOrganizationsGetOrganization", notes = "Get organization or list of organizations from service.", tags=["PartyOrganizations"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -61,7 +61,7 @@ interface PartyOrganizationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetOrganizationList", nickname = "partyOrganizationsGetOrganizationList", notes = "Get organization or list of organizations from service.", tags=["PartyOrganizations"],)
+    @ApiOperation(value = "GetOrganizationList", nickname = "partyOrganizationsGetOrganizationList", notes = "Get organization or list of organizations from service.", tags=["PartyOrganizations"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -76,7 +76,7 @@ interface PartyOrganizationsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyOrganization", nickname = "partyOrganizationsModifyOrganization", notes = "Change organization properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["PartyOrganizations"],)
+    @ApiOperation(value = "ModifyOrganization", nickname = "partyOrganizationsModifyOrganization", notes = "Change organization properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["PartyOrganizations"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

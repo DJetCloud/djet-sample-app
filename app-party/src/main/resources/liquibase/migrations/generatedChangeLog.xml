@@ -16,7 +16,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="VARCHAR(512)" >
 				<constraints nullable="false"/>
 			</column>
@@ -27,7 +27,31 @@
 			<column name="account_number" type="VARCHAR(32)" />
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.1.0">
+	<changeSet author="CodeGeneration" id="create_generated_table_attachment" labels="version:1.0.0">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment">
+			<column name="id" type="${UUID}">
+				<constraints nullable="false" primaryKey="true"/>
+			</column>
+			<column name="header_order_" type="int"/>
+			<column name="header_rank_" type="int"/>
+			<column name="header_period_start" type="datetime"/>
+			<column name="header_period_end" type="datetime"/>
+			<column name="content_type" type="VARCHAR(100)" />
+			<column name="language" type="VARCHAR(512)" />
+			<column name="data" type="VARCHAR(2048)" />
+			<column name="url" type="VARCHAR(512)" />
+			<column name="size" type="int" />
+			<column name="hash" type="VARCHAR(2048)" />
+			<column name="title" type="VARCHAR(512)" />
+			<column name="creation" type="datetime" />
+		</createTable>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_table_binding" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="binding" />
@@ -54,7 +78,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="VARCHAR(512)" >
 				<constraints nullable="false"/>
 			</column>
@@ -76,7 +100,7 @@
 				<constraints nullable="false" primaryKey="true"/>
 			</column>
 			<column name="name" type="VARCHAR(255)"/>
-			<column name="description" type="VARCHAR(510)"/>
+			<column name="description" type="VARCHAR(4096)"/>
 			<column name="type" type="VARCHAR(512)" />
 			<column name="region" type="VARCHAR(512)" />
 			<column name="party_code" type="VARCHAR(32)" />
@@ -101,7 +125,7 @@
 			<column name="spec_bank_routing_number" type="VARCHAR(16)"/>
 		</createTable>
 	</changeSet>
-	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.6.1">
+	<changeSet author="CodeGeneration" id="create_generated_table_entity" labels="version:1.0.0">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="entity" />
@@ -152,6 +176,24 @@
 		<addPrimaryKey columnNames="entity_id, binding_id"
 					   constraintName="pk_binding_to_entity"
 					   tableName="binding_to_entity"/>
+	</changeSet>
+	<changeSet author="CodeGeneration" id="create_generated_join_table_attachment_to_entity">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="attachment_to_entity" />
+			</not>
+		</preConditions>
+		<createTable tableName="attachment_to_entity">
+			<column name="entity_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="entity"/>
+			</column>
+			<column name="attachment_id" type="${UUID}">
+				<constraints nullable="false" referencedTableName="attachment"/>
+			</column>
+		</createTable>
+		<addPrimaryKey columnNames="entity_id, attachment_id"
+					   constraintName="pk_attachment_to_entity"
+					   tableName="attachment_to_entity"/>
 	</changeSet>
 	<changeSet author="CodeGeneration" id="create_generated_join_table_account_to_payment_instrument">
 		<preConditions onFail="MARK_RAN">

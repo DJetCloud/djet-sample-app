@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "Products", tags = ["Products"], description = "the Products API")
 interface ProductsApi {
 
-    @ApiOperation(value = "CreateProduct", nickname = "productsCreateProduct", notes = "Create a new Product. Validate Product not yet exist.", tags=["Products"],)
+    @ApiOperation(value = "CreateProduct", nickname = "productsCreateProduct", notes = "Create a new Product. Validate Product not yet exist.", tags=["Products"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -32,7 +32,7 @@ interface ProductsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteProduct", nickname = "productsDeleteProduct", notes = "Soft delete of the product by id.", tags=["Products"],)
+    @ApiOperation(value = "DeleteProduct", nickname = "productsDeleteProduct", notes = "Soft delete of the product by id.", tags=["Products"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -45,7 +45,7 @@ interface ProductsApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetProduct", nickname = "productsGetProduct", notes = "Get a product or list of products from the service. ", tags=["Products"],)
+    @ApiOperation(value = "GetProduct", nickname = "productsGetProduct", notes = "Get a product or list of products from the service. ", tags=["Products"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -54,16 +54,11 @@ interface ProductsApi {
     @GetMapping("/productlines/{productLineId}/products/{productId}")
     fun productsGetProduct(
 			@PathVariable("productLineId") productLineId: String,
-			@PathVariable("productId") productId: String,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
-			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value="type", required=false) type: String?,
-			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value="critical", required=false) critical: Boolean?,
-			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value="rank", required=false) rank: Integer?,
-			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value="estimation", required=false) estimation: String?): ResponseEntity<Product> {
+			@PathVariable("productId") productId: String): ResponseEntity<Product> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetProductList", nickname = "productsGetProductList", notes = "Get a product or list of products from the service. ", tags=["Products"],)
+    @ApiOperation(value = "GetProductList", nickname = "productsGetProductList", notes = "Get a product or list of products from the service. ", tags=["Products"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Contact is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -73,16 +68,11 @@ interface ProductsApi {
     fun productsGetProductList(
 			@PathVariable("productLineId") productLineId: String,
 			@RequestParam(value = "search", required = false) search: String?,
-			@ApiParam(value = "for filtering as a sample of Guid" ) @RequestHeader(value="partyId", required=false) partyId: String?,
-			@ApiParam(value = "for filtering as a sample of Enum" ) @RequestHeader(value="type", required=false) type: String?,
-			@ApiParam(value = "for filtering as a sample of boolean" ) @RequestHeader(value="critical", required=false) critical: Boolean?,
-			@ApiParam(value = "for filtering as a sample of Integer" ) @RequestHeader(value="rank", required=false) rank: Integer?,
-			@ApiParam(value = "for filtering as a sample of String" ) @RequestHeader(value="estimation", required=false) estimation: String?,
 			@PageableDefault(value=0, size = 50, sort=["id"], direction = Sort.Direction.ASC) page: Pageable): ResponseEntity<Page<Product>> {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyProduct", nickname = "productsModifyProduct", notes = "Change Product properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["Products"],)
+    @ApiOperation(value = "ModifyProduct", nickname = "productsModifyProduct", notes = "Change Product properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["Products"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "OrganizationRoles", tags = ["OrganizationRoles"], description = "the OrganizationRoles API")
 interface OrganizationRolesApi {
 
-    @ApiOperation(value = "CreateOrganizationRole", nickname = "organizationRolesCreateOrganizationRole", notes = "Create new organization role. Validate organization role not exist for this organization yet.", tags=["OrganizationRoles"],)
+    @ApiOperation(value = "CreateOrganizationRole", nickname = "organizationRolesCreateOrganizationRole", notes = "Create new organization role. Validate organization role not exist for this organization yet.", tags=["OrganizationRoles"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Create operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -33,7 +33,7 @@ interface OrganizationRolesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteOrganizationRole", nickname = "organizationRolesDeleteOrganizationRole", notes = "Delete organization role if it exists", tags=["OrganizationRoles"],)
+    @ApiOperation(value = "DeleteOrganizationRole", nickname = "organizationRolesDeleteOrganizationRole", notes = "Delete organization role if it exists", tags=["OrganizationRoles"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -47,7 +47,7 @@ interface OrganizationRolesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetOrganizationRole", nickname = "organizationRolesGetOrganizationRole", notes = "Get organization role or list of employ roles from service.", tags=["OrganizationRoles"],)
+    @ApiOperation(value = "GetOrganizationRole", nickname = "organizationRolesGetOrganizationRole", notes = "Get organization role or list of employ roles from service.", tags=["OrganizationRoles"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -61,7 +61,7 @@ interface OrganizationRolesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetOrganizationRoleList", nickname = "organizationRolesGetOrganizationRoleList", notes = "Get organization role or list of employ roles from service.", tags=["OrganizationRoles"],)
+    @ApiOperation(value = "GetOrganizationRoleList", nickname = "organizationRolesGetOrganizationRoleList", notes = "Get organization role or list of employ roles from service.", tags=["OrganizationRoles"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Object is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -76,7 +76,7 @@ interface OrganizationRolesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyOrganizationRole", nickname = "organizationRolesModifyOrganizationRole", notes = "Change organization role properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["OrganizationRoles"],)
+    @ApiOperation(value = "ModifyOrganizationRole", nickname = "organizationRolesModifyOrganizationRole", notes = "Change organization role properties to values specified in request. Property not specified will remain same. No element of any collection will be deleted. ", tags=["OrganizationRoles"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully without object returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),

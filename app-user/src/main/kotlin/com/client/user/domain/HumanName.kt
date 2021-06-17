@@ -1,7 +1,7 @@
 package com.client.user.domain
 
 import com.client.domain.BaseDomain
-import com.client.user.domain.Element
+import com.client.domain.Element
 import java.util.UUID
 import org.hibernate.annotations.Type
 import com.fasterxml.jackson.annotation.*

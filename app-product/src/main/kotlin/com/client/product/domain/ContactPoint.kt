@@ -1,7 +1,7 @@
 package com.client.product.domain
 
 import com.client.domain.BaseDomain
-import com.client.product.domain.Element
+import com.client.domain.Element
 import java.util.UUID
 import com.fasterxml.jackson.annotation.*
 import javax.persistence.*
@@ -15,7 +15,7 @@ import org.hibernate.annotations.LazyCollectionOption
 * @param value The actual contact point details
 * @param use What contact point use for.
 */
-@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.6.0")
+@javax.annotation.Generated(value = ["org.openapitools.codegen.CodeCodegen"], comments = "version:1.0.0")
 
 @JsonPropertyOrder("id", "header", "system", "value", "use")
 

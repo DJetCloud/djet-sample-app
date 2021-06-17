@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*
 @Api(value = "ProductCategories", tags = ["ProductCategories"], description = "the ProductCategories API")
 interface ProductCategoriesApi {
 
-    @ApiOperation(value = "CreateProductCategory", nickname = "productCategoriesCreateProductCategory", notes = "Create a new Product Category. Validate Product Category not yet exist.", tags=["ProductCategories"],)
+    @ApiOperation(value = "CreateProductCategory", nickname = "productCategoriesCreateProductCategory", notes = "Create a new Product Category. Validate Product Category not yet exist.", tags=["ProductCategories"])
     @ApiResponses(
         ApiResponse(code = 201, message = "Object created successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -32,7 +32,7 @@ interface ProductCategoriesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "DeleteProductCategory", nickname = "productCategoriesDeleteProductCategory", notes = "Soft delete of the product category by id.", tags=["ProductCategories"],)
+    @ApiOperation(value = "DeleteProductCategory", nickname = "productCategoriesDeleteProductCategory", notes = "Soft delete of the product category by id.", tags=["ProductCategories"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -45,7 +45,7 @@ interface ProductCategoriesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetProductCategory", nickname = "productCategoriesGetProductCategory", notes = "Get a product categpry or list of products categories from the service. ", tags=["ProductCategories"],)
+    @ApiOperation(value = "GetProductCategory", nickname = "productCategoriesGetProductCategory", notes = "Get a product categpry or list of products categories from the service. ", tags=["ProductCategories"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Product category is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -58,7 +58,7 @@ interface ProductCategoriesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "GetProductCategoryList", nickname = "productCategoriesGetProductCategoryList", notes = "Get a product categpry or list of products categories from the service. ", tags=["ProductCategories"],)
+    @ApiOperation(value = "GetProductCategoryList", nickname = "productCategoriesGetProductCategoryList", notes = "Get a product categpry or list of products categories from the service. ", tags=["ProductCategories"])
     @ApiResponses(
         ApiResponse(code = 200, message = "Product category is found and returned."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
@@ -72,7 +72,7 @@ interface ProductCategoriesApi {
         return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
     }
 
-    @ApiOperation(value = "ModifyProductCategory", nickname = "productCategoriesModifyProductCategory", notes = "Change Product Category properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["ProductCategories"],)
+    @ApiOperation(value = "ModifyProductCategory", nickname = "productCategoriesModifyProductCategory", notes = "Change Product Category properties to values specified in the request. Property not specified will remain the same. No element of any collection will be deleted.", tags=["ProductCategories"])
     @ApiResponses(
         ApiResponse(code = 204, message = "Operation completed successfully."),
         ApiResponse(code = 400, message = "Execution of user request failed."),
